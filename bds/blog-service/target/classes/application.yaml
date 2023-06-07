@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: blog-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_service
+    name: root
+    password: 123456789
+    driverClassName: com.mysql.cj.jdbc.Driver
+  config:
+    import: "optional:configserver:http://localhost:8088"
+server:
+  port: 8090
