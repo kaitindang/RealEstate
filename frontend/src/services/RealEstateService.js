@@ -24,6 +24,8 @@ class RealEstateService{
         return axios.delete(REALESTATE_BASE_REST_API_URL + '/' + realestatesId);
     }
 
+
+
 }
 
 export default new RealEstateService();

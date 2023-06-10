@@ -20,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0441bc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,11 +44,11 @@
 }
 
 
-
 /*CLIENT*/
 *{
   font-family: 'Montserrat', sans-serif;
 }
+
 .navbar{
   padding-top: 0;
   padding-bottom: 0;
@@ -57,7 +57,7 @@
   padding: 0;
 }
 .header{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 .nav-item{
   position: relative;
@@ -120,11 +120,10 @@
 
 .banner{
   min-height: 500px;
-  color:White;
-  background: #eff6ff no-repeat;
+  color:rgb(255, 255, 255);
+  background: #ffffff no-repeat;
   background-size: cover!important;
     background-position: center!important;
-    position:relative;
 }
 .inp-search{
   border:0;

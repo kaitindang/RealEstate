@@ -31,7 +31,10 @@ class ProductService{
     });
     }
 
-    
+    enableProduct(id,product){
+        return axios.put(PRO_API_BASE_URL + "/enable-product" + "/" + id, product,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
 }
 
 export default new ProductService();

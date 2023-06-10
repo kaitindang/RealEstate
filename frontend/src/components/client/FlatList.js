@@ -2,6 +2,7 @@ import Title from "./Title"
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RealEstateService from '../../services/RealEstateService';
+import ProductService from '../admin/Product/ProductService';
 
 const FlatList = () => {
 
@@ -13,7 +14,7 @@ const FlatList = () => {
     }, [])
 
     const getAllRealEstate = () => {
-        RealEstateService.getAllRealEstate().then((response) => {
+        ProductService.getProduct().then((response) => {
             setRealEstate(response.data)
             console.log(response.data);
         }).catch(error => {
@@ -33,6 +34,7 @@ const FlatList = () => {
 
                     {
                         RealEstate.map(
+
                             RealEstate =>
 
                                 <div className="text-center col-lg-4 col-12 col-md-6 ">
@@ -52,7 +54,7 @@ const FlatList = () => {
                                                 <div>
                                                     <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
                                                 </div>
-                                                <Link className="item-title" to={`/edit-realestate/${RealEstate.id_product}`}>
+                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
                                                     <button className="btn btn-detail">View</button>
                                                 </Link>
                                             </div>

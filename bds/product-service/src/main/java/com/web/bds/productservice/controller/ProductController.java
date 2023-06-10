@@ -50,4 +50,20 @@ public class ProductController {
         productServices.update(product);
         return ResponseEntity.ok("deleted");
     }
+
+    @PutMapping("/enable-product/{id_product}")
+    public ResponseEntity<String> EnableProduct(@PathVariable int id_product){
+
+        Product product = null;
+        product = productServices.findOne(id_product);
+
+        if(product.isEnable_product() == true){
+            product.setEnable_product(false);
+        } else {
+            product.setEnable_product(true);
+        }
+
+        productServices.update(product);
+        return ResponseEntity.ok("deleted");
+    }
 }

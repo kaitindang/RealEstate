@@ -32,6 +32,9 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/">Nhà đất cho thuê</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/add-realestate"><button type="button" class="btn btn-outline-danger">Đăng tin</button></Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

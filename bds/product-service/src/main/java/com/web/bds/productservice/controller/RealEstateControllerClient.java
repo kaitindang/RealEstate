@@ -24,7 +24,7 @@ public class RealEstateControllerClient {
         return realEstateService.findAllRealEstate();
     }
 
-    @PostMapping(value = "/create")
+    @PostMapping("")
     public Product createRealEstate(@RequestBody Product realEstate) {
         return realEstateService.addRealEstate(realEstate);
     }
