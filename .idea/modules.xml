@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bds/bds.iml" filepath="$PROJECT_DIR$/bds/bds.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/blog-service/blogservice.iml" filepath="$PROJECT_DIR$/bds/blog-service/blogservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/config-server/configserver.iml" filepath="$PROJECT_DIR$/bds/config-server/configserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bds/department-service/department-service.iml" filepath="$PROJECT_DIR$/bds/department-service/department-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/duancntt2.iml" filepath="$PROJECT_DIR$/.idea/duancntt2.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/product-service/productservice.iml" filepath="$PROJECT_DIR$/bds/product-service/productservice.iml" />
