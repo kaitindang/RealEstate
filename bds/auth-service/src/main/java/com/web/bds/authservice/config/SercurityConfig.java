@@ -1,7 +1,7 @@
 package com.web.bds.authservice.config;
-import com.web.shopping.security.jwt.AuthEntryPointJwt;
-import com.web.shopping.security.jwt.AuthTokenFilter;
-import com.web.shopping.security.services.UserDetailsServiceImpl;
+import com.web.bds.authservice.security.jwt.AuthEntryPointJwt;
+import com.web.bds.authservice.security.jwt.AuthTokenFilter;
+import com.web.bds.authservice.security.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

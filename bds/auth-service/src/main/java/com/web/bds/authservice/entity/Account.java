@@ -2,6 +2,7 @@ package com.web.bds.authservice.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -9,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Data
 @Table(name = "account")
 public class Account {
 	@Column(name = "id_account")
@@ -87,107 +89,5 @@ public class Account {
 		this.roles = roles;
 	}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Timestamp getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Timestamp dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
-	public int getPhone() {
-		return phone;
-	}
-
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
-
-	public String getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
-
-	public Timestamp getCreate_date() {
-		return create_date;
-	}
-
-	public void setCreate_date(Timestamp create_date) {
-		this.create_date = create_date;
-	}
-
-	public Timestamp getLast_login() {
-		return last_login;
-	}
-
-	public void setLast_login(Timestamp last_login) {
-		this.last_login = last_login;
-	}
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
-	public boolean isEnable_account() {
-		return enable_account;
-	}
-
-	public void setEnable_account(boolean enable_account) {
-		this.enable_account = enable_account;
-	}
 }

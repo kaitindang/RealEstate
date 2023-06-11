@@ -1,6 +1,6 @@
 package com.web.bds.authservice.security.jwt;
 
-import com.web.shopping.security.services.UserDetailsServiceImpl;
+import com.web.bds.authservice.security.services.UserDetailsServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

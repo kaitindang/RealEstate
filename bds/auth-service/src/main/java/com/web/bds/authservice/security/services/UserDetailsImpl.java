@@ -1,6 +1,6 @@
 package com.web.bds.authservice.security.services;
 
-import com.web.shopping.entity.Account;
+import com.web.bds.authservice.entity.Account;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
