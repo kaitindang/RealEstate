@@ -1,7 +1,6 @@
 package com.web.bds.authservice.security.jwt;
 
-
-import com.web.shopping.security.services.UserDetailsImpl;
+import com.web.bds.authservice.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
