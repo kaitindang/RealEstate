@@ -14,19 +14,23 @@ public class RealEstateService implements RealEstate<Product>{
     @Autowired
     ProductRepo productRepo;
 
+    @Override
     public List<Product> findAllRealEstate() {
         return productRepo.findAll();
     }
 
+    @Override
     public Product addRealEstate(Product realEstate) {
 
         return productRepo.save(realEstate);
     }
 
+    @Override
     public Optional<Product> findRealEstateById(int id) {
         return this.productRepo.findById(id);
     }
 
+    @Override
     public Product updateRealEstate(int id, Product realEstate) {
 
         Product updateRealEstate = productRepo.findById(id).orElse(null);
@@ -45,7 +49,14 @@ public class RealEstateService implements RealEstate<Product>{
         return productRepo.save(updateRealEstate);
     }
 
+    @Override
     public void delete(int id) {
         productRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Product> searchProductsByKeyword(String keyword) {
+        List<Product> products = productRepo.searchProductsByKeyword(keyword);
+        return products;
     }
 }

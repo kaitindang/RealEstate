@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/realestates")
 public class RealEstateControllerClient {
@@ -55,5 +55,10 @@ public class RealEstateControllerClient {
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Product>> searchProductsByKeyword(@RequestParam("keyword") String keyword){
+        return ResponseEntity.ok(realEstateService.searchProductsByKeyword(keyword));
     }
 }

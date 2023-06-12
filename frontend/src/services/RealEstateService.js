@@ -24,7 +24,9 @@ class RealEstateService{
         return axios.delete(REALESTATE_BASE_REST_API_URL + '/' + realestatesId);
     }
 
-
+    searchRealEstate(keyword) {
+        return axios.get(REALESTATE_BASE_REST_API_URL + '/search?keyword=' + keyword);
+    }
 
 }
 

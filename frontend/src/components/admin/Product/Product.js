@@ -1,6 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import ProductService from './ProductService';
+
 
 const Product = ({ product, deleteProduct, hideProduct }) => {
 
@@ -9,42 +10,46 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
   const editProduct = (e, id_product) => {
     e.preventDefault();
     navigate(`/edit-realestate/${id_product}`);
-  } 
+  }
 
-  
+
 
   const hide = () => {
     var enable_product = String(product.enable_product);
     console.log(enable_product);
-    if (enable_product == "true") {
-      return <p></p>
+    if (enable_product === "true") {
+      return <span class="badge rounded-pill bg-success">Hoạt động</span>
     }
     else {
-      return <p>Đã ẩn</p>
+      return <span class="badge rounded-pill bg-secondary">Đã ẩn</span>
     }
-    
+
   }
 
   const btnHide = () => {
     var enable_product = String(product.enable_product);
     console.log(enable_product);
-    if (enable_product == "true") {
+    if (enable_product === "true") {
       return <span>Ẩn</span>
     }
     else {
       return <span>Bỏ ẩn</span>
     }
-    
+
   }
- 
+
 
   return (
 
     <tr key={product.id_product}>
       <td className="text-left px-6 py-4 whitespace-nowrap">{product.id_product}</td>
-      <td className="text-left px-6 py-4 whitespace-nowrap">{product.name}</td>
+         
+      <Link className="item-title" to={`/detail-realestate/${product.id_product}`}>       
+        <td className="text-left px-6 py-4 whitespace-nowrap">{product.name}</td>
+      </Link>
 
       <td className="text-left px-6 py-4 whitespace-nowrap">{product.price}</td>
+
       <td className="text-left px-6 py-4 whitespace-nowrap">{hide()}</td>
       <td className="text-left px-6 py-4 whitespace-nowrap text-sm">
 
@@ -55,7 +60,7 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
           Xóa
         </button>
         <button className="btn btn-secondary" onClick={(e, id_product) => hideProduct(e, product.id_product)}>
-        {btnHide()}
+          {btnHide()}
         </button>
       </td>
 

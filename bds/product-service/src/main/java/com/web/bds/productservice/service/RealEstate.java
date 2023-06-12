@@ -7,13 +7,14 @@ import java.util.Optional;
 
 public interface RealEstate<T> {
 
-    List<Product> findAllRealEstate();
+    public List<Product> findAllRealEstate();
 
     public Product addRealEstate(T t);
 
-    public Optional<Product> findRealEstateById(int id);
+    Optional<Product> findRealEstateById(int id);
     public Product updateRealEstate(int id, T t);
 
+    public void delete(int id);
 
-
+    List<Product> searchProductsByKeyword(String keyword);
 }

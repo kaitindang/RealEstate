@@ -10,7 +10,7 @@ import AddProduct from './components/admin/Product/AddProduct';
 import UpdateProduct from './components/admin/Product/UpdateProduct';
 import TableProduct from './components/client/TableProduct';
 import AddProduct1 from './components/client/AddProduct';
-
+import SearchResult from './components/client/SearchResult';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
         <Route path="/detail-realestate/:id" element={<FlatDetail />} ></Route>
         <Route path="/add-realestate" element={<AddProduct1/>} ></Route>
         <Route path = "/edit-realestate/:id" element = {<AddProduct1/>} ></Route>
+        <Route path = "/search/:query" element = {<SearchResult/>} ></Route>
       </Routes>
  
       <Footer />

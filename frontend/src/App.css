@@ -124,6 +124,7 @@
   background: #ffffff no-repeat;
   background-size: cover!important;
     background-position: center!important;
+    position:relative;
 }
 .inp-search{
   border:0;

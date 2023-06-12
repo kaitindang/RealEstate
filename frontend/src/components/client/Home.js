@@ -1,4 +1,4 @@
-import Banner from "./Banner";
+import SearchBox from "./SearchBox";
 import FlatList from "./FlatList"
 import React from "react"
 
@@ -6,7 +6,7 @@ import React from "react"
 const Home=()=>{
     return (
         <React.Fragment>
-            <Banner/>
+            <SearchBox/>
             <FlatList/>
         </React.Fragment>
     )
