@@ -21,5 +21,5 @@ public interface Servicese<T> {
 
     List<T> listByName(String name);
 
-
+    List<T> listProductWaitingApprove();
 }

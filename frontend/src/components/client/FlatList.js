@@ -3,10 +3,15 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RealEstateService from '../../services/RealEstateService';
 import ProductService from '../admin/Product/ProductService';
+import dayjs from "dayjs";
 
 const FlatList = () => {
 
     const [RealEstate, setRealEstate] = useState([])
+
+    var relativeTime = require('dayjs/plugin/relativeTime')
+    dayjs.extend(relativeTime)
+
 
     useEffect(() => {
 
@@ -26,6 +31,7 @@ const FlatList = () => {
         text: "Danh sách bất động sản",
         description: "Mua bán nhà đất trên toàn quốc"
     }
+
     return (
         <section className="section-all-re">
             <div className="container">
@@ -44,7 +50,9 @@ const FlatList = () => {
                                         </div>
                                         <div className="item-description">
                                             <div className="d-flex justify-content-between mb-3">
-                                                <span className="item-title">{RealEstate.name}</span>
+                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                    <span className="item-title">{RealEstate.name}</span>
+                                                </Link>
                                                 <span className="item-price">${RealEstate.price}</span>
                                             </div>
                                             <div className="item-icon d-flex alig-items-center justify-content-between">
@@ -58,14 +66,18 @@ const FlatList = () => {
                                                     <button className="btn btn-detail">View</button>
                                                 </Link>
                                             </div>
+                                            <div class="card-footer">
+                                                <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
-
                         )
                     }
                 </div>
             </div>
+
         </section>
     )
 

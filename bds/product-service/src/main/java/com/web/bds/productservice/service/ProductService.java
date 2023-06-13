@@ -61,7 +61,7 @@ public class ProductService implements Servicese<Product> {
         p.setDate_modified(new Timestamp(System.currentTimeMillis()));
         p.setPerson_modified(product.getPerson_modified());
         p.setEnable_product(product.isEnable_product());
-
+        p.setApprove(product.isApprove());
 
         productRepo.save(p);
         return p;
@@ -72,6 +72,12 @@ public class ProductService implements Servicese<Product> {
         // TODO Auto-generated method stub
 
         return productRepo.findAll(true);
+
+    }
+
+    @Override
+    public List<Product> listProductWaitingApprove() {
+        return productRepo.findProductWaitingApprove();
 
     }
 

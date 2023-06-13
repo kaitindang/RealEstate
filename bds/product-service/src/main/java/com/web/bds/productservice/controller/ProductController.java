@@ -23,6 +23,13 @@ public class ProductController {
 
     }
 
+    @GetMapping("/product-waiting")
+    public List<Product> getAllProductWaitingApprove() {
+
+        return  productServices.listProductWaitingApprove();
+
+    }
+
     @PostMapping("")
     public void add(@RequestBody Product product) {
         productServices.add(product);
@@ -61,6 +68,22 @@ public class ProductController {
             product.setEnable_product(false);
         } else {
             product.setEnable_product(true);
+        }
+
+        productServices.update(product);
+        return ResponseEntity.ok("deleted");
+    }
+
+    @PutMapping("/approve-product/{id_product}")
+    public ResponseEntity<String> ApproveProduct(@PathVariable int id_product){
+
+        Product product = null;
+        product = productServices.findOne(id_product);
+
+        if(product.isEnable_product() == true){
+            product.setApprove(false);
+        } else {
+            product.setApprove(true);
         }
 
         productServices.update(product);

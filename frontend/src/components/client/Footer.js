@@ -6,8 +6,7 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-3 col-md-6">
-                        <i className="fas fa-home"></i>
-                        
+                        <i className="fas fa-home"></i>                       
                         <div className="footer-social">
                             <div className="footer-social-item"><i className="fab fa-facebook"></i></div>
                             <div className="footer-social-item"><i className="fab fa-twitter"></i></div>

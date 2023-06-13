@@ -762,7 +762,7 @@ section {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(200, 204, 209, 0.2) 0px 8px 24px;
 }
 .fd-item h4,.fd-sidebar-item h4{
   font-weight: bold;
@@ -801,4 +801,8 @@ section {
 .image-gallery-image{
 
   object-fit: cover;
+}
+
+.card-footer {
+  text-align: left;
 }

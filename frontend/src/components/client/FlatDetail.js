@@ -57,6 +57,7 @@ const FlatDetail = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="fd-top flat-detail-content">
+                            
                             <div>
                                 <h3 className="flat-detail-title">{name}</h3>
                                 <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>

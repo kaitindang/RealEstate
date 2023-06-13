@@ -39,7 +39,7 @@ public class Product {
     @Column
     private int person_modified;
     @Column
-    private boolean enable_product = true;
+    private boolean enable_product = false;
     @Column
     private String address;
     @Column
@@ -50,7 +50,10 @@ public class Product {
     private int room;
     @Column
     private String owner_project;
-
+    @Column
+    private int id_producttype;
+    @Column
+    private boolean approve = false;
 }
 
 

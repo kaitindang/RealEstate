@@ -23,20 +23,20 @@ const AddProduct = () => {
 
         const realestates = { name, address, floor_space, price, type, detail_product, room, area, owner_project }
 
-        if(id){
+        if (id) {
             RealEstateService.updateRealEstate(id, realestates).then((response) => {
                 navigate('/productlist')
             }).catch(error => {
                 console.log(error)
             })
 
-        }else{
-            RealEstateService.createRealEstate(realestates).then((response) =>{
+        } else {
+            RealEstateService.createRealEstate(realestates).then((response) => {
 
                 console.log(response.data)
-    
+
                 navigate('/productlist');
-    
+
             }).catch(error => {
                 console.log(error)
             })
@@ -63,62 +63,74 @@ const AddProduct = () => {
 
     const title = () => {
 
-        if(id){
+        if (id) {
             return <h2 >Chỉnh sửa tin đăng</h2>
-        }else{
+        } else {
             return <h2 >Thông tin cơ bản</h2>
         }
     }
 
     return (
         <div class="row">
+
             <div class="col-sm-4">
                 <Sidebar />
             </div>
-            
+
             <form class="col-sm-7">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Đăng tin</li>
+                    </ol>
+                </nav>
+
+
                 <h2> {title()} </h2>
                 <div class="form-group mb-3">
                     <label for="inputTitle">Tiêu đề</label>
-                    <input type="text" 
-                            class="form-control" 
-                            id="inputTitle" 
-                            name="name"
-                            value = {name}
-                            onChange = {(e) => setName(e.target.value)}
-                            placeholder="Nhập tiêu đề">
+                    <input type="text"
+                        class="form-control"
+                        id="inputTitle"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Nhập tiêu đề">
                     </input>
+
                 </div>
                 <div class="form-group mb-3">
                     <label for="inputAddress">Địa chỉ</label>
-                    <input type="text" 
-                            class="form-control" 
-                            id="inputAddress"
-                            name="address"
-                            value = {address}
-                            onChange = {(e) => setAddress(e.target.value)}
-                            placeholder="Nhập địa chỉ">
+                    <input type="text"
+                        class="form-control"
+                        id="inputAddress"
+                        name="address"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="Nhập địa chỉ">
                     </input>
                 </div>
                 <div class="form-group mb-3">
                     <label for="inputDetail">Mô tả</label>
-                    <input type="text" 
-                            class="form-control" 
-                            id="inputDetail"
-                            name="address"
-                            value = {detail_product}
-                            onChange = {(e) => setDetail_product(e.target.value)}
-                            placeholder="Nhập mô tả">
-                    </input>
+                    <textarea class="form-control"
+                        aria-label="With textarea"
+                        id="inputDetail"
+                        name="address"
+                        value={detail_product}
+                        onChange={(e) => setDetail_product(e.target.value)}
+                        placeholder="Nhập mô tả">
+                    </textarea>
+
                 </div>
                 <div class="form-group mb-3">
                     <label for="inputProject">Dự án</label>
-                    <input type="text" 
-                        class="form-control" 
+                    <input type="text"
+                        class="form-control"
                         id="inputProject"
                         name="owner_project"
-                        value = {owner_project}
-                        onChange = {(e) => setOwner_project(e.target.value)} 
+                        value={owner_project}
+                        onChange={(e) => setOwner_project(e.target.value)}
                         placeholder="Nhập tên dự án">
                     </input>
                 </div>
@@ -129,8 +141,8 @@ const AddProduct = () => {
                             class="form-control"
                             id="inputArea"
                             name="area"
-                            value = {area}
-                            onChange = {(e) => setArea(e.target.value)}
+                            value={area}
+                            onChange={(e) => setArea(e.target.value)}
                             placeholder="Nhập diện tích, VD 80"
                         >
                         </input>
@@ -141,35 +153,35 @@ const AddProduct = () => {
                             class="form-control"
                             id="inputRoom"
                             name="room"
-                            value = {room}
-                            onChange = {(e) => setRoom(e.target.value)}
+                            value={room}
+                            onChange={(e) => setRoom(e.target.value)}
                             placeholder="Nhập số phòng"
                         >
                         </input>
                     </div>
                     <div class="form-group col-md-3 mb-3">
                         <label for="inputFloor">Số tầng</label>
-                        <input type="text" 
-                                class="form-control"
-                                name="foor_space"
-                                value = {floor_space}
-                                onChange = {(e) => setFloor_space(e.target.value)} 
-                                id="inputFloor"
-                                >
+                        <input type="text"
+                            class="form-control"
+                            name="foor_space"
+                            value={floor_space}
+                            onChange={(e) => setFloor_space(e.target.value)}
+                            id="inputFloor"
+                        >
                         </input>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="form-row " style={{ display: 'flex' }}>
                     <div class="form-group col-md-8 mb-3">
                         <label for="inputPrice">Mức giá</label>
-                        <input type="text" 
-                                class="form-control"
-                                name="price"
-                                value = {price}
-                                onChange = {(e) => setPrice(e.target.value)} 
-                                id="inputPrice">
+                        <input type="text"
+                            class="form-control"
+                            name="price"
+                            value={price}
+                            onChange={(e) => setPrice(e.target.value)}
+                            id="inputPrice">
                         </input>
                     </div>
                     <div class="form-group col-md-4 mb-3">
@@ -179,12 +191,14 @@ const AddProduct = () => {
                             <option>USD</option>
                         </select>
                     </div>
-                    
+
                 </div>
 
-                <button className = "btn btn-success" onClick = {(e) => saveOrUpdateRealEstate(e)} >Submit </button>
-                <Link to="/" className="btn btn-danger"> Cancel </Link>
+                <button className="btn btn-success" onClick={(e) => saveOrUpdateRealEstate(e)} >Submit </button>
+                <Link to="/" className="btn btn-secondary"> Cancel </Link>
+
             </form>
+
         </div>
     )
 }

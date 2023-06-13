@@ -16,6 +16,12 @@ class ProductService{
         });
     }
 
+    getProductWaiting(){
+        return axios.get(PRO_API_BASE_URL + "/product-waiting",
+            {headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+        });
+    }
+
     deleteProduct(id_product){
         return axios.delete(PRO_API_BASE_URL + "/" + id_product,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
@@ -33,6 +39,11 @@ class ProductService{
 
     enableProduct(id,product){
         return axios.put(PRO_API_BASE_URL + "/enable-product" + "/" + id, product,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
+
+    approveProduct(id,product){
+        return axios.put(PRO_API_BASE_URL + "/approve-product" + "/" + id, product,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
     }
 }

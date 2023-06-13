@@ -45,6 +45,7 @@ public class RealEstateService implements RealEstate<Product>{
         updateRealEstate.setRoom(realEstate.getRoom());
         updateRealEstate.setOwner_project(realEstate.getOwner_project());
         updateRealEstate.setImage_product(realEstate.getImage_product());
+        updateRealEstate.setId_producttype(realEstate.getId_producttype());
 
         return productRepo.save(updateRealEstate);
     }

@@ -48,22 +48,54 @@ const Banner = () => {
 
     return (
         <Form onSubmit={submitHandler} inline>
-            <div className="banner d-flex align-items-center" style={{ backgroundImage: `url(/img/banner.jpg)` }}>
-                <div className="bg-custom">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 mx-auto">
-                                <div className="banner-area text-center pt-4 pb-4">
-                                    <h2 className="mt-2 mb-4 banner-title"><strong>batdongsan</strong> </h2>
-                                    <div className="search-area">
-                                        <input value={word} onChange={(e) => findSearch(e)} type="text" className="inp-search" placeholder="Nhập từ khóa" />
-                                        <button type="submit" className="btn-search m-2">Tìm kiếm</button>
+            <div class="container">
+                <div className="banner d-flex align-items-center" style={{ backgroundImage: `url(/img/banner.jpg)` }}>
+                    <div className="bg-custom">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-6 mx-auto">
+                                    <div className="banner-area text-center pt-4 pb-4">
+                                        <h2 className="mt-2 mb-4 banner-title"><strong>batdongsan</strong> </h2>
+                                        <div className="search-area">
+                                            <input value={word} onChange={(e) => findSearch(e)} type="text" className="inp-search" placeholder="Nhập từ khóa" />
+                                            <button type="submit" className="btn-search m-2">Tìm kiếm</button>
+                                        </div>
+                                        {findResult()}
                                     </div>
-                                    {findResult()}
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="list-group d-flex flex-row bd-highlight">
+                    <a href="/search/home" class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex align-items-center">
+                        <img className="img-fluid" src="/img/buy.png" alt="flat" style={{ width: "50px" }} />
+                            <h5 class="m-2"><b>Mua bán</b></h5>
+                        </div>
+                        <p class="mb-1">10000 tin đăng mua bán</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex align-items-center">
+                            <img className="img-fluid" src="/img/rent.png" alt="flat" style={{ width: "50px" }} />
+                            <h5 class="m-2"><b>Cho thuê</b></h5>
+                        </div>
+                        <small>1000 tin đăng cho thuê</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center">
+                        <img className="img-fluid" src="/img/property.png" alt="flat" style={{ width: "50px" }} />
+                            <h5 class="m-2"><b>Dự án</b></h5>
+                        </div>
+                        <p class="mb-1">10000 dự án</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center">
+                        <img className="img-fluid" src="/img/skyscraper.png" alt="flat" style={{ width: "50px" }} />
+                            <h5 class="m-2"><b>Môi giới</b></h5>
+                        </div>
+                        <p class="mb-1">10000 môi giới</p>
+                    </a>
                 </div>
             </div>
         </Form>

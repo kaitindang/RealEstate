@@ -16,9 +16,14 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
 
   const hide = () => {
     var enable_product = String(product.enable_product);
+    var approve_product = String(product.approve);
     console.log(enable_product);
-    if (enable_product === "true") {
-      return <span class="badge rounded-pill bg-success">Hoạt động</span>
+    if (approve_product === "true" && enable_product === "true") {
+      return <div><span class="badge rounded-pill bg-success">Hoạt động</span></div>
+    } else if(approve_product === "false" && enable_product === "true") {
+      return <div><span class="badge rounded-pill bg-success">Chờ duyệt</span></div>
+    } else if(approve_product === "false" && enable_product === "false") {
+      return <div><span class="badge rounded-pill bg-warning">Chờ duyệt</span></div>
     }
     else {
       return <span class="badge rounded-pill bg-secondary">Đã ẩn</span>

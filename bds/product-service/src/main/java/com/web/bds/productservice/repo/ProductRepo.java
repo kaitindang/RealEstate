@@ -10,9 +10,11 @@ import java.util.List;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product,Integer> {
-    @Query(value = "SELECT * FROM product p WHERE p.enable_product = :enable_product",nativeQuery = true)
+    @Query(value = "SELECT * FROM product p WHERE p.enable_product = :enable_product AND p.approve = true",nativeQuery = true)
     public List<Product> findAll(@Param("enable_product") boolean enable_product);
 
+    @Query(value = "SELECT * FROM product p WHERE p.approve = false",nativeQuery = true)
+    public List<Product> findProductWaitingApprove();
     List<Product> findByName(String name);
     Boolean existsByName(String name);
 

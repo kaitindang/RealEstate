@@ -21,16 +21,13 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/">Trang chủ</Link>
+                                    <Link  className="nav-link" to="/productlist">Quản lý tin đăng</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/">Tin tức</Link>
+                                    <Link className="nav-link" to="/">Đăng nhập</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/">Nhà đất bán</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/">Nhà đất cho thuê</Link>
+                                    <Link className="nav-link" to="/">Đăng ký</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/add-realestate"><button type="button" class="btn btn-outline-danger">Đăng tin</button></Link>

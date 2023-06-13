@@ -33,10 +33,13 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="user">Thông tin tài khoản</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/productlist" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Quản lý tin đăng</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Quản lý tin đăng</CDBSidebarMenuItem>              
             </NavLink>
-
+            <NavLink exact to="/productApprove" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="sticky-note">Phê duyệt</CDBSidebarMenuItem>              
+            </NavLink>
           </CDBSidebarMenu>
+          
         </CDBSidebarContent>
 
         <CDBSidebarFooter style={{ textAlign: 'center' }}>

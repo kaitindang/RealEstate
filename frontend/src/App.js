@@ -11,6 +11,7 @@ import UpdateProduct from './components/admin/Product/UpdateProduct';
 import TableProduct from './components/client/TableProduct';
 import AddProduct1 from './components/client/AddProduct';
 import SearchResult from './components/client/SearchResult';
+import ProductApprove from './components/admin/Product/ProductApprove';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/productList" element={<ProductList />} />
         <Route path='/addProduct' element={<AddProduct />} />
         <Route path='/editProduct/:id_product' element={<UpdateProduct />} />
+        <Route path='/productApprove' element={<ProductApprove />} />
 
         {/* CLIENT */}
         <Route path="/" element={<Home />}></Route>

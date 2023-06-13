@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import ProductService from './ProductService';
-import Product from './Product';
+import ProductWaiting from './ProductWaiting';
 import Sidebar from '../../client/Sidebar';
 import RealEstateService from '../../../services/RealEstateService';
 
@@ -30,7 +30,7 @@ const ProductList = () => {
             debugger;
             setLoading(true);
             try {
-                const response = await RealEstateService.getAllRealEstate();
+                const response = await ProductService.getProductWaiting();
                 setProduct(response.data);
             }
             catch (error) {
@@ -54,7 +54,7 @@ const ProductList = () => {
 
     const hideProduct = (e, id) => {
         e.preventDefault();
-        ProductService.enableProduct(id).then((res) => {
+        ProductService.approveProduct(id).then((res) => {
             if (product) {
                 setProduct((prevElement) => {
                     return prevElement.filter((product) => product.id_product !== id)
@@ -100,12 +100,12 @@ const ProductList = () => {
                             <tbody className='bg-white'>
 
                                 {product.map((product) => (
-                                    <Product product={product}
+                                    <ProductWaiting product={product}
                                         deleteProduct={deleteProduct}
                                         hideProduct={hideProduct}
                                         key={product.id_product}>
 
-                                    </Product>
+                                    </ProductWaiting>
 
                                 ))}
                             </tbody>
