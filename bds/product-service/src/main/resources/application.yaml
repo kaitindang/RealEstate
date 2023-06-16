@@ -9,6 +9,9 @@ spring:
 
   config:
     import: "optional:configserver:http://localhost:8088"
+  web:
+    jwtSecret: WERGEW4v23v34revr34v345v3425v342v5324v52fkewmq4ior334joi3jntio3ij4iionj4io3jtio4f34r3243rwrqQWRqwGQfwqq3rqFQWEF
+    jwtExpirationms: 24000000
 
 
 server:

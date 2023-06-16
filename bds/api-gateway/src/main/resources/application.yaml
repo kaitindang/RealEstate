@@ -18,6 +18,8 @@ spring:
           uri: lb://product-service
           predicates:
             - Path=/product/**
+          filters:
+            - AuthTokenFilter
         - id: blog-service
           uri: lb://blog-service
           predicates:

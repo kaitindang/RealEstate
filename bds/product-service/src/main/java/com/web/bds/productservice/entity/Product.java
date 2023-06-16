@@ -1,11 +1,13 @@
 package com.web.bds.productservice.entity;
 
-import java.util.Date;
+
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.*;
+
+import java.util.Date;
 
 
 @Builder
