@@ -64,6 +64,10 @@ CREATE TABLE IF NOT EXISTS Product (
     person_modified int,
     date_modified datetime default now(),
     enable_product BOOLEAN DEFAULT TRUE,
+	address VARCHAR(300),
+	area int,
+	floor_space int,
+	room int,
     CONSTRAINT FK_CateProduct FOREIGN KEY (id_productcate)
         REFERENCES ProductCategories (id_productcate)
 );
