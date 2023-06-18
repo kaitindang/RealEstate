@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -38,10 +39,16 @@ public class JwtUtils {
     }
 
     public Collection<? extends GrantedAuthority> getAuthories(String token){
-        Collection<? extends GrantedAuthority>  object = (Collection<? extends GrantedAuthority> )Jwts.
-                parserBuilder().setSigningKey(jwtSecret).build().parseClaimsJws(token).getBody();
+        List<String> object = (List<String> ) Jwts.
+                parserBuilder().setSigningKey(jwtSecret).build().parseClaimsJws(token).getBody().get("roles");
 
-        return object;
+        ArrayList<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+
+        for (int i = 0 ; i < object.size();i++) {
+            authorities.add(new SimpleGrantedAuthority(object.get(i)));
+        }
+
+        return authorities;
     }
 
     public boolean validateJwtToken(String authToken){

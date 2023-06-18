@@ -1,14 +1,16 @@
 package com.web.bds.authservice.security.jwt;
 
+import com.web.bds.authservice.entity.Role;
 import com.web.bds.authservice.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.util.*;
 
 @Component
 public class JwtUtils {
@@ -21,11 +23,12 @@ public class JwtUtils {
     @Value("${spring.web.jwtExpirationms}")
     private int jwtExpirationms;
 
-    public String generateJwtToken(Authentication authentication){
+    public String generateJwtToken(Authentication authentication, List<String> roles){
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
+                .claim("roles",roles)
                 .setExpiration(new Date(new Date().getTime() + jwtExpirationms))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
