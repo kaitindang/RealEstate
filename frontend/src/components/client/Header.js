@@ -1,7 +1,17 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const onClick = (e) =>{
+        if(localStorage.getItem("accessToken")!= null){
+            alert("Ban hien dang dang nhap");
+        }else{
+            navigate("/login");
+        }
+    }
+
     return (
         <div className="header">
             <div className="container">
@@ -21,17 +31,15 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/">Trang chủ</Link>
+                                    <Link className="nav-link" to="/">Quản lý tin đăng</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/">Tin tức</Link>
+                                    <button onClick={(e) => onClick(e)} className="nav-link" >Đăng nhập</button>
                                 </li>
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/">Nhà đất bán</Link>
+                                    <Link  className="nav-link" to="/">Đăng ký</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/">Nhà đất cho thuê</Link>
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>

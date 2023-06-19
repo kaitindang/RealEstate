@@ -5,7 +5,8 @@ const REALESTATE_BASE_REST_API_URL = 'http://localhost:8091/realestates';
 class RealEstateService{
 
     getAllRealEstate(){
-        return axios.get(REALESTATE_BASE_REST_API_URL+"/all-list")
+        return axios.get(REALESTATE_BASE_REST_API_URL+"/all-list",{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    })
     }
 
     createRealEstate(realestates){

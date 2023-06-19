@@ -9,7 +9,7 @@ const Login = (e) => {
     const [login,setLogin] = useState({
         username: "",
         password: "",
-        isLogin : localStorage.getItem("accessToken") == null
+        isLogin : localStorage.getItem("accessToken") != null
     })
 
     const handleChange = (e)=>{
@@ -38,6 +38,7 @@ const Login = (e) => {
             body: JSON.stringify(login)
         
         }
+        
 
          fetch("http://localhost:8100/api/auth/signin",requestOptions)
             .then(response => {console.log(response)
@@ -57,6 +58,7 @@ const Login = (e) => {
                         alert("username or password is wrong");
                  }
             )
+        
          
           
     }
