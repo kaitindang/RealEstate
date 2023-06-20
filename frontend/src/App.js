@@ -13,8 +13,9 @@ import Login from './components/auth/Login';
 function App() {
   return (
     <>  
-       
+    
       <Header />
+    
         <Routes>        
                 {/* ADMIN */}
               <Route path="/productList" element={<ProductList />} />
@@ -27,9 +28,9 @@ function App() {
               {/* AUTH */}   
               <Route path = "/login" element = {<Login />} ></Route>        
         </Routes>
-        
+      
       <Footer />
-
+    
     </>
     
   );

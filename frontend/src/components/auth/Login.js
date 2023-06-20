@@ -64,8 +64,9 @@ const Login = (e) => {
     }
 
   return ( 
-    <div>
+    <>
         {login.isLogin ? <App key={login.isLogin}/> :
+    
     <div className='px-8 py-8'>
         <div className="text-blue-800 justify-center mx-auto flex text-5xl">Login</div>
         <div className="py-5 px-5 border-x-8 justify-center flex">
@@ -91,8 +92,9 @@ const Login = (e) => {
         </div>
 
     </div>
+  
     }   
-    </div>
+    </>
   )
 }
 
