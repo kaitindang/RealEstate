@@ -66,6 +66,7 @@ public class SercurityConfig {
                 .authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/test/**").permitAll().requestMatchers("/api/v1/**").permitAll()
                 .requestMatchers("/admin/**").permitAll()
+                .requestMatchers("/").permitAll()
                 .requestMatchers(HttpMethod.GET,"/error").permitAll()
                 .requestMatchers(HttpMethod.POST,"/error").permitAll()
                 .anyRequest().authenticated();

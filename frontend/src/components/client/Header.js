@@ -6,9 +6,19 @@ const Header = () => {
 
     const onClick = (e) =>{
         if(localStorage.getItem("accessToken")!= null){
-            alert("Ban hien dang dang nhap");
+            alert("Bạn hiện đang đăng nhập");
         }else{
             navigate("/login");
+        }
+    }
+    const onLogout = (e) =>{
+        e.preventDefault();
+        if(localStorage.getItem("accessToken") == null){
+            alert("Bạn hiện không đăng nhập")
+        }else{
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("id");
+            navigate("/login")
         }
     }
 
@@ -38,6 +48,9 @@ const Header = () => {
                                 </li>
                                 <li className="nav-item">
                                     <Link  className="nav-link" to="/">Đăng ký</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <button onClick={(e) => onLogout(e)} className="nav-link" >Đăng xuất</button>
                                 </li>
                                
                             </ul>
