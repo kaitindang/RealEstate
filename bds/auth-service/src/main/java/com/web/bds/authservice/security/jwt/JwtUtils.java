@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class JwtUtils {
@@ -21,11 +22,12 @@ public class JwtUtils {
     @Value("${spring.web.jwtExpirationms}")
     private int jwtExpirationms;
 
-    public String generateJwtToken(Authentication authentication){
+    public String generateJwtToken(Authentication authentication, List<String> roles){
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(userPrincipal.getUsername())
                 .setIssuedAt(new Date())
+                .claim("roles",roles)
                 .setExpiration(new Date(new Date().getTime() + jwtExpirationms))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();

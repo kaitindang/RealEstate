@@ -6,6 +6,7 @@ import com.web.bds.productservice.service.RealEstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class RealEstateControllerClient {
 
     /** GET request to return all real estates **/
     @GetMapping(value = "/all-list")
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public List<Product> getAllRealEstates() {
         return realEstateService.findAllRealEstate();
     }
@@ -30,6 +32,7 @@ public class RealEstateControllerClient {
     }
 
     @GetMapping(value = {"/{id}" })
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public Product getRealEstate(@PathVariable int id) {
         return realEstateService.findRealEstateById(id).get();
     }
@@ -58,6 +61,7 @@ public class RealEstateControllerClient {
     }
 
     @GetMapping("/search")
+    @PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<Product>> searchProductsByKeyword(@RequestParam("keyword") String keyword){
         return ResponseEntity.ok(realEstateService.searchProductsByKeyword(keyword));
     }

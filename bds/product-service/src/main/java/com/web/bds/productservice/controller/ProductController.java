@@ -5,6 +5,7 @@ import com.web.bds.productservice.service.ProductService;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class ProductController {
     private ProductService productServices;
 
     @GetMapping("")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     public List<Product> showBill() {
 
         return  productServices.listAll();
@@ -24,6 +26,7 @@ public class ProductController {
     }
 
     @GetMapping("/product-waiting")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<Product> getAllProductWaitingApprove() {
 
         return  productServices.listProductWaitingApprove();
@@ -31,17 +34,20 @@ public class ProductController {
     }
 
     @PostMapping("")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void add(@RequestBody Product product) {
         productServices.add(product);
     }
 
     @PutMapping("/{id_product}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Product> update(@PathVariable int id_product, @RequestBody Product product) {
         product = productServices.update(id_product,product);
         return ResponseEntity.ok(product);
     }
 
     @GetMapping("/{id_product}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Product> getById(@PathVariable int id_product){
         Product product = null;
         product = productServices.findOne(id_product);
@@ -49,6 +55,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id_product}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> delete(@PathVariable int id_product){
 
         Product product = null;
@@ -59,6 +66,7 @@ public class ProductController {
     }
 
     @PutMapping("/enable-product/{id_product}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> EnableProduct(@PathVariable int id_product){
 
         Product product = null;
@@ -75,6 +83,7 @@ public class ProductController {
     }
 
     @PutMapping("/approve-product/{id_product}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> ApproveProduct(@PathVariable int id_product){
 
         Product product = null;

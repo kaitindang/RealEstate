@@ -56,15 +56,19 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtUtils.generateJwtToken(authentication);
+
 
         UserDetailsImpl accountDetailIs = (UserDetailsImpl) authentication.getPrincipal();
         List<String> roles = accountDetailIs.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
+
         Account account = accountRepo.findById(accountDetailIs.getId()).get();
         account.setLast_login(new Timestamp(System.currentTimeMillis()));
+        String jwt = jwtUtils.generateJwtToken(authentication,roles);
+
         accountRepo.save(account);
+
 
         return ResponseEntity.ok(new JwtResponse(jwt,
                 accountDetailIs.getId(),
