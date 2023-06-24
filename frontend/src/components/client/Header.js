@@ -1,7 +1,28 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
+    const onClick = (e) =>{
+        if(localStorage.getItem("accessToken")!= null){
+            alert("Bạn hiện đang đăng nhập");
+        }else{
+            navigate("/login");
+        }
+    }
+    const onLogout = (e) =>{
+        e.preventDefault();
+        if(localStorage.getItem("accessToken") == null){
+            alert("Bạn hiện không đăng nhập")
+        }else{
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("id");
+            navigate("/login")
+        }
+    }
+
     return (
         <div className="header">
             <div className="container">
@@ -18,20 +39,23 @@ const Header = () => {
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
+                        <div className="navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
                                     <Link  className="nav-link" to="/productlist">Quản lý tin đăng</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/">Đăng nhập</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/">Đăng ký</Link>
-                                </li>
+
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/add-realestate"><button type="button" class="btn btn-outline-danger">Đăng tin</button></Link>
                                 </li>
+
+                                <li className="nav-item">
+                                    <button onClick={(e) => onClick(e)} className="nav-link" >Đăng nhập</button>
+                                </li>
+                                <li className="nav-item">
+                                    <button onClick={(e) => onLogout(e)} className="nav-link" >Đăng xuất</button>
+                                </li>
+                               
                             </ul>
                         </div>
                     </div>

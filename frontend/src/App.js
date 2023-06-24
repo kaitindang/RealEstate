@@ -8,15 +8,16 @@ import FlatDetail from './components/client/FlatDetail';
 import ProductList from './components/admin/Product/ProductList';
 import AddProduct from './components/admin/Product/AddProduct';
 import UpdateProduct from './components/admin/Product/UpdateProduct';
-import TableProduct from './components/client/TableProduct';
 import AddProduct1 from './components/client/AddProduct';
 import SearchResult from './components/client/SearchResult';
 import ProductApprove from './components/admin/Product/ProductApprove';
+import Login from './components/auth/Login';
+
 
 function App() {
   return (
 
-    <BrowserRouter>
+    <>
       <Header />
    
       <Routes>
@@ -34,10 +35,15 @@ function App() {
         <Route path="/add-realestate" element={<AddProduct1/>} ></Route>
         <Route path = "/edit-realestate/:id" element = {<AddProduct1/>} ></Route>
         <Route path = "/search/:query" element = {<SearchResult/>} ></Route>
+
+         {/* AUTH*/}
+         <Route path = "/login" element = {<Login />} ></Route>
+         
+
       </Routes>
  
       <Footer />
-    </BrowserRouter>
+    </>
 
   );
 }
