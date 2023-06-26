@@ -10,8 +10,8 @@ class ProductService{
         });
     }
 
-    getProduct(){
-        return axios.get(PRO_API_BASE_URL,
+    getProduct(page, size){
+        return axios.get(PRO_API_BASE_URL, "?page="+page+"&size="+size,
             {headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
         });
     }

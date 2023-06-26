@@ -4,6 +4,8 @@ import com.web.bds.productservice.entity.Product;
 
 import com.web.bds.productservice.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -68,10 +70,10 @@ public class ProductService implements Servicese<Product> {
     }
 
     @Override
-    public List<Product> listAll() {
+    public Page<Product> listAll(Pageable pageable) {
         // TODO Auto-generated method stub
 
-        return productRepo.findAll(true);
+        return productRepo.findAll(pageable, true);
 
     }
 

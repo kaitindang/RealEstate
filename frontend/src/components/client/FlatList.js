@@ -3,39 +3,72 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import RealEstateService from '../../services/RealEstateService';
 import ProductService from '../admin/Product/ProductService';
+
 import dayjs from "dayjs";
 
-const FlatList = () => {
+const FlatList = (props) => {
 
     const [RealEstate, setRealEstate] = useState([])
+    const [page, setPage] = useState(0);
+    const [count, setCount] = useState(0);
+    const [pageSize, setPageSize] = useState(3);
+
+    const pageSizes = [3, 6, 9];
 
     var relativeTime = require('dayjs/plugin/relativeTime')
     dayjs.extend(relativeTime)
 
 
-    useEffect(() => {
-
-        getAllRealEstate();
-    }, [])
+    const getRequestParams = (page, pageSize) => {
+        let params = {};
+    
+        if (page) {
+          params["page"] = page - 1;
+        }
+    
+        if (pageSize) {
+          params["size"] = pageSize;
+        }
+    
+        return params;
+      };
 
     const getAllRealEstate = () => {
-        ProductService.getProduct().then((response) => {
-            setRealEstate(response.data)
+        const params = getRequestParams(page, pageSize);
+
+        console.log(params.size)
+
+        ProductService.getProduct(1,3).then((response) => {
+            const { products, totalPages } = response.data;
+            setCount(totalPages);
+            setRealEstate(products);
             console.log(response.data);
         }).catch(error => {
             console.log(error);
         })
     }
 
+    useEffect(getAllRealEstate, [page, pageSize]);
+
     const title = {
         text: "Danh sách bất động sản",
         description: "Mua bán nhà đất trên toàn quốc"
     }
 
+    const handlePageChange = (event, value) => {
+        setPage(value);
+      };
+
+
+    const handlePageSizeChange = (event) => {
+        setPageSize(event.target.value);
+        setPage(1);
+    };
+
     return (
         <section className="section-all-re">
             <div className="container">
-                <Title title={title.text} description={title.description} />
+                <Title title={title.text} description={title.description} />                
                 <div className="row">
 
                     {
@@ -75,6 +108,18 @@ const FlatList = () => {
                                 </div>
                         )
                     }
+                </div>
+                <div className="mt-3">
+                    {"Items per Page: "}
+                    <select onChange={handlePageSizeChange} value={pageSize}>
+                        {pageSizes.map((size) => (
+                            <option key={size} value={size}>
+                                {size}
+                            </option>
+                        ))}
+                    </select>
+
+                   
                 </div>
             </div>
 

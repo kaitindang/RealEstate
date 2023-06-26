@@ -4,11 +4,17 @@ import com.web.bds.productservice.entity.Product;
 import com.web.bds.productservice.service.ProductService;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/admin/product")
@@ -19,9 +25,20 @@ public class ProductController {
 
     @GetMapping("")
     @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
-    public List<Product> showBill() {
+    public Map<String, Object> showBill(@RequestParam(value = "page", defaultValue = "0") int page,
+                                        @RequestParam(value = "size", defaultValue = "2") int size) {
 
-        return  productServices.listAll();
+        List<Product> products = new ArrayList<Product>();
+        Pageable pagination = PageRequest.of(page, size);
+        Page<Product> productPage;
+
+        productPage = productServices.listAll(pagination);
+
+        products = productPage.getContent();
+        Map<String, Object> response = new HashMap<String, Object>();
+        response.put("products", products);
+        response.put("totalPages", productPage.getTotalPages());
+        return response;
 
     }
 

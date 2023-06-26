@@ -1,5 +1,8 @@
 package com.web.bds.productservice.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 
 public interface Servicese<T> {
@@ -15,7 +18,7 @@ public interface Servicese<T> {
 
     void delete(int id);
 
-    List<T> listAll();
+    Page<T> listAll(Pageable pageable);
 
     List<T> listById(int id);
 
