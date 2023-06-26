@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/RealEstate/bds/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealEstate/bds/api-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealEstate/bds/auth-service/src/main/java" charset="UTF-8" />
@@ -13,5 +14,16 @@
     <file url="file://$PROJECT_DIR$/RealEstate/bds/eurekaserver/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealEstate/bds/product-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealEstate/bds/product-service/src/main/resources" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/bds/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/api-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/auth-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/blog-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/department-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/eurekaserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bds/product-service/src/main/java" charset="UTF-8" />
+>>>>>>> 6788657e194966262e62e7ce27b79055c840405c
   </component>
 </project>

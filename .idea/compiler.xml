@@ -7,8 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="apigateway" />
         <module name="eurekaserver" />
+=======
+        <module name="eurekaserver" />
+        <module name="apigateway" />
+>>>>>>> 6788657e194966262e62e7ce27b79055c840405c
         <module name="blogservice" />
         <module name="configserver" />
         <module name="authservice" />
@@ -16,6 +21,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="apigateway" target="17" />
       <module name="authservice" target="17" />
       <module name="bds" target="1.5" />
@@ -23,6 +29,10 @@
       <module name="configserver" target="17" />
       <module name="eurekaserver" target="17" />
       <module name="productservice" target="17" />
+=======
+      <module name="auth-service" target="17" />
+      <module name="department-service" target="17" />
+>>>>>>> 6788657e194966262e62e7ce27b79055c840405c
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,6 +41,10 @@
       <module name="authservice" options="-parameters" />
       <module name="blogservice" options="-parameters" />
       <module name="configserver" options="-parameters" />
+<<<<<<< HEAD
+=======
+      <module name="department-service" options="-parameters" />
+>>>>>>> 6788657e194966262e62e7ce27b79055c840405c
       <module name="eurekaserver" options="-parameters" />
       <module name="productservice" options="-parameters" />
     </option>
