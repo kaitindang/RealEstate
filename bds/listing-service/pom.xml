@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.web.bds</groupId>
-    <artifactId>productservice</artifactId>
+    <artifactId>listingservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>listing-service</name>
     <description>Demo project for Spring Boot</description>

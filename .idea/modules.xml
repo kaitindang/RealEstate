@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/RealEstate.iml" filepath="$PROJECT_DIR$/.idea/RealEstate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/api-gateway/apigateway.iml" filepath="$PROJECT_DIR$/bds/api-gateway/apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/auth-service/authservice.iml" filepath="$PROJECT_DIR$/bds/auth-service/authservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/bds.iml" filepath="$PROJECT_DIR$/bds/bds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/blog-service/blogservice.iml" filepath="$PROJECT_DIR$/bds/blog-service/blogservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/config-server/configserver.iml" filepath="$PROJECT_DIR$/bds/config-server/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/listing-service/listingservice.iml" filepath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" />
+    </modules>
+  </component>
+</project>

@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin/realestate")
 @CrossOrigin(origins = "http://localhost:3000")
-public class ListingAdminController {
+public class ProductController {
     @Autowired
     private ListingService listingService;
 

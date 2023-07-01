@@ -1,7 +1,7 @@
 import ImageGallery from 'react-image-gallery';
 import React, {useState, useEffect} from 'react'
 import {Link, useNavigate , useParams } from 'react-router-dom';
-import RealEstateService from '../../services/RealEstateService';
+import RealEstateService from './Service/RealEstateService';
 
 
 const FlatDetail = () => {

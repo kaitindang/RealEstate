@@ -12,8 +12,6 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
     navigate(`/edit-realestate/${id_product}`);
   }
 
-
-
   const hide = () => {
     var enable_product = String(product.enable_product);
     var approve_product = String(product.approve);

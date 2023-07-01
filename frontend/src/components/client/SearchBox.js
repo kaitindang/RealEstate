@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Form, Button } from 'reactstrap'
-import RealEstateService from "../../services/RealEstateService";
+import RealEstateService from "./Service/RealEstateService";
 
 const Banner = () => {
 
@@ -12,7 +12,7 @@ const Banner = () => {
     const [word, setWord] = useState("");
 
     useEffect(() => {
-        setSearch(["cho thue", "tim", "can ho", "can ho quan 7", "quan 8", "quan 9", "can ho quan 10"])
+        setSearch(["cho thue","cho thue can ho","ban", "ban can ho", "tim", "can ho", "can ho quan 7", "quan 8", "quan 9", "can ho quan 10"])
     }, [])
 
     const findSearch = (e) => {
@@ -41,7 +41,7 @@ const Banner = () => {
         if (word.trim()) {
             navigate(`/search/${word}`)
         } else {
-            navigate('/')
+            navigate('/search/all')
         }
     }
 
@@ -56,8 +56,8 @@ const Banner = () => {
                                 <div className="col-lg-6 mx-auto">
                                     <div className="banner-area text-center pt-4 pb-4">
                                         <h2 className="mt-2 mb-4 banner-title"><strong>batdongsan</strong> </h2>
-                                        <div className="search-area">
-                                            <input value={word} onChange={(e) => findSearch(e)} type="text" className="inp-search" placeholder="Nhập từ khóa" />
+                                        <div className="search-area">                                     
+                                            <input value={word} onChange={(e) => findSearch(e)} type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                             <button type="submit" className="btn-search m-2">Tìm kiếm</button>
                                         </div>
                                         {findResult()}

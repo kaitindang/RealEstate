@@ -23,7 +23,7 @@ import java.util.Date;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/realestates")
-public class ListingClientController {
+public class RealEstateControllerClient {
 
     @Autowired
     private ListingService listingService;

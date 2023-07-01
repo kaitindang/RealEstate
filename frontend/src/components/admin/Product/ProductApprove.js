@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ProductService from './ProductService';
 import ProductWaiting from './ProductWaiting';
 import Sidebar from '../../client/Sidebar';
-import RealEstateService from '../../../services/RealEstateService';
+import RealEstateService from '../../client/Service/RealEstateService';
 
 const ProductList = () => {
     const navigate = useNavigate();
@@ -52,7 +52,7 @@ const ProductList = () => {
         })
     }
 
-    const hideProduct = (e, id) => {
+    const approveProduct = (e, id) => {
         e.preventDefault();
         ProductService.approveProduct(id).then((res) => {
             if (product) {
@@ -102,7 +102,7 @@ const ProductList = () => {
                                 {product.map((product) => (
                                     <ProductWaiting product={product}
                                         deleteProduct={deleteProduct}
-                                        hideProduct={hideProduct}
+                                        approveProduct={approveProduct}
                                         key={product.id_product}>
 
                                     </ProductWaiting>
