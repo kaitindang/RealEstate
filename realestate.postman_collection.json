@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "03bf4513-a6d8-4118-8970-c246b73178c8",
+		"name": "realestate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"firstname\": \"admin\",\r\n    \"lastname\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/realestates/all-list?page=1&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"all-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NzcwNjIwNywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODc3MzAyMDd9.6Xv92vzFoFRE-a1QCdt5F46GFzWCpwITknMM5Prp2p1XP_d-WaLcnh2eBxoPi-4S6UC2XfKGSoR1j_iW6_2Mtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Cho thuê gấp căn 4PN 3WC 160m2\",\r\n        \"address\": \"25, Đường Lê Văn Lương, Phường Nhân Chính, Thanh Xuân, Hà Nội\",\r\n        \"floor_space\": 4,\r\n        \"price\": 1000,\r\n        \"pictureUrl\": \"\",\r\n        \"detail_product\": \"thoi tiet\",\r\n        \"area\": 160,\r\n        \"room\": 3,\r\n        \"owner_project\": \"Vinhomes\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/realestates/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEzMjgwMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODgxNTY4MDN9.ZFamoUUTa4IppZySZBhGpv75zM6hmNUru4dqqEbjtIHg-QKsejlyWxSN5aL7rxQ5J96ymf-JCCQI_uXWZv1hvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cho thuê gấp căn 4PN 3WC 160m22222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/update-listing/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"update-listing",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multisearch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NzcwNjA3Mywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODc3MzAwNzN9.HnzifoN7famf5dokObgKx_9WZR53nuXmg8EnPzJje-kd9TP7gGvCrXgtrtjct7ugQjLn4HfGNOdZ_8v-84hgxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/searchbyfilter?price=1000&area=50&floor_space=3&room=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"searchbyfilter"
+							],
+							"query": [
+								{
+									"key": "price",
+									"value": "1000"
+								},
+								{
+									"key": "area",
+									"value": "50"
+								},
+								{
+									"key": "floor_space",
+									"value": "3"
+								},
+								{
+									"key": "room",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search keywork",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/search?keyword=cho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "cho"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/realestate?page=0&size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"realestate"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get listing waiting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEzMjgwMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODgxNTY4MDN9.ZFamoUUTa4IppZySZBhGpv75zM6hmNUru4dqqEbjtIHg-QKsejlyWxSN5aL7rxQ5J96ymf-JCCQI_uXWZv1hvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/realestate/product-waiting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"realestate",
+								"product-waiting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enable listing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEzMjgwMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODgxNTY4MDN9.ZFamoUUTa4IppZySZBhGpv75zM6hmNUru4dqqEbjtIHg-QKsejlyWxSN5aL7rxQ5J96ymf-JCCQI_uXWZv1hvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/realestate/enable-product/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"realestate",
+								"enable-product",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve listing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEzMjgwMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODgxNTY4MDN9.ZFamoUUTa4IppZySZBhGpv75zM6hmNUru4dqqEbjtIHg-QKsejlyWxSN5aL7rxQ5J96ymf-JCCQI_uXWZv1hvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/realestate/enable-product/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"realestate",
+								"enable-product",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
