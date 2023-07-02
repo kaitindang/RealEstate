@@ -37,9 +37,6 @@ const FilterSearchBar = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        if(!product.price) {
-            product.price = null
-        }
 
         navigate(`/search/searchbyfilter?price=${product.price}&area=${product.area}&floor_space=${product.floor_space}&room=${product.room}`)
         
@@ -69,7 +66,8 @@ const FilterSearchBar = () => {
                     <input type="text" class="form-control" placeholder="Tìm kiếm..." aria-label="Recipient's username" aria-describedby="basic-addon2" />
                     
                     <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary wrn-btn">Tìm kiếm</button>
+                    <button type="submit" class="btn btn-primary wrn-btn">Tìm kiếm</button>
+                        
                         
                     </div>
                 </div>
@@ -85,8 +83,6 @@ const FilterSearchBar = () => {
                                             onChange={(e) => handleChange(e)}>
                                             <option>Mức giá</option>
                                             <option>1000</option>
-                                            <option>2000</option>
-                                            <option>3000</option>
                                         </select>
 
                                     </div>
@@ -96,10 +92,7 @@ const FilterSearchBar = () => {
                                             value={product.area}
                                             onChange={(e) => handleChange(e)}>
                                             <option>Diện tích</option>
-                                            <option>30</option>
-                                            <option>35</option>
-                                            <option>40</option>
-                                            <option>45</option>
+                                            <option>160</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">

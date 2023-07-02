@@ -5,6 +5,7 @@ import com.web.bds.productservice.entity.Listing;
 import com.web.bds.productservice.service.impl.ISearchListingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.web.bds.productservice.dto.ListingSearchRequest;
 
 import java.util.List;
 
@@ -28,6 +29,19 @@ public class SearchService implements ISearchListingService<Listing> {
                 area,
                 floor_space,
                 room
+        );
+
+        return listings;
+    }
+
+    @Override
+    public List<Listing> findListingsByFilterParams(ListingSearchRequest filter) {
+
+        List<Listing> listings = listingRepo.findListingsByFilterParams(
+                filter.price,
+                filter.area,
+                filter.floor_space,
+                filter.room
         );
 
         return listings;

@@ -43,9 +43,9 @@ class RealEstateService{
         return axios.get(REALESTATE_BASE_REST_API_URL + '/search-keywork?keyword=' + keyword,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
     }
-
-    multipleSearchRealEstate(price,area,floor_space,room){
-        return axios.get(REALESTATE_BASE_REST_API_URL+"/search-filter?price="+price+"&area="+area+"&floor_space="+floor_space+"&room="+room, {headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    
+    multipleSearchRealEstates(realestates){
+        return axios.post(REALESTATE_BASE_REST_API_URL+"/search-filters", realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
     }
 

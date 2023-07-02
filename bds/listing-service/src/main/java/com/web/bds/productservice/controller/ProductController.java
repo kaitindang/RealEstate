@@ -51,7 +51,7 @@ public class ProductController {
 
     @PutMapping("/enable-product/{id_product}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<String> EnableProduct(@PathVariable int id_product){
+    public ResponseEntity<String> EnableListing(@PathVariable int id_product){
 
         Listing listing = null;
         listing = listingService.findOne(id_product);
@@ -68,7 +68,7 @@ public class ProductController {
 
     @PutMapping("/approve-product/{id_product}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<String> Approve(@PathVariable int id_product){
+    public ResponseEntity<String> ApproveListing(@PathVariable int id_product){
 
         Listing listing = null;
         listing = listingService.findOne(id_product);

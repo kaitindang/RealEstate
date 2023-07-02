@@ -5,98 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/RealEstate.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Product$ProductBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/RealEstate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/RealEstateService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cntt2222.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/duancntt2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/blog-service/blogservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/blog-service/blogservice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/eurekaserver/target/test-classes/com/web/bds/eurekaserver/EurekaServerApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/eurekaserver/target/test-classes/com/web/bds/eurekaserver/EurekaServerApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/productservice.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/config/EntityManagerFactoryConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/EntityManagerFactoryConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/config/SercurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/SercurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/exeption/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/exeption/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/repo/ProductRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/security/jwt/AuthEntryPointJwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/security/jwt/AuthEntryPointJwt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/security/jwt/AuthTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/security/jwt/AuthTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/security/jwt/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/security/services/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/security/services/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/service/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/service/RealEstate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/service/RealEstateService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/java/com/web/bds/productservice/service/Servicese.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/config/EntityManagerFactoryConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/EntityManagerFactoryConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/config/SercurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/SercurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/entity/Product$ProductBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/entity/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/exeption/ResourceNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/exeption/ResourceNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/repo/ProductRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/repo/ProductRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/security/jwt/AuthEntryPointJwt.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/security/jwt/AuthEntryPointJwt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/security/jwt/AuthTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/security/jwt/AuthTokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/security/jwt/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/security/jwt/JwtUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/security/services/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/security/services/UserDetailsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/service/RealEstate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/service/RealEstateService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/product-service/target/classes/com/web/bds/productservice/service/Servicese.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/Servicese.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/NavBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/AddProduct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductApprove.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductApprove.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductWaiting.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductWaiting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/UpdateProduct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/SideBarData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/AddProduct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/ISearchListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/ISearchListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FilterSearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FilterSearchBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/TableProduct.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/RealEstateService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -227,7 +160,8 @@
       <workItem from="1688126738784" duration="877000" />
       <workItem from="1688127673812" duration="112000" />
       <workItem from="1688127822694" duration="9717000" />
-      <workItem from="1688184676093" duration="4035000" />
+      <workItem from="1688184676093" duration="11008000" />
+      <workItem from="1688264909484" duration="10594000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 package com.web.bds.productservice.controller;
 
+import com.web.bds.productservice.dto.ListingSearchRequest;
 import com.web.bds.productservice.entity.Listing;
 import com.web.bds.productservice.exeption.ResourceNotFoundException;
 import com.web.bds.productservice.service.ListingService;
@@ -117,5 +118,10 @@ public class RealEstateControllerClient {
                                                                       @RequestParam(value = "floor_space", defaultValue = "0") int floor_space,
                                                                       @RequestParam(value = "room", defaultValue = "0") int room){
         return ResponseEntity.ok(searchService.findListingByFilterParams(price, area, floor_space, room));
+    }
+
+    @PostMapping("/search-filters")
+    public ResponseEntity<List<Listing>> searchListingsByFilterParams(@RequestBody ListingSearchRequest filter){
+        return ResponseEntity.ok(searchService.findListingsByFilterParams(filter));
     }
 }

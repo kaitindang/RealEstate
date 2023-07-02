@@ -5,6 +5,8 @@ import RealEstateService from './Service/RealEstateService';
 
 const AddProduct = () => {
 
+    const [id_producttype, setId_producttype] = useState('')
+    const [id_productcate, setId_productcate] = useState('')
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [floor_space, setFloor_space] = useState('')
@@ -23,7 +25,10 @@ const AddProduct = () => {
     const saveOrUpdateRealEstate = (e) => {
         e.preventDefault();
 
-        const realestates = { name, address, floor_space, price, type, detail_product, room, area, owner_project, priority_type }
+        const realestates = {
+            id_producttype, id_productcate, name, address, floor_space, price, type,
+            detail_product, room, area, owner_project, priority_type
+        }
 
         if (id) {
             RealEstateService.updateRealEstate(id, realestates).then((response) => {
@@ -94,6 +99,35 @@ const AddProduct = () => {
 
 
                 <h2> {title()} </h2>
+
+                <div class="form-group mb-3">
+                    <label for="inputTitle">Chọn loại tin đăng</label>
+                    <select class="form-control" id="exampleFormControlSelect1"
+                        name="id_producttype"
+                        value={id_producttype}
+                        onChange={(e) => setId_producttype(e.target.value)}
+                    >
+                        <option selected></option>
+                        <option value="1">Mua bán</option>
+                        <option value="2">Cho thuê</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="inputTitle">Loại bất động sản</label>
+                    <select class="form-control" id="exampleFormControlSelect1"
+                        name="id_productcate"
+                        value={id_productcate}
+                        onChange={(e) => setId_productcate(e.target.value)}
+                    >
+                        <option value="0"></option>
+                        <option value="1">Căn hộ chung cư</option>
+                        <option value="2">Nhà ở</option>
+                        <option value="3">Đất</option>
+                        <option value="4">Văn phòng</option>
+                        <option value="5">Nhà xưởng</option>
+                    </select>
+                </div>
 
                 <div class="form-group mb-3">
                     <label for="inputTitle">Tiêu đề</label>
@@ -201,9 +235,10 @@ const AddProduct = () => {
                     </div>
 
                 </div>
+
                 <p for="inputState">Chọn gói tin đăng</p>
                 <div class="form-row d-flex justify-content-between" style={{ display: 'flex' }}>
-                    
+
                     <label>
                         <input
                             type="radio"
@@ -233,7 +268,7 @@ const AddProduct = () => {
                             onChange={handleExpireChange}
                         />
                         Tin ưu tiên (30.000VND/15 ngày)<br />
-                        Ưu điểm:<br/>
+                        Ưu điểm:<br />
                         - Đánh dấu tin ưu tiên <br />
                         - Hiển thị lên đầu danh sách
                     </label>

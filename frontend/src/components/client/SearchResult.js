@@ -28,6 +28,36 @@ const SearchResult = () => {
     console.log("area:   ",area)
     console.log("room:   ",room)
 
+    const handleFilterParams = (price, floor_space, area, room) => {
+        let params = {};
+    
+        if (!price) {
+          params["price"] = null;
+        } else {
+            params["price"] = price
+        }
+    
+        if (!floor_space) {
+          params["floor_space"] = null;
+        } else {
+            params["floor_space"] = floor_space;
+        }
+
+        if (!area) {
+            params["area"] = null;
+        } else {
+            params["area"] = area;
+        }
+
+        if (!room) {
+            params["room"] = null;
+        } else {
+            params["room"] = room;
+        }
+    
+        return params;
+      };
+
     const getRequestParams = (page, pageSize) => {
         let params = {};
     
@@ -53,15 +83,18 @@ const SearchResult = () => {
                 const { listings, totalPages } = response.data;
                 setCount(totalPages);
                 setRealEstate(listings);
-                console.log(response.data);
+                console.log(response.data);                
             }).catch(error => {
                 console.log(error);
             })
         } else if(query == "searchbyfilter") {
+
+            const params = handleFilterParams(price, floor_space, area, room)
             
-            RealEstateService.multipleSearchRealEstate(price, area, floor_space, room).then((response) => {
+            RealEstateService.multipleSearchRealEstates(params).then((response) => {
                 setRealEstate(response.data)
                 console.log(response.data);
+        
             }).catch(error => {
                 console.log(error);
             })

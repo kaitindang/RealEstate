@@ -21,6 +21,7 @@ public interface ListingRepo extends JpaRepository<Listing,Integer> {
 
     @Query(value = "SELECT * FROM listing p WHERE p.approve = false",nativeQuery = true)
     public List<Listing> findListingWaitingApprove();
+
     List<Listing> findByName(String name);
     Boolean existsByName(String name);
 
@@ -40,4 +41,13 @@ public interface ListingRepo extends JpaRepository<Listing,Integer> {
                                              @Param("floor_space") int floor_space,
                                              @Param("room") int room);
 
+    @Query("SELECT p FROM Listing p " +
+            "WHERE (coalesce(:price, null) IS NULL OR p.price = :price)" +
+            "AND (coalesce(:area, null) IS NULL OR p.area = :area)" +
+            "AND (coalesce(:floor_space, null) IS NULL OR p.floor_space = :floor_space)" +
+            "AND (coalesce(:room, null) IS NULL OR p.room = :room)")
+    List<Listing> findListingsByFilterParams(@Param("price") String price,
+                                            @Param("area") String area,
+                                            @Param("floor_space") String floor_space,
+                                            @Param("room") String room);
 }

@@ -39,7 +39,7 @@ const Banner = () => {
         e.preventDefault()
 
         if (word.trim()) {
-            navigate(`/search/${word}`)
+            navigate(`/search/${word}`)           
         } else {
             navigate('/search/all')
         }

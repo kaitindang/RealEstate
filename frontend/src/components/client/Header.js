@@ -67,7 +67,7 @@ const Header = () => {
                                 }
 
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/add-realestate"><button type="button" class="btn btn-outline-danger">Đăng tin</button></Link>
+                                    <Link to="/add-realestate"><button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark">Đăng tin</button></Link>
                                 </li>
 
                             </ul>
