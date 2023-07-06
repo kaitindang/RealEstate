@@ -1,6 +1,12 @@
 package com.web.bds.productservice.repo;
 
 import com.web.bds.productservice.entity.Listing;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,10 +14,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public interface ListingRepo extends JpaRepository<Listing,Integer> {
+
     @Query(value = "SELECT * FROM listing p " +
             "WHERE p.enable_product = true " +
             "AND p.approve = true " +
@@ -32,22 +40,24 @@ public interface ListingRepo extends JpaRepository<Listing,Integer> {
     List<Listing> searchProductsByKeyword(String keyword);
 
     @Query("SELECT p FROM Listing p " +
-            "WHERE (coalesce(:price, null) IS NULL OR p.price = :price)" +
-            "AND (coalesce(:area, null) IS NULL OR p.area = :area)" +
-            "AND (coalesce(:floor_space, null) IS NULL OR p.floor_space = :floor_space)" +
-            "AND (coalesce(:room, null) IS NULL OR p.room = :room)")
-    List<Listing> findListingByFilterParams(@Param("price") double price,
-                                             @Param("area") int area,
-                                             @Param("floor_space") int floor_space,
-                                             @Param("room") int room);
+            "WHERE p.enable_product = true " +
+            "AND p.approve = true " +
+            "AND DATE(p.date_expired) >= DATE(NOW())" +
+            "AND (coalesce(:price_start, null) IS NULL OR p.price BETWEEN :price_start AND :price_end)" +
+            "AND (coalesce(:area_start, null) IS NULL OR p.area BETWEEN :area_start AND :area_end)" +
+            "AND (coalesce(:floor_spaceStart, null) IS NULL OR p.floor_space BETWEEN :floor_spaceStart AND :floor_spaceEnd)" +
+            "AND (coalesce(:room_start, null) IS NULL OR p.room BETWEEN :room_start AND :room_end)" +
+            "AND (coalesce(:address, null) IS NULL OR p.address LIKE CONCAT('%', :address, '%'))" +
+            "AND (coalesce(:listing_categories, null) IS NULL OR p.id_productcate = :listing_categories)")
+    List<Listing> findListingsByFilterParams(@Param("price_start") String price_start,
+                                             @Param("price_end") String price_end,
+                                            @Param("area_start") String area_start,
+                                             @Param("area_end") String area_end,
+                                            @Param("floor_spaceStart") String floor_spaceStart,
+                                             @Param("floor_spaceEnd") String floor_spaceEnd,
+                                            @Param("room_start") String room_start,
+                                             @Param("room_end") String room_end,
+                                            @Param("address") String address,
+                                             @Param("listing_categories") String listing_categories);
 
-    @Query("SELECT p FROM Listing p " +
-            "WHERE (coalesce(:price, null) IS NULL OR p.price = :price)" +
-            "AND (coalesce(:area, null) IS NULL OR p.area = :area)" +
-            "AND (coalesce(:floor_space, null) IS NULL OR p.floor_space = :floor_space)" +
-            "AND (coalesce(:room, null) IS NULL OR p.room = :room)")
-    List<Listing> findListingsByFilterParams(@Param("price") String price,
-                                            @Param("area") String area,
-                                            @Param("floor_space") String floor_space,
-                                            @Param("room") String room);
 }

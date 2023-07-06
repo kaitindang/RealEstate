@@ -6,18 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/dto/ListingSearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/dto/ListingSearchRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/SearchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/ISearchListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/ISearchListingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/dto/ListingSearchRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/dto/ListingSearchRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/repo/ListingRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/repo/ListingRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/SearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/SearchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/impl/ISearchListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/impl/ISearchListingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FilterSearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FilterSearchBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Eclipse/duancntt/RealEstate/bds/listings-service/src/main/java/com/web/bds/productservice/service/impl&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Eclipse/cntt2/RealEstate&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,11 +92,11 @@
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\listing-service\src\main\java\com\web\bds\productservice\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.bds.productservice.repo" />
       <recent name="com.web.bds.productservice.controller.admin" />
       <recent name="com.web.bds.productservice.controller.client" />
       <recent name="com.web.bds.productservice.service" />
       <recent name="com.web.bds.productservice.service.impl" />
-      <recent name="com.web.bds.productservice.entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -99,24 +106,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="apigateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.apigateway.ApiGatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ProductServierApplication">
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="authservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.authservice.AuthServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BlogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="blogservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.blogservice.BlogServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,6 +128,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductServierApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="listingservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.productservice.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.ProductServierApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -161,7 +167,13 @@
       <workItem from="1688127673812" duration="112000" />
       <workItem from="1688127822694" duration="9717000" />
       <workItem from="1688184676093" duration="11008000" />
-      <workItem from="1688264909484" duration="10594000" />
+      <workItem from="1688264909484" duration="10898000" />
+      <workItem from="1688357429942" duration="968000" />
+      <workItem from="1688358732247" duration="6255000" />
+      <workItem from="1688438283004" duration="7154000" />
+      <workItem from="1688569427722" duration="8743000" />
+      <workItem from="1688608437380" duration="12665000" />
+      <workItem from="1688645673174" duration="1399000" />
     </task>
     <servers />
   </component>

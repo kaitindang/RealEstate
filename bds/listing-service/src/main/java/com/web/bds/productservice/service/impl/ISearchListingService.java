@@ -9,7 +9,7 @@ public interface ISearchListingService<T> {
 
     List<Listing> searchListingByKeyword(String keyword);
 
-    List<Listing> findListingByFilterParams(double price, int area, int floor_space, int room);
-
     List<Listing> findListingsByFilterParams(ListingSearchRequest filter);
+
+    List<Listing> findListingByFilterParam(ListingSearchRequest filter);
 }

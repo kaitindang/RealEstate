@@ -45,7 +45,7 @@ class RealEstateService{
     }
     
     multipleSearchRealEstates(realestates){
-        return axios.post(REALESTATE_BASE_REST_API_URL+"/search-filters", realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+        return axios.post(REALESTATE_BASE_REST_API_URL+"/search-filter", realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
     }
 

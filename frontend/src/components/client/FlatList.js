@@ -72,6 +72,7 @@ const FlatList = (props) => {
             <div className="container">
                 <Title title={title.text} description={title.description} />
                 <div className="row">
+                    
                     <div className="mt-3 d-flex flex-row-reverse bd-highlight">
 
                         <Pagination

@@ -5,6 +5,7 @@ import RealEstateService from './Service/RealEstateService';
 import Pagination from "@material-ui/lab/Pagination";
 import Title from "./Title"
 import FilterSearchBar from "./FilterSearchBar";
+import FilterSearchBar1 from "./FilterSearchBar1";
 
 const SearchResult = () => {
 
@@ -18,45 +19,18 @@ const SearchResult = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const price = searchParams.get("price");
-    const floor_space = searchParams.get("floor_space");
-    const area = searchParams.get("area");
-    const room = searchParams.get("room");
+    const price_start = searchParams.get("price_start");
+    const price_end = searchParams.get("price_end");
+    const area_start = searchParams.get("area_start");
+    const area_end = searchParams.get("area_end");
+    const room_start = searchParams.get("room_start");
+    const room_end = searchParams.get("room_end");
+    const floor_spaceStart = searchParams.get("floor_spaceStart");
+    const floor_spaceEnd = searchParams.get("floor_spaceEnd");
+    const address = searchParams.get("address");
+    const listing_categories = searchParams.get("listing_categories");
+    const listing_type = searchParams.get("listing_type");
 
-    console.log("price:   ",price)
-    console.log("floor_space:   ",floor_space)
-    console.log("area:   ",area)
-    console.log("room:   ",room)
-
-    const handleFilterParams = (price, floor_space, area, room) => {
-        let params = {};
-    
-        if (!price) {
-          params["price"] = null;
-        } else {
-            params["price"] = price
-        }
-    
-        if (!floor_space) {
-          params["floor_space"] = null;
-        } else {
-            params["floor_space"] = floor_space;
-        }
-
-        if (!area) {
-            params["area"] = null;
-        } else {
-            params["area"] = area;
-        }
-
-        if (!room) {
-            params["room"] = null;
-        } else {
-            params["room"] = room;
-        }
-    
-        return params;
-      };
 
     const getRequestParams = (page, pageSize) => {
         let params = {};
@@ -67,6 +41,64 @@ const SearchResult = () => {
     
         if (pageSize) {
           params["size"] = pageSize;
+        }
+    
+        return params;
+      };
+
+
+    const getRequestfilterParams = (price_start, price_end, room_start, room_end, area_start, area_end, 
+        floor_spaceStart, floor_spaceEnd, address, listing_categories, listing_type) => {
+        let params = {};
+    
+        if (price_start && price_end) {
+          params["price_start"] = price_start;
+          params["price_end"] = price_end;
+        } else {
+            params["price_start"] = null;
+          params["price_end"] = null;
+        }
+
+        if (room_start && room_end) {
+            params["room_start"] = room_start;
+            params["room_end"] = room_end;
+        } else {
+              params["room_start"] = null;
+            params["room_end"] = null;
+        }
+
+        if (area_start && area_end) {
+            params["area_start"] = area_start;
+            params["area_end"] = area_end;
+        } else {
+              params["area_start"] = null;
+            params["area_end"] = null;
+        }
+
+        if (floor_spaceStart && floor_spaceEnd) {
+            params["floor_spaceStart"] = floor_spaceStart;
+            params["floor_spaceEnd"] = floor_spaceEnd;
+        } else {
+              params["floor_spaceStart"] = null;
+            params["floor_spaceEnd"] = null;
+        }
+
+        if (address) {
+            params["address"] = address;
+        } else {
+              params["address"] = null;
+        }
+
+        if (listing_categories) {
+            params["listing_categories"] = listing_categories;
+        } else {
+              params["listing_categories"] = null;
+        }
+
+        if (listing_type) {
+            params["listing_type"] = listing_type;
+        } else {
+              params["listing_type"] = null;
         }
     
         return params;
@@ -89,7 +121,8 @@ const SearchResult = () => {
             })
         } else if(query == "searchbyfilter") {
 
-            const params = handleFilterParams(price, floor_space, area, room)
+            const params = getRequestfilterParams(price_start, price_end, room_start, room_end, area_start, area_end, 
+                    floor_spaceStart, floor_spaceEnd, address, listing_categories, listing_type)
             
             RealEstateService.multipleSearchRealEstates(params).then((response) => {
                 setRealEstate(response.data)
@@ -133,7 +166,7 @@ const SearchResult = () => {
                 <div className="container">
                     <Title title={title.text} description={title.description} />
                     <div className="row">
-
+                        
                         {RealEstate.length === 0 ? (<p>Không có kết quả tìm kiếm</p>) :
 
                             RealEstate.map(

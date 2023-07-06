@@ -112,16 +112,8 @@ public class RealEstateControllerClient {
         return ResponseEntity.ok(searchService.searchListingByKeyword(keyword));
     }
 
-    @GetMapping("/search-filter")
-    public ResponseEntity<List<Listing>> searchPerfumesByFilterParams(@RequestParam(value = "price", defaultValue = "null") double price,
-                                                                      @RequestParam(value = "area", defaultValue = "0") int area,
-                                                                      @RequestParam(value = "floor_space", defaultValue = "0") int floor_space,
-                                                                      @RequestParam(value = "room", defaultValue = "0") int room){
-        return ResponseEntity.ok(searchService.findListingByFilterParams(price, area, floor_space, room));
-    }
-
-    @PostMapping("/search-filters")
+    @PostMapping("/search-filter")
     public ResponseEntity<List<Listing>> searchListingsByFilterParams(@RequestBody ListingSearchRequest filter){
-        return ResponseEntity.ok(searchService.findListingsByFilterParams(filter));
+        return ResponseEntity.ok(searchService.findListingByFilterParam(filter));
     }
 }
