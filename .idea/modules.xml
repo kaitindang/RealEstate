@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/bds/bds.iml" filepath="$PROJECT_DIR$/bds/bds.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/blog-service/blogservice.iml" filepath="$PROJECT_DIR$/bds/blog-service/blogservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/config-server/configserver.iml" filepath="$PROJECT_DIR$/bds/config-server/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bds/crawl-service/crawldata.iml" filepath="$PROJECT_DIR$/bds/crawl-service/crawldata.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/bds/eurekaserver/eurekaserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/bds/listing-service/listingservice.iml" filepath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" />
     </modules>

@@ -15,6 +15,7 @@
         <module>blog-service</module>
         <module>api-gateway</module>
         <module>auth-service</module>
+        <module>crawl-service</module>
     </modules>
 
 </project>

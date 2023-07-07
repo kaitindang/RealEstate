@@ -1,0 +1,7 @@
+com\example\crawldata\config\EntityManagerFactoryConfig.class
+com\example\crawldata\config\SeleniumConfig.class
+com\example\crawldata\model\Listing.class
+com\example\crawldata\model\Listing$ListingBuilder.class
+com\example\crawldata\CrawldataApplication.class
+com\example\crawldata\service\CrawlService.class
+com\example\crawldata\repo\CrawlRepo.class

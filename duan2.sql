@@ -44,13 +44,13 @@ USE Listing_service;
 
 CREATE TABLE IF NOT EXISTS Listing (
     id_product INT PRIMARY KEY AUTO_INCREMENT,
-    name_product VARCHAR(50) NOT NULL,
+    name_product VARCHAR(1000) NOT NULL,
     detail_product VARCHAR(500),
     image_product VARCHAR(50) DEFAULT 'product.png',
     date_create DATETIME DEFAULT NOW(),
     id_productcate INT NOT NULL,
     price DOUBLE NOT NULL,
-    person_modified int,
+    person_modified VARCHAR(50),
     date_modified datetime default now(),
     enable_product BOOLEAN DEFAULT TRUE,
 	address VARCHAR(300),
