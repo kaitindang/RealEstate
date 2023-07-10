@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +31,8 @@ public class RealEstateControllerClient {
     private ListingService listingService;
     @Autowired
     private SearchService searchService;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @GetMapping(value = "/all-listings")
     /*@PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")*/
@@ -49,7 +52,7 @@ public class RealEstateControllerClient {
     }
 
     @PostMapping("/create-listing")
-    public Listing createListing(@RequestBody Listing listing) {
+    public ResponseEntity<Listing> createListing(@RequestBody Listing listing) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.add(Calendar.DAY_OF_YEAR, 7);
@@ -73,7 +76,9 @@ public class RealEstateControllerClient {
             listing.setDate_expired(newDate);
         }
         System.out.println(listing.getDate_expired());
-        return listingService.addListing(listing);
+
+
+        return ResponseEntity.ok(listingService.addListing(listing));
     }
 
     @GetMapping(value = {"/get-listing/{id}" })
@@ -116,4 +121,5 @@ public class RealEstateControllerClient {
     public ResponseEntity<List<Listing>> searchListingsByFilterParams(@RequestBody ListingSearchRequest filter){
         return ResponseEntity.ok(searchService.findListingByFilterParam(filter));
     }
+
 }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import RealEstateService from './Service/RealEstateService';
+import UploadImageComponent from './upload';
+import FileService from './Service/FileService';
 
 const AddProduct = () => {
 
@@ -17,6 +19,19 @@ const AddProduct = () => {
     const [area, setArea] = useState('')
     const [owner_project, setOwner_project] = useState('')
     const [priority_type, setPriority_type] = useState('');
+
+    const [upload, setUpload] = useState({
+        files: null,
+        fileUploaded: null,
+    });
+
+    const onFileChange = (event) => {
+        setUpload({ ...upload, files: event.target.files });
+    };
+
+    const onUploaderNameChange = (event) => {
+        setUpload({ ...upload, uploaderName: event.target.value });
+    };
 
 
     const navigate = useNavigate();
@@ -39,16 +54,33 @@ const AddProduct = () => {
             })
 
         } else {
+
             RealEstateService.createRealEstate(realestates).then((response) => {
-
                 console.log(response.data)
-                navigate('/');
 
+                const id_product = response.data.id_product;
+
+                const formData = new FormData();
+
+                for (const key of Object.keys(upload.files)) {
+                    formData.append('files', upload.files[key]);
+                }
+
+                formData.append('id_product', id_product);
+
+                FileService.uploadImage(formData).then((response) => {
+                    console.log(response.data);
+                    setUpload({ ...upload, fileUploaded: true });
+                }).catch(error => {
+                    console.log(error);
+                });
             }).catch(error => {
                 console.log(error)
             })
+
         }
 
+        navigate('/my-images')
     }
 
     const handleExpireChange = (e) => {
@@ -81,6 +113,8 @@ const AddProduct = () => {
         }
     }
 
+    const uniqueId = () => parseInt(Date.now() * Math.random()).toString();
+
     return (
         <div class="row">
 
@@ -94,6 +128,7 @@ const AddProduct = () => {
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Trang chủ</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Đăng tin</li>
+                        <label>{uniqueId()}</label>
                     </ol>
                 </nav>
 
@@ -273,7 +308,18 @@ const AddProduct = () => {
                         - Hiển thị lên đầu danh sách
                     </label>
                 </div>
+                <div className='row'>
+                    <div className='card col-md-12'>
+                        <h4>Upload Image</h4>
+                        <div className='card-body'>
+                            <div>
+                                <label>Select a file:</label>
+                                <input className='mx-2' type='file' name='file' onChange={onFileChange} multiple></input>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
                 <button className="btn btn-success" onClick={(e) => saveOrUpdateRealEstate(e)} >Submit </button>
                 <Link to="/" className="btn btn-secondary"> Cancel </Link>
 

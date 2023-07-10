@@ -48,7 +48,7 @@ const FlatList = (props) => {
         })
     }
 
-    useEffect(getAllRealEstate, [page, pageSize]);
+    useEffect( getAllRealEstate, [page, pageSize]);
 
     const title = {
         text: "Danh sách bất động sản",
