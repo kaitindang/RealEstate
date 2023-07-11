@@ -17,6 +17,10 @@ import java.util.Date;
 @Table(name = "listing")
 @Data
 public class Listing {
+
+    @Transient
+    public static final String SEQUENCE_NAME="photo_sequence";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_product;

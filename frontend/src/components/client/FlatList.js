@@ -95,7 +95,7 @@ const FlatList = (props) => {
                                     <div className="item">
 
                                         <div className="best-estate-img-area">
-                                            <img className="best-estate-img" src="/img/product1.jpeg" alt="flat" />
+                                            <img className="best-estate-img" src="https://file4.batdongsan.com.vn/crop/393x222/2023/02/10/20230210164442-4f9d_wm.jpg" alt="flat" />
                                             <div className="best-estate-state bg-red">Ưu tiên</div>
                                         </div>
                                         <div className="item-description">
@@ -129,7 +129,7 @@ const FlatList = (props) => {
                                     <div className="item">
 
                                         <div className="best-estate-img-area">
-                                            <img className="best-estate-img" src="/img/product1.jpeg" alt="flat" />
+                                            <img className="best-estate-img" src="https://file4.batdongsan.com.vn/crop/393x222/2023/02/10/20230210164442-4f9d_wm.jpg" alt="flat" />
                                 
                                         </div>
                                         <div className="item-description">
