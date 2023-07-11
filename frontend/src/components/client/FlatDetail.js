@@ -1,24 +1,10 @@
 import ImageGallery from 'react-image-gallery';
-import React, {useState, useEffect} from 'react'
-import {Link, useNavigate , useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
-
+import ImagesListing from './ImagesListing';
 
 const FlatDetail = () => {
-    const images = [
-        {
-            original: '/img/product1.jpeg',
-            thumbnail: '/img/product1.jpeg',
-        },
-        {
-            original: '/img/banner.jpg',
-            thumbnail: '/img/banner.jpg',
-        },
-        {
-            original: '/img/product1.jpeg',
-            thumbnail: '/img/product1.jpeg',
-        },
-    ];
 
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
@@ -30,11 +16,11 @@ const FlatDetail = () => {
     const [area, setArea] = useState('')
     const [owner_project, setOwner_project] = useState('')
     const history = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
 
-        RealEstateService.getRealEstateById(id).then((response) =>{
+        RealEstateService.getRealEstateById(id).then((response) => {
             console.log(response.data)
             setName(response.data.name)
             setAddress(response.data.address)
@@ -48,6 +34,7 @@ const FlatDetail = () => {
         }).catch(error => {
             console.log(error)
         })
+        
     }, [])
 
     return (
@@ -57,17 +44,17 @@ const FlatDetail = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="fd-top flat-detail-content">
-                            
+
                             <div>
                                 <h3 className="flat-detail-title">{name}</h3>
                                 <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
-                                {address}</p>
+                                    {address}</p>
                             </div>
                             <div>
                                 <span className="fd-price">${price}</span>
                             </div>
                         </div>
-                        <ImageGallery flickThreshold={0.50} slideDuration={0} items={images} showNav={false} showFullscreenButton={false} showPlayButton={false} />
+                        <ImagesListing/>
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="fd-item">
@@ -89,8 +76,8 @@ const FlatDetail = () => {
                                             <span>Số phòng</span><br></br>
                                             <span>{room} phòng</span>
                                         </div>
-                                    </div>                                   
-                                    
+                                    </div>
+
                                 </div>
                                 <div className="fd-item fd-features">
                                     <h4>Dự án </h4>
@@ -100,7 +87,7 @@ const FlatDetail = () => {
                                             <span>{owner_project}</span>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div className="fd-item">
                                     <h4>Maps</h4>
@@ -114,7 +101,7 @@ const FlatDetail = () => {
                                         <img src="/img/product1.jpeg" alt="detail" width="50px" />
                                         <span></span>
                                     </div>
-                                    
+
                                 </div>
                                 <div className="fd-sidebar-item">
                                     <h4>Danh sách khác</h4>

@@ -80,7 +80,7 @@ const AddProduct = () => {
 
         }
 
-        navigate('/my-images')
+        navigate('/')
     }
 
     const handleExpireChange = (e) => {

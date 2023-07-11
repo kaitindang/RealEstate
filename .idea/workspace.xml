@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/SercurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/SercurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/FileDetailsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/FileDetailsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/FileUploadSerivceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/FileUploadSerivceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/SercurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/SercurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/FileUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/FileUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/FileUploadSerivceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/FileUploadSerivceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/MyImagesComponent.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/FileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/FileService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +174,7 @@
       <workItem from="1688820212200" duration="1221000" />
       <workItem from="1688870158837" duration="10179000" />
       <workItem from="1688955668485" duration="22577000" />
+      <workItem from="1689042116062" duration="12449000" />
     </task>
     <servers />
   </component>

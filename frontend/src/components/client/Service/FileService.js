@@ -12,6 +12,11 @@ class FileService {
     });
     
     }
+    getImagesId(id_product) {
+        return axios.get(BASE_URL + '/images-product/' + id_product,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    
+    }
     uploadImage(fileFormData){
         return axios.post(BASE_URL+'/upload', fileFormData, {headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });

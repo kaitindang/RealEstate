@@ -15,4 +15,6 @@ public interface FileUploadService {
                                          int id_product) throws IOException;
 
     public List<FileDetails> getAllFiles();
+
+    public List<FileDetails> getFilesById(int id);
 }

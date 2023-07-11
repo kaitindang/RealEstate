@@ -12,7 +12,6 @@ import ProductApprove from './components/admin/Product/ProductApprove';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import Upload from './components/client/upload'
-import MyImagesComponent from './components/client/MyImagesComponent';
 
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
         <Route path="/edit-realestate/:id" element={<PostListing />} ></Route>
         <Route path="/search/:query" element={<SearchResult />} ></Route>
         <Route path="/upload" element={<Upload />} ></Route>
-        <Route path="/my-images" element={<MyImagesComponent />} ></Route>
 
         {/* AUTH*/}
         <Route path="/login" element={<Login />} ></Route>

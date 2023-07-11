@@ -34,6 +34,12 @@ public class FileUploadController {
         return this.fileUploadService.getAllFiles();
     }
 
+    @GetMapping(value = "/images-product/{id_product}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<FileDetails> getFilesByProduct(@PathVariable("id_product") int id_product) {
+        return this.fileUploadService.getFilesById(id_product);
+    }
+
     @PostMapping(value = "/upload")
     public ResponseEntity<Object> uploadFiles(@RequestParam("id_product") int id_product
             , @RequestParam("files") MultipartFile[] files) {

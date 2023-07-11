@@ -14,6 +14,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -43,6 +44,7 @@ public class SercurityConfig {
                 .authorizeHttpRequests().requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/test/**").permitAll().requestMatchers("/api/v1/**").permitAll()
                 .requestMatchers("/admin/**").permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/image/**")).permitAll()
                 .requestMatchers(HttpMethod.GET,"/error").permitAll()
                 .requestMatchers(HttpMethod.POST,"/error").permitAll()
                 .anyRequest().authenticated();

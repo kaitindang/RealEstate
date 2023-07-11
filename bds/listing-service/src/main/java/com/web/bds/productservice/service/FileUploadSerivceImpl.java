@@ -7,16 +7,12 @@ import com.web.bds.productservice.repo.FileDetailsRepository;
 import com.web.bds.productservice.service.impl.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -58,10 +54,6 @@ public class FileUploadSerivceImpl implements FileUploadService {
         String fileUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/image/").path(timeStampedFileName).toUriString();
 
-        String fileDownloadUri =
-                ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("/file/download/").path(timeStampedFileName).toUriString();
-
         FileDetails fileDetails = new FileDetails(file.getOriginalFilename(),
                                                 fileUri,
                                                 id_product);
@@ -79,6 +71,11 @@ public class FileUploadSerivceImpl implements FileUploadService {
     @Override
     public List<FileDetails> getAllFiles() {
         return this.fileDetailsRepository.findAll();
+    }
+
+    @Override
+    public List<FileDetails> getFilesById(int id) {
+        return this.fileDetailsRepository.findFileDetailsById_product(id);
     }
 
 }
