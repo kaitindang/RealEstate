@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/model/Dbsequence.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/model/Photo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/repo/PhotoRepo.java" afterDir="false" />
@@ -436,6 +437,20 @@
       <change beforePath="$PROJECT_DIR$/bds/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/listingservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/ProductServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -468,6 +483,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RequestMappingsPanelOrder0": "0",
@@ -490,6 +506,26 @@
     "project.structure.side.proportion": "0.0",
     "spring.configuration.checksum": "221db6e5cff38f135008cd1af2cfed55",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Eclipse/duancntt/RealEstate&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;338f88270bbeaf622ca867e0e07e370f&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -513,9 +549,13 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.web.bds.model" />
       <recent name="com.web.bds.productservice.repo" />
+      <recent name="com.web.bds.productservice.service" />
+<<<<<<< HEAD
+=======
+      <recent name="com.web.bds.productservice.service.impl" />
       <recent name="com.web.bds.productservice.controller.admin" />
       <recent name="com.web.bds.productservice.controller.client" />
-      <recent name="com.web.bds.productservice.service" />
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
     </key>
   </component>
   <component name="RunDashboard">
@@ -525,6 +565,7 @@
       </set>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
@@ -539,6 +580,10 @@
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.web.bds.authservice.AuthServiceApplication" />
+=======
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
       <module name="authservice" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -553,6 +598,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="CrawldataApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -566,6 +612,9 @@
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.web.bds.eurekaserver.EurekaServerApplication" />
+=======
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
       <module name="eurekaserver" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -589,6 +638,7 @@
       <method v="2" />
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="Application.AuthServiceApplication" />
       <item itemvalue="Application.EurekaServerApplication" />
       <item itemvalue="Application.ConfigServerApplication" />
@@ -596,6 +646,12 @@
       <item itemvalue="Application.ProductServiceApplication" />
       <item itemvalue="Application.CrawldataApplication" />
       <item itemvalue="Compound.run" />
+=======
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.ProductServierApplication" />
+>>>>>>> 060892f99956ce363a9bd030cd8d6ff37f9223f7
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -632,6 +688,10 @@
       <workItem from="1688645673174" duration="1399000" />
       <workItem from="1688741636386" duration="2810000" />
       <workItem from="1688745357826" duration="3777000" />
+      <workItem from="1688785586710" duration="10851000" />
+      <workItem from="1688820212200" duration="1221000" />
+      <workItem from="1688870158837" duration="10179000" />
+      <workItem from="1688955668485" duration="22577000" />
     </task>
     <servers />
   </component>
