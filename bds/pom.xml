@@ -16,6 +16,7 @@
         <module>api-gateway</module>
         <module>auth-service</module>
         <module>crawl-service</module>
+        <module>image-service</module>
     </modules>
 
 </project>

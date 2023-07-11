@@ -4,3 +4,9 @@ spring:
     name: root
     password: 123456789
     driverClassName: com.mysql.cj.jdbc.Driver
+#  data:
+#    mongodb:
+#      host: localhost
+#      port: 27017
+#      database: image
+
