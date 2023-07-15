@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import FileService from './Service/FileService';
 import ImageGallery from 'react-image-gallery';
+import ImageService from './Service/ImageService'
 
 
 const ImagesListing = () => {
@@ -14,7 +15,7 @@ const ImagesListing = () => {
 
     useEffect(() => {
 
-        FileService.getImagesId(id).then((response) => {
+        ImageService.getImagesId(id).then((response) => {
             setImage({ imageList: response.data });
         });
     }, [])

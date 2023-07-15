@@ -18,6 +18,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,13 +70,13 @@ public class CrawlService {
         crawlData();
     }
 
-    public void crawlData() throws InterruptedException {
-        //crawlSellData(URLSellData);
-        crawlRentData(URLRentData);
+    public void crawlData() throws InterruptedException, IOException {
+        crawlSellData(URLSellData);
+        //crawlRentData(URLRentData);
     }
 
 
-    public void crawlSellData(String URL) {
+    public void crawlSellData(String URL) throws IOException {
 
         chromeDriver.get(URL);
 
@@ -106,14 +107,16 @@ public class CrawlService {
         List<WebElement> imagechild2 = chromeDriver.findElements(By.xpath("//div[@class='re__card-image ']//div[3]//img"));
         List<WebElement> imagechild3 = chromeDriver.findElements(By.xpath("//div[@class='re__card-image ']//div[4]//img"));
 
+        for (int i = 0; i < 20; i++) {
 
-        List<WebElement> imagechild4 = chromeDriver.findElements(By.xpath("//*[@id=\"product-lists-web\"]/div[1]/a/div[1]/div[1]/div/div/img"));
-
-        for (int i = 1; i < 20; i++) {
-
+            JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
+            js.executeScript("arguments[0].scrollIntoView();", imageparent.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild1.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild2.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild3.get(i));
 
             String strPrice = prices.get(i).getText();
-            String numberPrice = strPrice.replaceAll("[^0-9]", "");
+            String numberPrice = strPrice.replaceAll("[^0-9,]", "").replaceAll(",",".");
 
             String strArea = area.get(i).getText();
             String numberArea = strArea.replaceAll("[^0-9]", "");
@@ -123,6 +126,10 @@ public class CrawlService {
 
             //String strFloor = floor.get(i).getText();
             //String numberFloor = strFloor.replaceAll("[^0-9]", "");
+
+            if(numberPrice == "") {
+                numberPrice = "0";
+            }
 
             System.out.println(titles.get(i).getText());
             System.out.println(address.get(i).getText());
@@ -137,18 +144,19 @@ public class CrawlService {
             System.out.println(imagechild1.get(i).getAttribute("src"));
             System.out.println(imagechild2.get(i).getAttribute("src"));
             System.out.println(imagechild3.get(i).getAttribute("src"));
-            System.out.println("image: "+imagechild4.get(i).getAttribute("src"));
+
 
             Listing listing = Listing.builder()
                     .name(titles.get(i).getText())
                     .address(address.get(i).getText())
                     .detail_product(description.get(i).getText())
-                    .price(random.nextInt(10000)+100)
+                    .price(Double.parseDouble(numberPrice))
                     .area(Integer.parseInt(numberArea))
                     .room(random.nextInt(5)+1)
                     .floor_space(random.nextInt(5)+1)
                     .person_modified(dealer.get(i).getText())
                     .id_productcate(random.nextInt(5)+1)
+                    .image_product(imageparent.get(i).getAttribute("src"))
                     .id_producttype(1)
                     .priority_type(1)
                     .date_expired(newDate)
@@ -156,76 +164,98 @@ public class CrawlService {
                     .enable_product(true)
                     .approve(true)
                     .build();
+//
+//            listing = crawlRepo.save(listing);
+//            int id_product = listing.getId_product();
+//
+//            FileDetails fileDetails = new FileDetails(imageparent.get(i).getAttribute("src"),
+//                    imageparent.get(i).getAttribute("src"),id_product);
+//
+//            fileDetailsRepo.save(fileDetails);
+//
+//            FileDetails fileDetails1 = new FileDetails(imagechild1.get(i).getAttribute("src"),
+//                    imagechild1.get(i).getAttribute("src"),id_product);
+//
+//            fileDetailsRepo.save(fileDetails1);
+//
+//            FileDetails fileDetails2 = new FileDetails(imagechild2.get(i).getAttribute("src"),
+//                    imagechild2.get(i).getAttribute("src"),id_product);
+//
+//            fileDetailsRepo.save(fileDetails2);
+//
+//            FileDetails fileDetails3 = new FileDetails(imagechild3.get(i).getAttribute("src"),
+//                    imagechild3.get(i).getAttribute("src"),id_product);
+//
+//            fileDetailsRepo.save(fileDetails3);
+
+
 
             listing = crawlRepo.save(listing);
-            int id_product = listing.getId_product();
+            int groupId = listing.getId_product();
 
-            FileDetails fileDetails = new FileDetails(imageparent.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
-
-            fileDetailsRepo.save(fileDetails);
-
-            FileDetails fileDetails1 = new FileDetails(imagechild1.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
-
-            fileDetailsRepo.save(fileDetails1);
-
-            FileDetails fileDetails2 = new FileDetails(imagechild2.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
-
-            fileDetailsRepo.save(fileDetails2);
-
-            FileDetails fileDetails3 = new FileDetails(imagechild3.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
-
-            fileDetailsRepo.save(fileDetails3);
-
-
-
-//            listing = crawlRepo.save(listing);
-//            int groupId = listing.getId_product();
-//
-//            URL url = new URL(imageparent.get(i).getAttribute("src"));
-//            InputStream is = url.openStream();
+            URL url = new URL(imageparent.get(i).getAttribute("src"));
+            InputStream is = url.openStream();
+            Photo photo = Photo.builder()
+                    .id(service.getSequenceNumber(Listing.SEQUENCE_NAME))
+                    .groupId(groupId)
+                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is)))
+                    .fileUri(imageparent.get(i).getAttribute("src"))
+                    .build();
 //            Photo photo = Photo.builder()
 //                    .groupId(groupId)
 //                    .title("parentImage")
 //                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is)))
 //                    .build();
-//
-//            photo.setId(service.getSequenceNumber(Listing.SEQUENCE_NAME));
-//            photoRepo.save(photo);
 
-//            URL url1 = new URL(imagechild1.get(i).getAttribute("src"));
-//            InputStream is1 = url1.openStream();
+            photoRepo.save(photo);
+
+            URL url1 = new URL(imagechild1.get(i).getAttribute("src"));
+            InputStream is1 = url1.openStream();
+            Photo photo1 = Photo.builder()
+                    .id(service.getSequenceNumber(Listing.SEQUENCE_NAME))
+                    .groupId(groupId)
+                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is1)))
+                    .fileUri(imagechild1.get(i).getAttribute("src"))
+                    .build();
 //            Photo photo1 = Photo.builder()
 //                    .groupId(groupId)
 //                    .title("child1Image")
 //                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is1)))
 //                    .build();
 //            photo1.setId(service.getSequenceNumber(Listing.SEQUENCE_NAME));
-//            photoRepo.save(photo1);
-//
-//            URL url2 = new URL(imagechild2.get(i).getAttribute("src"));
-//            InputStream is2 = url2.openStream();
+            photoRepo.save(photo1);
+
+            URL url2 = new URL(imagechild2.get(i).getAttribute("src"));
+            InputStream is2 = url2.openStream();
+            Photo photo2 = Photo.builder()
+                    .id(service.getSequenceNumber(Listing.SEQUENCE_NAME))
+                    .groupId(groupId)
+                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is2)))
+                    .fileUri(imagechild2.get(i).getAttribute("src"))
+                    .build();
 //            Photo photo2 = Photo.builder()
 //                    .groupId(groupId)
 //                    .title("child2Image")
 //                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is2)))
 //                    .build();
 //            photo2.setId(service.getSequenceNumber(Listing.SEQUENCE_NAME));
-//            photoRepo.save(photo2);
-//
-//            URL url3 = new URL(imagechild3.get(i).getAttribute("src"));
-//            InputStream is3 = url3.openStream();
+            photoRepo.save(photo2);
+
+            URL url3 = new URL(imagechild3.get(i).getAttribute("src"));
+            InputStream is3 = url3.openStream();
+            Photo photo3 = Photo.builder()
+                    .id(service.getSequenceNumber(Listing.SEQUENCE_NAME))
+                    .groupId(groupId)
+                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is3)))
+                    .fileUri(imagechild2.get(i).getAttribute("src"))
+                    .build();
 //            Photo photo3 = Photo.builder()
 //                    .groupId(groupId)
 //                    .title("child3Image")
 //                    .image(new Binary(BsonBinarySubType.BINARY,IOUtils.toByteArray(is3)))
 //                    .build();
 //            photo3.setId(service.getSequenceNumber(Listing.SEQUENCE_NAME));
-//            photoRepo.save(photo3);
-
+            photoRepo.save(photo3);
 
         }
         chromeDriver.quit();
@@ -265,13 +295,17 @@ public class CrawlService {
 
         for (int i = 0; i < 20; i++) {
 
+            JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
+            js.executeScript("arguments[0].scrollIntoView();", imageparent.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild1.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild2.get(i));
+            js.executeScript("arguments[0].scrollIntoView();", imagechild3.get(i));
+
             String strPrice = prices.get(i).getText();
-            String numberPrice = strPrice.replaceAll("[^0-9]", "");
+            String numberPrice = strPrice.replaceAll("[^0-9,]", "").replaceAll(",",".");
 
             String strArea = area.get(i).getText();
             String numberArea = strArea.replaceAll("[^0-9]", "");
-
-
 
             //String strRoom = room.get(i).getText();
             //String numberRoom = strRoom.replaceAll("[^0-9]", "");
@@ -279,6 +313,9 @@ public class CrawlService {
             //String strFloor = floor.get(i).getText();
             //String numberFloor = strFloor.replaceAll("[^0-9]", "");
 
+            if(numberPrice == "") {
+                numberPrice = "0";
+            }
 
             System.out.println(titles.get(i).getText());
             System.out.println(address.get(i).getText());
@@ -294,16 +331,18 @@ public class CrawlService {
             System.out.println(imagechild2.get(i).getAttribute("src"));
             System.out.println(imagechild3.get(i).getAttribute("src"));
 
+
             Listing listing = Listing.builder()
                     .name(titles.get(i).getText())
                     .address(address.get(i).getText())
                     .detail_product(description.get(i).getText())
-                    .price(random.nextInt(10000)+100)
+                    .price(Double.parseDouble(numberPrice))
                     .area(Integer.parseInt(numberArea))
                     .room(random.nextInt(5)+1)
                     .floor_space(random.nextInt(5)+1)
                     .person_modified(dealer.get(i).getText())
                     .id_productcate(random.nextInt(5)+1)
+                    .image_product(imageparent.get(i).getAttribute("src"))
                     .id_producttype(2)
                     .priority_type(1)
                     .date_expired(newDate)
@@ -321,17 +360,17 @@ public class CrawlService {
             fileDetailsRepo.save(fileDetails);
 
             FileDetails fileDetails1 = new FileDetails(imagechild1.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
+                    imagechild1.get(i).getAttribute("src"),id_product);
 
             fileDetailsRepo.save(fileDetails1);
 
             FileDetails fileDetails2 = new FileDetails(imagechild2.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
+                    imagechild2.get(i).getAttribute("src"),id_product);
 
             fileDetailsRepo.save(fileDetails2);
 
             FileDetails fileDetails3 = new FileDetails(imagechild3.get(i).getAttribute("src"),
-                    imageparent.get(i).getAttribute("src"),id_product);
+                    imagechild3.get(i).getAttribute("src"),id_product);
 
             fileDetailsRepo.save(fileDetails3);
 

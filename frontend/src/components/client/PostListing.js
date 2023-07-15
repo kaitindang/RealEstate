@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import RealEstateService from './Service/RealEstateService';
 import UploadImageComponent from './upload';
 import FileService from './Service/FileService';
+import ImageService from './Service/ImageService';
 
 const AddProduct = () => {
 
@@ -68,7 +69,7 @@ const AddProduct = () => {
 
                 formData.append('id_product', id_product);
 
-                FileService.uploadImage(formData).then((response) => {
+                ImageService.uploadImage(formData).then((response) => {
                     console.log(response.data);
                     setUpload({ ...upload, fileUploaded: true });
                 }).catch(error => {
@@ -113,8 +114,6 @@ const AddProduct = () => {
         }
     }
 
-    const uniqueId = () => parseInt(Date.now() * Math.random()).toString();
-
     return (
         <div class="row">
 
@@ -128,7 +127,6 @@ const AddProduct = () => {
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Trang chủ</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Đăng tin</li>
-                        <label>{uniqueId()}</label>
                     </ol>
                 </nav>
 
@@ -310,11 +308,13 @@ const AddProduct = () => {
                 </div>
                 <div className='row'>
                     <div className='card col-md-12'>
-                        <h4>Upload Image</h4>
+                        <h4>Hình ảnh</h4>
                         <div className='card-body'>
                             <div>
-                                <label>Select a file:</label>
+                                
                                 <input className='mx-2' type='file' name='file' onChange={onFileChange} multiple></input>
+                                <br/>
+                                <label>*Chọn ít nhất 2 hình ảnh</label>
                             </div>
 
                         </div>

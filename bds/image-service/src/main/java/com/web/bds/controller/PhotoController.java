@@ -1,5 +1,6 @@
 package com.web.bds.controller;
 
+import com.web.bds.exeption.FileNotSupportedException;
 import com.web.bds.model.Photo;
 import com.web.bds.service.PhotoService;
 import org.apache.commons.io.IOUtils;
@@ -13,9 +14,14 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/photo")
+@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/photo")
 public class PhotoController {
     @Autowired
     private PhotoService photoService;
@@ -27,9 +33,32 @@ public class PhotoController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Photo> getPhoto(@PathVariable int id) {
-        Photo photo = photoService.getPhoto(id);
-        return new ResponseEntity<Photo>(photo, HttpStatus.OK);
+    @PostMapping(value = "/upload")
+    public ResponseEntity<Object> uploadPhotos(@RequestParam("id_product") int id_product
+            , @RequestParam("files") MultipartFile[] files) {
+
+        try {
+            List<Photo> photos =
+                    Arrays.stream(files).map(file -> {
+                        try {
+                            return photoService.uploadPhoto(file, id_product);
+                        } catch (IOException e) {
+                            throw new UncheckedIOException(e);
+                        }
+                    }).collect(Collectors.toList());
+
+            return new ResponseEntity<>(photos, HttpStatus.OK);
+        } catch (UncheckedIOException e) {
+            return new ResponseEntity<>(e.getMessage(),
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        } catch (FileNotSupportedException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<List<Photo>> getPhoto(@PathVariable int id) {
+        return ResponseEntity.ok(photoService.getPhoto(id));
+    }
+
 }

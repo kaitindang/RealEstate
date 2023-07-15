@@ -52,7 +52,7 @@ public class FileUploadSerivceImpl implements FileUploadService {
         Files.copy(file.getInputStream(), filePath);
 
         String fileUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/image/").path(timeStampedFileName).toUriString();
+                .path("/image/"+id_product+"/").path(timeStampedFileName).toUriString();
 
         FileDetails fileDetails = new FileDetails(file.getOriginalFilename(),
                                                 fileUri,

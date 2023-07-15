@@ -51,7 +51,7 @@ const FlatDetail = () => {
                                     {address}</p>
                             </div>
                             <div>
-                                <span className="fd-price">${price}</span>
+                                <span className="fd-price">{price} Tỷ</span>
                             </div>
                         </div>
                         <ImagesListing/>

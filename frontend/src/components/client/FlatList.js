@@ -94,8 +94,8 @@ const FlatList = (props) => {
                                 <div className="text-center col-lg-4 col-12 col-md-6 ">
                                     <div className="item">
 
-                                        <div className="best-estate-img-area">
-                                            <img className="best-estate-img" src="https://file4.batdongsan.com.vn/crop/393x222/2023/02/10/20230210164442-4f9d_wm.jpg" alt="flat" />
+                                        <div className="best-estate-img-area" style={{height: '1500vh', width: '1500vh'}}>
+                                            <img className="best-estate-img" src={RealEstate.image_product} alt="flat"/>
                                             <div className="best-estate-state bg-red">Ưu tiên</div>
                                         </div>
                                         <div className="item-description">
@@ -104,7 +104,7 @@ const FlatList = (props) => {
                                                 <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
                                                     <span className="item-title">{RealEstate.name}</span>
                                                 </Link>
-                                                <span className="item-price">${RealEstate.price}</span>
+                                                <span className="item-price">{RealEstate.price} Tỷ</span>
                                             </div>
                                             <div className="item-icon d-flex alig-items-center justify-content-between">
                                                 <div>
@@ -129,7 +129,7 @@ const FlatList = (props) => {
                                     <div className="item">
 
                                         <div className="best-estate-img-area">
-                                            <img className="best-estate-img" src="https://file4.batdongsan.com.vn/crop/393x222/2023/02/10/20230210164442-4f9d_wm.jpg" alt="flat" />
+                                            <img className="best-estate-img" src={RealEstate.image_product} alt="flat" />
                                 
                                         </div>
                                         <div className="item-description">
@@ -138,7 +138,7 @@ const FlatList = (props) => {
                                                 <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
                                                     <span className="item-title">{RealEstate.name}</span>
                                                 </Link>
-                                                <span className="item-price">${RealEstate.price}</span>
+                                                <span className="item-price">{RealEstate.price} Tỷ</span>
                                             </div>
                                             <div className="item-icon d-flex alig-items-center justify-content-between">
                                                 <div>

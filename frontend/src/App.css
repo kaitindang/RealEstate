@@ -361,6 +361,7 @@ section {
   transition: 0.5s linear;
   cursor: pointer;
 }
+
 .best-estate-item .best-estate-img:hover{
   transform: scale(1.2);
 }

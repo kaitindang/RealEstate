@@ -1238,7 +1238,7 @@ roles_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="344" parent="308" name="id">
-      <AutoIncrement>77</AutoIncrement>
+      <AutoIncrement>513</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1266,7 +1266,7 @@ roles_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="350" parent="309" name="id_product">
-      <AutoIncrement>490</AutoIncrement>
+      <AutoIncrement>718</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1281,7 +1281,7 @@ roles_id</ColNames>
       <Position>3</Position>
     </column>
     <column id="353" parent="309" name="image_product">
-      <DasType>varchar(50)|0s</DasType>
+      <DasType>varchar(500)|0s</DasType>
       <DefaultExpression>&apos;product.png&apos;</DefaultExpression>
       <Position>4</Position>
     </column>
