@@ -1,0 +1,3 @@
+rabbitmq:
+  queue:
+    name: LISTING_TO_PAYMENT_QUEUE

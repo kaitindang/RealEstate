@@ -3,8 +3,8 @@ spring:
     name: listing-service
   datasource:
     url: jdbc:mysql://localhost:3306/listing_service
-    name: root
-    password: 123456789
+    name: user
+    password: test123
     driverClassName: com.mysql.cj.jdbc.Driver
 
   config:
@@ -18,6 +18,14 @@ spring:
     max-file-size: 300MB
     file-size-threshold: 2KB
     max-request-size: 300MB
+rabbitmq:
+  exchange:
+    name: LISTING_TO_PAYMENT_EXCHANGE
 
+  routing:
+    json:
+      key: LISTING_TO_PAYMENT_KEY
+  queue:
+    name: LISTING_TO_PAYMENT_QUEUE
 server:
   port: 8091
