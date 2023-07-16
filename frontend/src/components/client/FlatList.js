@@ -37,7 +37,7 @@ const FlatList = (props) => {
 
     const getAllRealEstate = () => {
         const params = getRequestParams(page, pageSize);
-        
+
         RealEstateService.getAllRealEstate(params).then((response) => {
             const { listings, totalPages } = response.data;
             setCount(totalPages);
@@ -48,7 +48,7 @@ const FlatList = (props) => {
         })
     }
 
-    useEffect( getAllRealEstate, [page, pageSize]);
+    useEffect(getAllRealEstate, [page, pageSize]);
 
     const title = {
         text: "Danh sách bất động sản",
@@ -72,7 +72,7 @@ const FlatList = (props) => {
             <div className="container">
                 <Title title={title.text} description={title.description} />
                 <div className="row">
-                    
+
                     <div className="mt-3 d-flex flex-row-reverse bd-highlight">
 
                         <Pagination
@@ -91,73 +91,90 @@ const FlatList = (props) => {
 
                             RealEstate =>
                                 RealEstate.priority == true ?
-                                <div className="text-center col-lg-4 col-12 col-md-6 ">
-                                    <div className="item">
+                                    <div class="text-center col-lg-4 col-12 col-md-6">
 
-                                        <div className="best-estate-img-area" style={{height: '1500vh', width: '1500vh'}}>
-                                            <img className="best-estate-img" src={RealEstate.image_product} alt="flat"/>
-                                            <div className="best-estate-state bg-red">Ưu tiên</div>
-                                        </div>
-                                        <div className="item-description">
-
-                                            <div className="d-flex justify-content-between mb-3">
-                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                    <span className="item-title">{RealEstate.name}</span>
-                                                </Link>
-                                                <span className="item-price">{RealEstate.price} Tỷ</span>
+                                        <div class="card h-100 card-image">
+                                            <div className="best-estate-img-area">
+                                                <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />
+                                                <div className="best-estate-state bg-red">Ưu tiên</div>
                                             </div>
-                                            <div className="item-icon d-flex alig-items-center justify-content-between">
-                                                <div>
-                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+
+
+                                            <div class="card-body d-flex align-content-between justify-content-between flex-wrap">
+
+                                                <div className="d-flex align-items-center justify-content-between">
+                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                        <span className="item-title">{RealEstate.name}</span>
+                                                    </Link>
+                                                    <span className="item-price">{RealEstate.price} Tỷ</span>
+
                                                 </div>
                                                 <div>
-                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                    <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                        {RealEstate.address}</p>
                                                 </div>
-                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                    <button className="btn btn-detail">View</button>
-                                                </Link>
+                                                <div className="d-flex">
+                                                    <div class="mr-auto p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
+                                                    </div>
+                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                        <button className="btn btn-detail">Chi tiết</button>
+                                                    </Link>
+                                                </div>
                                             </div>
                                             <div class="card-footer">
                                                 <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
                                             </div>
                                         </div>
-
                                     </div>
-                                </div>
-                                :
-                                <div className="text-center col-lg-4 col-12 col-md-6 ">
-                                    <div className="item">
+                                    :
+                                    <div class="text-center col-lg-4 col-12 col-md-6">
 
-                                        <div className="best-estate-img-area">
-                                            <img className="best-estate-img" src={RealEstate.image_product} alt="flat" />
-                                
-                                        </div>
-                                        <div className="item-description">
-
-                                            <div className="d-flex justify-content-between mb-3">
-                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                    <span className="item-title">{RealEstate.name}</span>
-                                                </Link>
-                                                <span className="item-price">{RealEstate.price} Tỷ</span>
+                                        <div class="card h-100 card-image">
+                                            <div className="best-estate-img-area">
+                                                <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />                                             
                                             </div>
-                                            <div className="item-icon d-flex alig-items-center justify-content-between">
-                                                <div>
-                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+
+
+                                            <div class="card-body d-flex align-content-between justify-content-between flex-wrap">
+
+                                                <div className="d-flex align-items-center justify-content-between">
+                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                        <span className="item-title">{RealEstate.name}</span>
+                                                    </Link>
+                                                    <span className="item-price">{RealEstate.price} Tỷ</span>
+
                                                 </div>
                                                 <div>
-                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                    <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                        {RealEstate.address}</p>
                                                 </div>
-                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                    <button className="btn btn-detail">View</button>
-                                                </Link>
+                                                <div className="d-flex">
+                                                    <div class="mr-auto p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
+                                                    </div>
+                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                        <button className="btn btn-detail">Chi tiết</button>
+                                                    </Link>
+                                                </div>
                                             </div>
                                             <div class="card-footer">
                                                 <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
                                             </div>
                                         </div>
-
                                     </div>
-                                </div>
                         )
                     }
                 </div>

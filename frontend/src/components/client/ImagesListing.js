@@ -21,7 +21,7 @@ const ImagesListing = () => {
     }, [])
 
     return (
-        <div>
+        <div className="col-lg-8">
 
             <div id="carouselExampleIndicators" class="carousel slide">
                 

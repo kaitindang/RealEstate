@@ -5,7 +5,6 @@ import RealEstateService from './Service/RealEstateService';
 import Pagination from "@material-ui/lab/Pagination";
 import Title from "./Title"
 import FilterSearchBar from "./FilterSearchBar";
-import FilterSearchBar1 from "./FilterSearchBar1";
 
 const SearchResult = () => {
 

@@ -64,6 +64,7 @@ public class ListingService implements IListingService<Listing> {
         updateListing.setImage_product(listing.getImage_product());
         updateListing.setId_producttype(listing.getId_producttype());
         updateListing.setDate_modified(new Timestamp(System.currentTimeMillis()));
+        updateListing.setImage_product(listing.getImage_product());
 
         return listingRepo.save(updateListing);
     }

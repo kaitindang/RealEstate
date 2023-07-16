@@ -1,8 +1,9 @@
 package com.web.bds.service;
 
 import com.web.bds.exeption.FileNotSupportedException;
-import com.web.bds.model.FileDetails;
+import com.web.bds.model.Listing;
 import com.web.bds.model.Photo;
+import com.web.bds.repo.ListingRepo;
 import com.web.bds.repo.PhotoRepo;
 import org.apache.commons.io.IOUtils;
 import org.bson.BsonBinarySubType;
@@ -15,8 +16,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,6 +27,8 @@ import java.util.List;
 public class PhotoService {
     @Autowired
     private PhotoRepo photoRepo;
+    @Autowired
+    private ListingRepo listingRepo;
     @Autowired
     private SequenceGeneratorService sequenceGeneratorService;
 
@@ -84,7 +85,12 @@ public class PhotoService {
                 .fileUri(fileUri)
                 .build();
 
+        Listing updateListing = listingRepo.findById(id_product).orElse(null);
+        updateListing.setImage_product(fileUri);
+        listingRepo.save(updateListing);
+
         return photoRepo.save(photo);
     }
+
 
 }

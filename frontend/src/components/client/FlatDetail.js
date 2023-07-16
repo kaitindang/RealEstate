@@ -34,12 +34,12 @@ const FlatDetail = () => {
         }).catch(error => {
             console.log(error)
         })
-        
+
     }, [])
 
     return (
         <div className="flat-detail">
-            
+
             <div className="container mt-5 mb-5">
                 <div className="row">
                     <div className="col-lg-12">
@@ -54,7 +54,26 @@ const FlatDetail = () => {
                                 <span className="fd-price">{price} Tỷ</span>
                             </div>
                         </div>
-                        <ImagesListing/>
+                        <div className="row">
+                            <ImagesListing />
+                            <div className="col-lg-4">
+                                <div className="fd-sidebar-item">
+                                    <h4>Được đăng bởi</h4>
+                                    <div className="recently-item">
+                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
+                                        <span></span>
+
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-outline-dark">Gửi email</button>
+                                        <button type="button" class="btn btn-outline-dark">Yêu cầu liên hệ lại</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="fd-item">

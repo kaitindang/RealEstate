@@ -189,7 +189,7 @@
 
 .carousel-item img {
   width: 100%;
-  height: 700px;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -233,6 +233,10 @@
   align-items: center;
 }
 
+.link-item {
+  text-decoration: none;
+}
+
 .section-all-re .item-title{
   font-weight: 600;
   text-align: left;
@@ -251,7 +255,9 @@
   color:black;
   font-weight: 500;
   font-size: 15px;
-  display: flex;align-items: center;
+  display: flex;
+  align-items: center;
+
 }
 .item-title .btn-detail{
   background-color: #364465;
@@ -362,6 +368,12 @@ section {
   cursor: pointer;
 }
 
+.card-image img {
+  cursor: pointer;
+  width: 100%;
+  height: 200px;
+}
+
 .best-estate-item .best-estate-img:hover{
   transform: scale(1.2);
 }
@@ -408,6 +420,7 @@ section {
   position: relative;
   overflow: hidden;
 }
+
 .bg-crimson{
   background: crimson;
 }
@@ -767,7 +780,6 @@ section {
   background: white;
   padding: 35px;
   border-radius: 10px;
-  margin-top: 20px;
   margin-bottom: 20px;
   box-shadow: rgba(200, 204, 209, 0.2) 0px 8px 24px;
 }

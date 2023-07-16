@@ -72,6 +72,8 @@ const AddProduct = () => {
                 ImageService.uploadImage(formData).then((response) => {
                     console.log(response.data);
                     setUpload({ ...upload, fileUploaded: true });
+                    console.log("image_product: ", response.data[0].fileUri)
+                    console.log("id_product: ", response.data[0].id_product)
                 }).catch(error => {
                     console.log(error);
                 });
