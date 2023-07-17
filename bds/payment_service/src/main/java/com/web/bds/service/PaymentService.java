@@ -1,6 +1,8 @@
 package com.web.bds.service;
 
 import com.web.bds.entity.Payment;
+import com.web.bds.entity.PaymentHistory;
+import com.web.bds.repo.PaymentHistoryRepo;
 import com.web.bds.repo.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +13,22 @@ public class PaymentService {
     @Autowired
     PaymentRepo paymentRepo;
 
-    public Payment findPaymentByAccountId (int id){
-        return paymentRepo.findByAccountId(id);
+    @Autowired
+    PaymentHistoryRepo paymentHistoryRepo;
+
+    public Payment cashIn(Payment payment){
+        Payment paymentFromDb = paymentRepo.findByAccountId(payment.getId_account());
+        paymentFromDb.setAmount(paymentFromDb.getAmount() + payment.getAmount());
+        Payment payment1 = paymentRepo.save(paymentFromDb);
+
+        PaymentHistory paymentHistory = new PaymentHistory();
+        paymentHistory.setId_payment(payment.getId_payment());
+        paymentHistory.setPre_amount(paymentFromDb.getAmount());
+        paymentHistory.setPay_money(payment.getAmount());
+        paymentHistory.setAft_amount(payment1.getAmount());
+
+        paymentHistoryRepo.save(paymentHistory);
+
+        return paymentFromDb;
     }
 }
