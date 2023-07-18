@@ -139,7 +139,7 @@ use Payment_service;
 
 CREATE TABLE IF NOT EXISTS Payment (
     id_payment INT PRIMARY KEY AUTO_INCREMENT,
-    name_payment VARCHAR(20) NOT NULL,
+    name_payment VARCHAR(20),
     id_account INT NOT NULL,
     content_payment VARCHAR(300),
 	amount DOUBLE,

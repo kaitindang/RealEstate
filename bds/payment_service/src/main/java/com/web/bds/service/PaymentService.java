@@ -18,6 +18,14 @@ public class PaymentService {
 
     public Payment cashIn(Payment payment){
         Payment paymentFromDb = paymentRepo.findByAccountId(payment.getId_account());
+        if (paymentFromDb == null){
+            Payment payment2 = new Payment();
+            payment2.setId_account(payment.getId_account());
+            payment2.setAmount(payment.getAmount());
+            paymentRepo.save(payment2);
+            return payment2;
+        }
+        paymentFromDb.setId_account(payment.getId_account());
         paymentFromDb.setAmount(paymentFromDb.getAmount() + payment.getAmount());
         Payment payment1 = paymentRepo.save(paymentFromDb);
 

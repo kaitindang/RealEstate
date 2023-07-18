@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/EntityManagerFactoryConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/EntityManagerFactoryConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duan2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/duan2.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.run">
+  <component name="RunManager" selected="Application.ProductServiceApplication">
     <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -152,6 +160,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.web.bds.PaymentServiceApplication" />
+      <module name="paymentservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductServiceApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -170,6 +187,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.PaymentServiceApplication" />
       <item itemvalue="Application.AuthServiceApplication" />
       <item itemvalue="Application.EurekaServerApplication" />
       <item itemvalue="Application.ImageServiceApplication" />
@@ -230,5 +248,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -5,6 +5,7 @@ import com.web.bds.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class PaymentController {
     PaymentService paymentService;
 
     @PostMapping("/cashIn")
-    public ResponseEntity<Payment> cashIn(Payment payment){
+    public ResponseEntity<Payment> cashIn(@RequestBody Payment payment){
         return ResponseEntity.ok(paymentService.cashIn(payment));
     }
 }

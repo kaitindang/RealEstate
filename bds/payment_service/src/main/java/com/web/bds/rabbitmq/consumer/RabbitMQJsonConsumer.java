@@ -23,6 +23,7 @@ public class RabbitMQJsonConsumer {
     public void consumeJsonMessage(Payment payment){
         Payment paymentFromDb = paymentRepo.findByAccountId(payment.getId_account());
         double money = paymentFromDb.getAmount();
+        double paymoney = payment.getAmount();
         if(paymentFromDb == null){
           throw new RuntimeException("Tài khoản không tồn tại");
         }else if(money <= 0){
@@ -34,7 +35,7 @@ public class RabbitMQJsonConsumer {
 
 
 
-
+        payment.setId_payment(paymentFromDb.getId_payment());
         payment.setAmount(money - payment.getAmount());
         Payment payment1 = paymentRepo.save(payment);
 
@@ -43,7 +44,7 @@ public class RabbitMQJsonConsumer {
         PaymentHistory paymentHistory = new PaymentHistory();
         paymentHistory.setId_payment(payment.getId_payment());
         paymentHistory.setPre_amount(money);
-        paymentHistory.setPay_money(payment.getAmount());
+        paymentHistory.setPay_money(paymoney);
         paymentHistory.setAft_amount(payment1.getAmount());
         paymentHistory.setDate_modified(new Timestamp(System.currentTimeMillis()));
         paymentHistory.setPerson_modified(payment.getId_account());

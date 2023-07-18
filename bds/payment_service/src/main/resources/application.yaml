@@ -1,3 +1,21 @@
 rabbitmq:
+  exchange:
+    name: LISTING_TO_PAYMENT_EXCHANGE
+
+  routing:
+    json:
+      key: LISTING_TO_PAYMENT_KEY
   queue:
     name: LISTING_TO_PAYMENT_QUEUE
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment_service
+    name: user
+    password: test123
+    driverClassName: com.mysql.cj.jdbc.Driver
+  config:
+    import: "optional:configserver:http://localhost:8088"
+server:
+  port: 8093

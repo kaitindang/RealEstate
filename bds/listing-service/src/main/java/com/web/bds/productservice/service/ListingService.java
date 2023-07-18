@@ -20,6 +20,7 @@ public class ListingService implements IListingService<Listing> {
     @Autowired
     ListingRepo listingRepo;
 
+    @Autowired
     RabbitMQJsonProducer producer;
 
     @Override
@@ -78,7 +79,7 @@ public class ListingService implements IListingService<Listing> {
             return;
         }
         int m = t.getPriority_type();
-        RequestPayment payment = null;
+        RequestPayment payment = new RequestPayment();
         payment.setId_account(1);
         if (m == 1){
             payment.setAmount(10000.00);
