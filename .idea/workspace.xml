@@ -5,7 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/entity/RequestPayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/RabbitMQConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/RequestPayment$RequestPaymentBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/RequestPayment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/PaymentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/EntityManagerFactoryConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/entity/PaymentHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentHistoryRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duan2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/duan2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,37 +76,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Eclipse/duancntt/RealEstate/bds/image-service/src/main/java/com/web/bds&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;ec5804f931e3ec25a0f6b15af118f2c2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/RealEstate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "2257f15345a61fb94fe45582b1849cc9",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mongo&quot;,
-      &quot;documentdb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mongo",
+      "documentdb"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -77,14 +115,17 @@
       <recent name="com.example.crawldata.repo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RealEstate\bds\payment_service\src\main\java\com\web\bds\config" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\image-service\src\main\java\com\web\bds" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\listings-service\src\main\java\com\web\bds\productservice\service\impl" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\listings-service\src\main\java\com\web\bds\productservice\service\impl\impl" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds" />
-      <recent name="D:\Eclipse\duancntt\RealEstate\bds\listing-service\src\main\java\com\web\bds\productservice\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.web.bds.repo" />
+      <recent name="com.web.bds.productservice.rabbitmq.publisher" />
+      <recent name="com.web.bds.productservice.config" />
+      <recent name="com.web.bds.service" />
       <recent name="com.web.bds.model" />
       <recent name="com.web.bds.service" />
       <recent name="com.example.crawldata.repo" />
@@ -103,7 +144,16 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+    <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.web.bds.authservice.AuthServiceApplication" />
+      <module name="authservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -126,6 +176,25 @@
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.web.bds.eurekaserver.EurekaServerApplication" />
+      <module name="eurekaserver" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImageServiceApplication" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.web.bds.ImageServiceApplication" />
+      <module name="imageservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.web.bds.PaymentServiceApplication" />
+      <module name="paymentservice" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,10 +209,10 @@
       </method>
     </configuration>
     <configuration name="run" type="CompoundRunConfigurationType">
-      <toRun name="ApiGatewayApplication" type="Application" />
       <toRun name="AuthServiceApplication" type="Application" />
       <toRun name="ConfigServerApplication" type="Application" />
       <toRun name="EurekaServerApplication" type="Application" />
+      <toRun name="ImageServiceApplication" type="Application" />
       <toRun name="ProductServiceApplication" type="Application" />
       <method v="2" />
     </configuration>
@@ -173,12 +242,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawldataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="crawldata" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.crawldata.CrawldataApplication" />
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eurekaserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.eurekaserver.EurekaServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.crawldata.*" />
+          <option name="PATTERN" value="com.web.bds.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -213,12 +282,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.PaymentServiceApplication" />
+      <item itemvalue="Application.AuthServiceApplication" />
       <item itemvalue="Application.EurekaServerApplication" />
+      <item itemvalue="Application.ImageServiceApplication" />
       <item itemvalue="Application.ConfigServerApplication" />
       <item itemvalue="Application.ProductServiceApplication" />
       <item itemvalue="Application.CrawldataApplication" />
       <item itemvalue="Compound.run" />
-      <item itemvalue="Spring Boot.CrawldataApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
@@ -226,11 +298,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ImageServiceApplication" />
-        <item itemvalue="Spring Boot.ConfigServerApplication" />
         <item itemvalue="Spring Boot.ProductServiceApplication" />
-        <item itemvalue="Spring Boot.CrawldataApplication" />
+        <item itemvalue="Spring Boot.ImageServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -281,10 +353,22 @@
       <workItem from="1689303306383" duration="13160000" />
       <workItem from="1689397818512" duration="10772000" />
       <workItem from="1689473920733" duration="12133000" />
+      <workItem from="1689694150242" duration="1118000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

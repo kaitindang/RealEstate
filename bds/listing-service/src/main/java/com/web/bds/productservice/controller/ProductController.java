@@ -79,6 +79,7 @@ public class ProductController {
             listing.setApprove(true);
         }
 
+
         listingService.update(listing);
         return ResponseEntity.ok("Listing Approved Successful");
     }

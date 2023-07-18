@@ -1,5 +1,7 @@
 package com.web.bds.productservice.service;
 
+import com.web.bds.productservice.entity.RequestPayment;
+import com.web.bds.productservice.rabbitmq.publisher.RabbitMQJsonProducer;
 import com.web.bds.productservice.repo.ListingRepo;
 import com.web.bds.productservice.entity.Listing;
 import com.web.bds.productservice.service.impl.IListingService;
@@ -17,6 +19,9 @@ public class ListingService implements IListingService<Listing> {
 
     @Autowired
     ListingRepo listingRepo;
+
+    @Autowired
+    RabbitMQJsonProducer producer;
 
     @Override
     public Page<Listing> findAllListing(Pageable pageable) {
@@ -74,6 +79,20 @@ public class ListingService implements IListingService<Listing> {
         if(t == null){
             return;
         }
+        int m = t.getPriority_type();
+        RequestPayment payment = new RequestPayment();
+        payment.setId_account(1);
+        if (m == 1){
+            payment.setAmount(10000.00);
+            payment.setName_payment("Tin thường");
+        }else if (m == 2){
+            payment.setAmount(20000.00);
+            payment.setName_payment("Tin vip");
+        } else if(m == 3){
+            payment.setAmount(30000.00);
+            payment.setName_payment("Tin ưu tiên");
+        }
+        producer.sendJsonMessager(payment);
         listingRepo.save(t);
     }
 

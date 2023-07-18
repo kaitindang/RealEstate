@@ -18,6 +18,14 @@ spring:
     max-file-size: 300MB
     file-size-threshold: 2KB
     max-request-size: 300MB
+rabbitmq:
+  exchange:
+    name: LISTING_TO_PAYMENT_EXCHANGE
 
+  routing:
+    json:
+      key: LISTING_TO_PAYMENT_KEY
+  queue:
+    name: LISTING_TO_PAYMENT_QUEUE
 server:
   port: 8091

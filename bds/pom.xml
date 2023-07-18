@@ -17,6 +17,7 @@
         <module>auth-service</module>
         <module>crawl-service</module>
         <module>image-service</module>
+        <module>payment_service</module>
     </modules>
 
 </project>

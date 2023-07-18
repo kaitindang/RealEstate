@@ -31,8 +31,6 @@ public class RealEstateControllerClient {
     private ListingService listingService;
     @Autowired
     private SearchService searchService;
-    @Autowired
-    private RestTemplate restTemplate;
 
     @GetMapping(value = "/all-listings")
     /*@PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")*/

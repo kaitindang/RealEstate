@@ -133,3 +133,31 @@ CREATE TABLE IF NOT EXISTS Blog (
         REFERENCES BlogCategories (id_blogcate)
        
 );
+
+CREATE DATABASE IF NOT EXISTS Payment_service;
+use Payment_service;
+
+CREATE TABLE IF NOT EXISTS Payment (
+    id_payment INT PRIMARY KEY AUTO_INCREMENT,
+    name_payment VARCHAR(20),
+    id_account INT NOT NULL,
+    content_payment VARCHAR(300),
+	amount DOUBLE,
+    person_modified INT,
+    date_modified DATETIME DEFAULT NOW()
+
+       
+);
+
+CREATE TABLE IF NOT EXISTS PaymentHistory (
+    id_paymenthistory INT PRIMARY KEY AUTO_INCREMENT,
+    id_payment INT NOT NULL,
+	pre_amount DOUBLE,
+	pay_money DOUBLE,
+	aft_amount DOUBLE,	
+    person_modified INT,
+    date_modified DATETIME DEFAULT NOW(),
+	CONSTRAINT FK_PayHis FOREIGN KEY (id_payment)
+        REFERENCES Payment (id_payment)
+       
+);

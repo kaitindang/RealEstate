@@ -7,21 +7,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="apigateway" />
         <module name="eurekaserver" />
+        <module name="apigateway" />
         <module name="listingservice" />
         <module name="blogservice" />
         <module name="authservice" />
         <module name="imageservice" />
         <module name="crawldata" />
         <module name="configserver" />
+        <module name="paymentservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="apigateway" target="17" />
       <module name="blogservice" target="17" />
       <module name="eurekaserver" target="17" />
       <module name="image-service" target="17" />
+      <module name="payment_service" target="17" />
       <module name="productservice (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -35,6 +36,7 @@
       <module name="eurekaserver" options="-parameters" />
       <module name="imageservice" options="-parameters" />
       <module name="listingservice" options="-parameters" />
+      <module name="paymentservice" options="-parameters" />
       <module name="productservice (1)" options="-parameters" />
     </option>
   </component>

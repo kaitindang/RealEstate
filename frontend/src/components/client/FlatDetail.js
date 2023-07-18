@@ -64,8 +64,8 @@ const FlatDetail = () => {
                                         <span></span>
 
                                     </div>
-                                    <div>
-                                        <button type="button" class="btn btn-outline-dark">Gửi email</button>
+                                    <div class="d-flex align-content-between justify-content-between">
+                                
                                         <button type="button" class="btn btn-outline-dark">Yêu cầu liên hệ lại</button>
                                     </div>
 
@@ -114,14 +114,7 @@ const FlatDetail = () => {
                                 </div>
                             </div>
                             <div className="col-lg-4">
-                                <div className="fd-sidebar-item">
-                                    <h4>Được đăng bởi</h4>
-                                    <div className="recently-item">
-                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                        <span></span>
-                                    </div>
-
-                                </div>
+                                
                                 <div className="fd-sidebar-item">
                                     <h4>Danh sách khác</h4>
                                     <ul className="category-ul">
