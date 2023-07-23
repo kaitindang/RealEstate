@@ -18,6 +18,7 @@
         <module>crawl-service</module>
         <module>image-service</module>
         <module>payment_service</module>
+        <module>finance-service</module>
     </modules>
 
 </project>

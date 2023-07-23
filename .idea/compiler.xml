@@ -11,6 +11,7 @@
         <module name="apigateway" />
         <module name="listingservice" />
         <module name="blogservice" />
+        <module name="financeservice" />
         <module name="authservice" />
         <module name="imageservice" />
         <module name="crawldata" />
@@ -34,6 +35,7 @@
       <module name="configserver" options="-parameters" />
       <module name="crawldata" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="financeservice" options="-parameters" />
       <module name="imageservice" options="-parameters" />
       <module name="listingservice" options="-parameters" />
       <module name="paymentservice" options="-parameters" />

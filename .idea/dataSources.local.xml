@@ -13,8 +13,8 @@
         <introspection-scope>
           <node kind="schema">
             <name qname="account_service" />
+            <name qname="finance_service" />
             <name qname="listing_service" />
-            <name qname="product_service" />
           </node>
         </introspection-scope>
       </schema-mapping>

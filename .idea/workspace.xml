@@ -5,45 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/entity/RequestPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/config/RabbitMQConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/RequestPayment$RequestPaymentBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/RequestPayment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/PaymentServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/EntityManagerFactoryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/entity/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/entity/PaymentHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentHistoryRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/image-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/ProductServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duan2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/duan2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchResult.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +55,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/RealEstate",
+    "last_opened_file_path": "D:/Eclipse/duancntt/RealEstate/bds/finance-service/src/main/java/com/web/bds/financeservice/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,7 +64,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "2257f15345a61fb94fe45582b1849cc9",
+    "spring.configuration.checksum": "b285c1537a763e6c26f4dcfb159d9254",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -115,13 +83,14 @@
       <recent name="com.example.crawldata.repo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Eclipse\duancntt\RealEstate\bds\finance-service\src\main\java\com\web\bds\financeservice\config" />
+      <recent name="D:\Eclipse\duancntt\RealEstate\bds\finance-service\src\main\java\com\web\bds\financeservice" />
       <recent name="D:\RealEstate\bds\payment_service\src\main\java\com\web\bds\config" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\image-service\src\main\java\com\web\bds" />
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\listings-service\src\main\java\com\web\bds\productservice\service\impl" />
-      <recent name="D:\Eclipse\duancntt\RealEstate\bds\listings-service\src\main\java\com\web\bds\productservice\service\impl\impl" />
-      <recent name="D:\Eclipse\duancntt\RealEstate\bds" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.bds.financeservice.entity" />
       <recent name="com.web.bds.repo" />
       <recent name="com.web.bds.productservice.rabbitmq.publisher" />
       <recent name="com.web.bds.productservice.config" />
@@ -144,7 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+  <component name="RunManager" selected="Spring Boot.FinanceServiceApplication">
     <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -255,12 +224,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="imageservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.ImageServiceApplication" />
+    <configuration name="FinanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="financeservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.financeservice.FinanceServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.*" />
+          <option name="PATTERN" value="com.web.bds.financeservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -268,12 +237,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="listingservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.productservice.ProductServiceApplication" />
+    <configuration name="ImageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="imageservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.ImageServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.productservice.*" />
+          <option name="PATTERN" value="com.web.bds.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -291,18 +260,18 @@
       <item itemvalue="Application.CrawldataApplication" />
       <item itemvalue="Compound.run" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
-      <item itemvalue="Spring Boot.ConfigServerApplication" />
-      <item itemvalue="Spring Boot.AuthServiceApplication" />
-      <item itemvalue="Spring Boot.ProductServiceApplication" />
       <item itemvalue="Spring Boot.ImageServiceApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.FinanceServiceApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProductServiceApplication" />
-        <item itemvalue="Spring Boot.ImageServiceApplication" />
+        <item itemvalue="Spring Boot.FinanceServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.ConfigServerApplication" />
         <item itemvalue="Spring Boot.EurekaServerApplication" />
+        <item itemvalue="Spring Boot.ImageServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +322,17 @@
       <workItem from="1689303306383" duration="13160000" />
       <workItem from="1689397818512" duration="10772000" />
       <workItem from="1689473920733" duration="12133000" />
-      <workItem from="1689694150242" duration="1118000" />
+      <workItem from="1689694150242" duration="1610000" />
+      <workItem from="1689769231230" duration="684000" />
+      <workItem from="1689822381039" duration="5901000" />
+      <workItem from="1689866701647" duration="441000" />
+      <workItem from="1689867217320" duration="287000" />
+      <workItem from="1689867589261" duration="152000" />
+      <workItem from="1689867998348" duration="272000" />
+      <workItem from="1689869161809" duration="728000" />
+      <workItem from="1689904453898" duration="11058000" />
+      <workItem from="1689991614153" duration="13029000" />
+      <workItem from="1690082528510" duration="12597000" />
     </task>
     <servers />
   </component>
@@ -361,14 +340,10 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/rabbitmq/publisher/RabbitMQJsonProducer.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="financeRequest.setInterest_rate" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
