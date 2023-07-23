@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS Listing (
     id_product INT PRIMARY KEY AUTO_INCREMENT,
     name_product VARCHAR(1000) NOT NULL,
     detail_product VARCHAR(500),
-    image_product VARCHAR(50) DEFAULT 'product.png',
+    image_product VARCHAR(500) DEFAULT 'product.png',
     date_create DATETIME DEFAULT NOW(),
     id_productcate INT NOT NULL,
     price DOUBLE NOT NULL,
@@ -161,3 +161,37 @@ CREATE TABLE IF NOT EXISTS PaymentHistory (
         REFERENCES Payment (id_payment)
        
 );
+
+CREATE DATABASE IF NOT EXISTS finance_service,
+USE finance_service
+
+CREATE TABLE Bank (
+	id_bank INT PRIMARY KEY AUTO_INCREMENT,
+    bank_name VARCHAR(100),
+    bank_rate FLOAT,
+    maximum_term int,
+    maximum_rate int
+);
+
+INSERT INTO Bank (bank_name, bank_rate, maximum_term, maximum_rate) value 
+("BIDV", 7.8, 100, 30), 
+("Agribank", 8, 100, 5),
+("Vietinbank", 8.2, 80, 20),
+("Vietcombank", 9.5, 70, 20),
+("MSB", 4.99, 90, 35),
+("Shinhan Bank", 7.99, 70, 30),
+("TPBank", 8, 90, 30),
+("HDBank", 8.2, 85, 25),
+("VIB", 8.5, 90, 30),
+("Eximbank", 8.5, 70, 20),
+("SeABank", 9.29, 90, 25),
+("Sacombank", 9.5, 100, 30),
+("Standard Chartered", 10, 75, 25),
+("OCB", 10.5, 100, 30),
+("Techcombank", 10.5, 70, 35),
+("MBBank", 10.5, 80, 20),
+("SHB", 10.8, 75, 25),
+("ABBank", 	11.2, 90, 35),
+("HSBC", 11.5, 70, 25),
+("VPBank", 11.8, 75, 25)
+
