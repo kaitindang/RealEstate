@@ -63,6 +63,7 @@ public class FinanceController {
                 float loanOfMonth = (financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100))/financeRequest.getLoan_term();
                 float moneyOfMonth = interestOfMonth + loanOfMonth;
 
+                financeResponse.setTerm(term);
                 financeResponse.setPrepay_amount(financeRequest.getPrices_property()-financeRequest.getLoan_amount());
                 financeResponse.setPrincipal_amount(remain_loan);
                 financeResponse.setOriginal_payment(financeRequest.getLoan_amount()/financeRequest.getLoan_term());
@@ -85,6 +86,7 @@ public class FinanceController {
                 float loanOfMonth = (remain_loan * (financeRequest.getInterest_rate() / 100)) / financeRequest.getLoan_term();
                 float moneyOfMonth = interestOfMonth + loanOfMonth;
 
+                financeResponse.setTerm(term);
                 financeResponse.setPrepay_amount(financeRequest.getPrices_property() - financeRequest.getLoan_amount());
                 financeResponse.setPrincipal_amount(remain_loan);
                 financeResponse.setOriginal_payment(financeRequest.getLoan_amount() / financeRequest.getLoan_term());

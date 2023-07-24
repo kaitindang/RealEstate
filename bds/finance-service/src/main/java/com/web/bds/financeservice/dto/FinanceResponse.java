@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FinanceResponse {
+    public int term;
     public float principal_amount;
     public float original_payment;
     public float interest_payment;
