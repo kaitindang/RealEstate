@@ -51,7 +51,8 @@ public class FinanceController {
 
         financeRequest.setInterest_rate(bank.getBank_rate());
 
-        float remain_loan = financeRequest.getLoan_amount();
+        float remain_loan = Math.round(financeRequest.getLoan_amount());
+        float Interest_amount = 0;
 
         if (financeRequest.getRepayment_method() == 1) {
 
@@ -59,20 +60,26 @@ public class FinanceController {
 
                 FinanceResponse financeResponse = new FinanceResponse();
 
-                float interestOfMonth = financeRequest.getLoan_amount()/financeRequest.getLoan_term();
-                float loanOfMonth = (financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100))/financeRequest.getLoan_term();
-                float moneyOfMonth = interestOfMonth + loanOfMonth;
+                float interestOfMonth = Math.round(financeRequest.getLoan_amount()/financeRequest.getLoan_term());
+                float loanOfMonth = Math.round((financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100))/12);
+                float moneyOfMonth = Math.round(interestOfMonth + loanOfMonth);
 
                 financeResponse.setTerm(term);
-                financeResponse.setPrepay_amount(financeRequest.getPrices_property()-financeRequest.getLoan_amount());
-                financeResponse.setPrincipal_amount(remain_loan);
-                financeResponse.setOriginal_payment(financeRequest.getLoan_amount()/financeRequest.getLoan_term());
-                remain_loan -= (financeRequest.getLoan_amount()/financeRequest.getLoan_term());
-                financeResponse.setRemaining_balance(remain_loan);
-                financeResponse.setInterest_payment(loanOfMonth);
-                financeResponse.setInterest_amount(financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100));
-                financeResponse.setInterest_month(moneyOfMonth);
-                financeResponse.setTotal_amount(financeRequest.getPrices_property()+financeResponse.getInterest_amount());
+                financeResponse.setPrepay_amount(Math.round(financeRequest.getPrices_property()-financeRequest.getLoan_amount()));
+                financeResponse.setPrincipal_amount(Math.round(remain_loan));
+                if(term == financeRequest.getLoan_term()) {
+                    financeResponse.setOriginal_payment(Math.round(financeResponse.getPrincipal_amount()));
+                } else {
+                    financeResponse.setOriginal_payment(Math.round(financeRequest.getLoan_amount()/financeRequest.getLoan_term()));
+                }
+
+                remain_loan -= Math.round(financeResponse.getOriginal_payment());
+                financeResponse.setRemaining_balance(Math.round(remain_loan));
+                financeResponse.setInterest_payment(Math.round(loanOfMonth));
+                financeResponse.setInterest_month(Math.round(financeResponse.getOriginal_payment()+financeResponse.getInterest_payment()));
+                Interest_amount += Math.round(financeResponse.getInterest_payment());
+                financeResponse.setInterest_amount(Math.round(Interest_amount));
+                financeResponse.setTotal_amount(Math.round(financeRequest.getPrices_property()+financeResponse.getInterest_amount()));
 
                 financeResponses.add(financeResponse);
 
@@ -82,20 +89,26 @@ public class FinanceController {
 
                 FinanceResponse financeResponse = new FinanceResponse();
 
-                float interestOfMonth = financeRequest.getLoan_amount() / financeRequest.getLoan_term();
-                float loanOfMonth = (remain_loan * (financeRequest.getInterest_rate() / 100)) / financeRequest.getLoan_term();
-                float moneyOfMonth = interestOfMonth + loanOfMonth;
+                float interestOfMonth = Math.round(financeRequest.getLoan_amount() / financeRequest.getLoan_term());
+                float loanOfMonth = Math.round((remain_loan * (financeRequest.getInterest_rate() / 100)) / 12);
+                float moneyOfMonth = Math.round(interestOfMonth + loanOfMonth);
 
                 financeResponse.setTerm(term);
-                financeResponse.setPrepay_amount(financeRequest.getPrices_property() - financeRequest.getLoan_amount());
-                financeResponse.setPrincipal_amount(remain_loan);
-                financeResponse.setOriginal_payment(financeRequest.getLoan_amount() / financeRequest.getLoan_term());
-                remain_loan -= (financeRequest.getLoan_amount() / financeRequest.getLoan_term());
-                financeResponse.setRemaining_balance(remain_loan);
-                financeResponse.setInterest_payment(loanOfMonth);
-                financeResponse.setInterest_amount(financeRequest.getLoan_amount() * (financeRequest.getInterest_rate() / 100));
-                financeResponse.setInterest_month(moneyOfMonth);
-                financeResponse.setTotal_amount(financeRequest.getPrices_property() + financeResponse.getInterest_amount());
+                financeResponse.setPrepay_amount(Math.round(financeRequest.getPrices_property()-financeRequest.getLoan_amount()));
+                financeResponse.setPrincipal_amount(Math.round(remain_loan));
+                if(term == financeRequest.getLoan_term()) {
+                    financeResponse.setOriginal_payment(Math.round(financeResponse.getPrincipal_amount()));
+                } else {
+                    financeResponse.setOriginal_payment(Math.round(financeRequest.getLoan_amount()/financeRequest.getLoan_term()));
+                }
+
+                remain_loan -= Math.round(financeResponse.getOriginal_payment());
+                financeResponse.setRemaining_balance(Math.round(remain_loan));
+                financeResponse.setInterest_payment(Math.round(loanOfMonth));
+                financeResponse.setInterest_month(Math.round(financeResponse.getOriginal_payment()+financeResponse.getInterest_payment()));
+                Interest_amount += Math.round(financeResponse.getInterest_payment());
+                financeResponse.setInterest_amount(Math.round(Interest_amount));
+                financeResponse.setTotal_amount(Math.round(financeRequest.getPrices_property()+financeResponse.getInterest_amount()));
 
                 financeResponses.add(financeResponse);
             }

@@ -52,7 +52,7 @@ const FlatDetail = () => {
                                     {address}</p>
                             </div>
                             <div>
-                                <span className="fd-price">{price} Tỷ</span>
+                                <span className="fd-price">{price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
                             </div>
                         </div>
                         <div className="row">

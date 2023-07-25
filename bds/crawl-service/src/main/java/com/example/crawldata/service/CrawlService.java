@@ -116,7 +116,7 @@ public class CrawlService {
             js.executeScript("arguments[0].scrollIntoView();", imagechild3.get(i));
 
             String strPrice = prices.get(i).getText();
-            String numberPrice = strPrice.replaceAll("[^0-9,]", "").replaceAll(",",".");
+            String numberPrice = strPrice.replaceAll("[^0-9]", "").replaceAll(",","");
 
             String strArea = area.get(i).getText();
             String numberArea = strArea.replaceAll("[^0-9]", "");
@@ -126,9 +126,15 @@ public class CrawlService {
 
             //String strFloor = floor.get(i).getText();
             //String numberFloor = strFloor.replaceAll("[^0-9]", "");
-
-            if(numberPrice == "") {
+            if(numberPrice.length() == 0) {
                 numberPrice = "0";
+            }
+            else if(numberPrice.length() == 1) {
+                numberPrice += "000000000";
+            } else if(numberPrice.length() == 2) {
+                numberPrice += "00000000";
+            } else if(numberPrice.length() == 3){
+                numberPrice += "0000000";
             }
 
             System.out.println(titles.get(i).getText());

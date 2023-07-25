@@ -139,7 +139,7 @@ const FlatList = (props) => {
 
                                         <div class="card h-100 card-image">
                                             <div className="best-estate-img-area">
-                                                <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />                                             
+                                                <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />
                                             </div>
 
 
@@ -149,13 +149,15 @@ const FlatList = (props) => {
                                                     <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
                                                         <span className="item-title">{RealEstate.name}</span>
                                                     </Link>
-                                                    <span className="item-price">{RealEstate.price} Tỷ</span>
+                                                </div>
+            
+                                                
+                                                <div className="d-flex flex-column">
+                                                    <span className="item-price p-2">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
+                                                    <span className="fd-address p-2"> <i className="fas fa-map-marker-alt"></i>
+                                                        {RealEstate.address}</span>
+                                                </div>
 
-                                                </div>
-                                                <div>
-                                                    <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
-                                                        {RealEstate.address}</p>
-                                                </div>
                                                 <div className="d-flex">
                                                     <div class="mr-auto p-2">
                                                         <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>

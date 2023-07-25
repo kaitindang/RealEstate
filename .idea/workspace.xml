@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/controller/FinanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/controller/FinanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/controller/FinanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/controller/FinanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
+  <component name="RunManager" selected="Spring Boot.CrawldataApplication">
     <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -198,12 +199,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="configserver" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.configserver.ConfigServerApplication" />
+    <configuration name="CrawldataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="crawldata" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.crawldata.CrawldataApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.configserver.*" />
+          <option name="PATTERN" value="com.example.crawldata.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -259,8 +260,8 @@
       <item itemvalue="Application.ProductServiceApplication" />
       <item itemvalue="Application.CrawldataApplication" />
       <item itemvalue="Compound.run" />
+      <item itemvalue="Spring Boot.CrawldataApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
-      <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.FinanceServiceApplication" />
       <item itemvalue="Spring Boot.ImageServiceApplication" />
@@ -268,10 +269,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FinanceServiceApplication" />
-        <item itemvalue="Spring Boot.ProductServiceApplication" />
+        <item itemvalue="Spring Boot.CrawldataApplication" />
         <item itemvalue="Spring Boot.ImageServiceApplication" />
+        <item itemvalue="Spring Boot.ProductServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
-        <item itemvalue="Spring Boot.ConfigServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +334,8 @@
       <workItem from="1689904453898" duration="11058000" />
       <workItem from="1689991614153" duration="13029000" />
       <workItem from="1690082528510" duration="12995000" />
-      <workItem from="1690165975387" duration="10571000" />
+      <workItem from="1690165975387" duration="10637000" />
+      <workItem from="1690250269755" duration="14115000" />
     </task>
     <servers />
   </component>

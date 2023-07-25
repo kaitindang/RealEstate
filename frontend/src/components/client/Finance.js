@@ -36,6 +36,19 @@ const Finance = () => {
 
     }
 
+    const FinanceCalculates = () => {
+        const a = "00000000";
+        if (a == 0) {
+            divStyle.width = 30
+        }     
+
+    }
+
+    const divStyle = {
+        width: '15%'
+        
+      };
+
 
     useEffect(() => {
         RealEstateService.getRealEstateById(id).then((response) => {
@@ -55,19 +68,19 @@ const Finance = () => {
 
                     <div class="form-row" style={{ display: 'flex' }}>
                         <div class="form-group col-md-8 mb-3">
-                            <label for="inputprices_property">Gía BDS</label>
+                            <label for="inputprices_property">Giá BDS</label>
                             <input type="text"
                                 class="form-control"
-                                name="prices_property"
+                                name="price"
+                                
                                 onChange={(e) => setPrices_property(e.target.value)}
-                                id="inputprices_property">
+                                id="price">
                             </input>
                         </div>
                         <div class="form-group col-md-4 mb-3">
                             <label for="inputState">Đơn vị</label>
                             <select id="inputState" class="form-control">
-                                <option selected>USD</option>
-                                <option>VND</option>
+                                <option selected>VND</option>
                             </select>
                         </div>
 
@@ -86,8 +99,7 @@ const Finance = () => {
                         <div class="form-group col-md-4 mb-3">
                             <label for="inputState">Đơn vị</label>
                             <select id="inputState" class="form-control">
-                                <option selected>USD</option>
-                                <option>VND</option>
+                                <option selected>VND</option>
                             </select>
                         </div>
 
@@ -105,7 +117,7 @@ const Finance = () => {
                         <div class="form-group col-md-4 mb-3">
                             <label for="inputState">Đơn vị</label>
                             <select id="inputState" class="form-control">
-                                <option selected>Năm</option>
+                                <option selected>Tháng</option>
                             </select>
                         </div>
 
@@ -128,11 +140,7 @@ const Finance = () => {
                         </div>
                         <div class="form-group col-md-3 mb-3">
                             <label for="inputFloor">Lãi suất</label>
-                            <input type="text"
-                                class="form-control"
-                                name="foor_space"
-                                id="inputFloor"
-                                placeholder="Nhập số tầng"
+                            <input type="text"                             
                             >
                             </input>
                         </div>
@@ -145,7 +153,6 @@ const Finance = () => {
                                 name="repayment_method"
                                 onChange={(e) => setrepayment_method(e.target.value)}
                             >
-                                <option value="0"></option>
                                 <option value="1">Trả trên dư nợ ban đầu</option>
                                 <option value="2">Trả trên dư nợ giảm dần</option>
 
@@ -161,55 +168,62 @@ const Finance = () => {
                             <span></span>
                             <div>
                                 <b>Giá trị BĐS:</b>
-                                <h5>{price} tỷ</h5>
+                                <h5>{price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</h5>
                             </div>
+                            
                         </div>
                         <br></br>
+                        <div class="progress">
+                                <div class="progress-bar" role="progressbar" style={FinanceCalculates()} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-success" role="progressbar" style={{width: '15%'}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-info" role="progressbar" style={{width: '15%'}} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        <br></br>
                         <div class="d-flex justify-content-between">
-                            <p>Cần trả trước:</p>
+                            <span>Cần trả trước:</span>
                             {
                                 Finance.filter(finance => finance.term === 1)
                                     .map(
                                         Finance =>
-                                            <p>{Finance.prepay_amount}</p>
+                                            <span>{Finance.prepay_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>Gốc cần trả:</p>
+                            <span>Gốc cần trả:</span>
                             {
                                 Finance.filter(finance => finance.term === 1)
                                     .map(
                                         Finance =>
-                                            <p>{Finance.principal_amount}</p>
+                                            <span>{Finance.principal_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>Lãi cần trả:</p>
+                            <span>Lãi cần trả:</span>
                             {
-                                Finance.filter(finance => finance.term === 1)
+                                Finance.filter(finance => finance.term === Finance.length)
                                     .map(
                                         Finance =>
-                                            <p>{Finance.interest_amount}</p>
-                                    )}
-                        </div>
-                        <hr></hr>
-                        <div class="d-flex justify-content-between">
-                            <p>Thanh toán hàng tháng:</p>
-                            {
-                                Finance.filter(finance => finance.term === 1)
-                                    .map(
-                                        Finance =>
-                                            <p>{Finance.interest_month}</p>
+                                            <span>{Finance.interest_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
                         <hr></hr>
                         <div class="d-flex justify-content-between">
-                            <p>Tổng phải trả:</p>
+                            <span>Thanh toán hàng tháng:</span>
                             {
                                 Finance.filter(finance => finance.term === 1)
                                     .map(
                                         Finance =>
-                                            <p>{Finance.total_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</p>
+                                            <span>{Finance.interest_month.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                    )}
+                        </div>
+                        <hr></hr>
+                        <div class="d-flex justify-content-between">
+                            <span>Tổng phải trả:</span>
+                            {
+                                Finance.filter(finance => finance.term  === Finance.length)
+                                    .map(
+                                        Finance =>
+                                            <span>{Finance.total_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
 
@@ -221,7 +235,7 @@ const Finance = () => {
             <button className="btn btn-success" onClick={(e) => FinanceCalculate(e)} >Submit </button>
 
             <h4>Chi tiết khoản vay phải trả hàng tháng</h4>
-            <table class="table table-bordered">
+            <table class="table table-bordered text-center">
 
                 <thead class="table-secondary">
                     <tr>
@@ -241,11 +255,11 @@ const Finance = () => {
                                 <tr>
                                     <th scope="row">{Finance.term}</th>
 
-                                    <td>{Finance.principal_amount}</td>
-                                    <td>{Finance.original_payment}</td>
-                                    <td>{Finance.interest_payment}</td>
-                                    <td>{Finance.interest_month}</td>
-                                    <td>{Finance.remaining_balance}</td>
+                                    <td>{Finance.principal_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</td>
+                                    <td>{Finance.original_payment.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</td>
+                                    <td>{Finance.interest_payment.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</td>
+                                    <td>{Finance.interest_month.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</td>
+                                    <td>{Finance.remaining_balance.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</td>
 
 
                                 </tr>
