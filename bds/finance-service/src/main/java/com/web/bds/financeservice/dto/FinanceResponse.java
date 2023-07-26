@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FinanceResponse {
     public int term;
-    public float principal_amount;
-    public float original_payment;
-    public float interest_payment;
-    public float interest_amount;
-    public float interest_month;
-    public float remaining_balance;
-    public float prepay_amount;
-    public float total_amount;
+    public double principal_amount;
+    public double original_payment;
+    public double interest_payment;
+    public double interest_amount;
+    public double interest_month;
+    public double remaining_balance;
+    public double prepay_amount;
+    public double total_amount;
 
 
 }

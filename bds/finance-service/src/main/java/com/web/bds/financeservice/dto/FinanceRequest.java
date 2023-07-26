@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FinanceRequest {
-    public float loan_amount;
-    public float loan_term;
+    public double loan_amount;
+    public double loan_term;
     public float interest_rate;
     public int repayment_method;
     public int id_bank;
-    public float prices_property;
+    public double prices_property;
 
 }

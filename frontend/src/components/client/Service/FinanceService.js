@@ -16,6 +16,12 @@ class FinanceService{
     });
     }
 
+    getAllBank(){
+        return axios.get(FINANCE_BASE_REST_API_URL + "/all-bank",{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
+
+
 }
 
 export default new FinanceService();

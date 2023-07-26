@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/controller/FinanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/controller/FinanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/dto/FinanceResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/src/main/java/com/web/bds/financeservice/service/FinanceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/controller/FinanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/controller/FinanceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/finance-service/target/classes/com/web/bds/financeservice/service/FinanceService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/FinanceService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/FinanceService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CrawldataApplication">
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
     <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -199,12 +201,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawldataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="crawldata" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.crawldata.CrawldataApplication" />
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eurekaserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.eurekaserver.EurekaServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.crawldata.*" />
+          <option name="PATTERN" value="com.web.bds.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -260,7 +262,7 @@
       <item itemvalue="Application.ProductServiceApplication" />
       <item itemvalue="Application.CrawldataApplication" />
       <item itemvalue="Compound.run" />
-      <item itemvalue="Spring Boot.CrawldataApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.FinanceServiceApplication" />
@@ -269,10 +271,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FinanceServiceApplication" />
-        <item itemvalue="Spring Boot.CrawldataApplication" />
         <item itemvalue="Spring Boot.ImageServiceApplication" />
-        <item itemvalue="Spring Boot.ProductServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.ProductServiceApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -336,6 +338,7 @@
       <workItem from="1690082528510" duration="12995000" />
       <workItem from="1690165975387" duration="10637000" />
       <workItem from="1690250269755" duration="14115000" />
+      <workItem from="1690360400583" duration="9000000" />
     </task>
     <servers />
   </component>
@@ -345,7 +348,9 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="financeRequest.setInterest_rate" />
+        <watch expression="Math.round(financeRequest.getPrices_property()-financeRequest.getLoan_amount())" />
+        <watch expression="financeRequest.getPrices_property()" />
+        <watch expression="financeRequest.getLoan_amount()" />
       </configuration>
     </watches-manager>
   </component>

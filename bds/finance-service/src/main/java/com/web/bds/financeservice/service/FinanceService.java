@@ -5,6 +5,8 @@ import com.web.bds.financeservice.repo.FinanceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class FinanceService {
@@ -19,5 +21,9 @@ public class FinanceService {
         return bank;
     }
 
+    public List<Bank> findAllBank() {
+
+        return financeRepo.findAll();
+    }
 
 }

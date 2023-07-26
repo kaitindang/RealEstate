@@ -20,24 +20,10 @@ public class FinanceController {
     @Autowired
     FinanceService financeService;
 
-    @GetMapping(value = "/cal-tax")
-    public String getAllListingApproved(@RequestParam(value = "loan") double loan,
-                                     @RequestParam(value = "rate") double rate,
-                                     @RequestParam(value = "month") double month) {
+    @GetMapping(value = "/all-bank")
+    public List<Bank> getAllBank() {
 
-        NumberFormat formatter = new DecimalFormat("###.#####");
-
-        double interestOfMonth;
-        double loanOfMonth;
-        double moneyOfMonth;
-
-        interestOfMonth = loan/month;
-        loanOfMonth = (loan*(rate/100))/month;
-        moneyOfMonth = interestOfMonth + loanOfMonth;
-
-        String result = formatter.format(moneyOfMonth);
-
-        return result;
+        return financeService.findAllBank();
     }
 
     @PostMapping
@@ -51,8 +37,8 @@ public class FinanceController {
 
         financeRequest.setInterest_rate(bank.getBank_rate());
 
-        float remain_loan = Math.round(financeRequest.getLoan_amount());
-        float Interest_amount = 0;
+        double remain_loan = Math.round(financeRequest.getLoan_amount());
+        double Interest_amount = 0;
 
         if (financeRequest.getRepayment_method() == 1) {
 
@@ -60,9 +46,10 @@ public class FinanceController {
 
                 FinanceResponse financeResponse = new FinanceResponse();
 
-                float interestOfMonth = Math.round(financeRequest.getLoan_amount()/financeRequest.getLoan_term());
-                float loanOfMonth = Math.round((financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100))/12);
-                float moneyOfMonth = Math.round(interestOfMonth + loanOfMonth);
+                double interestOfMonth = Math.round(financeRequest.getLoan_amount()/financeRequest.getLoan_term());
+                double loanOfMonth = Math.round((financeRequest.getLoan_amount()*(financeRequest.getInterest_rate()/100))/12);
+                double moneyOfMonth = Math.round(interestOfMonth + loanOfMonth);
+
 
                 financeResponse.setTerm(term);
                 financeResponse.setPrepay_amount(Math.round(financeRequest.getPrices_property()-financeRequest.getLoan_amount()));

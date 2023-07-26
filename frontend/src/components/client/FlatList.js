@@ -42,7 +42,6 @@ const FlatList = (props) => {
             const { listings, totalPages } = response.data;
             setCount(totalPages);
             setRealEstate(listings);
-            debugger
             console.log(response.data);
         }).catch(error => {
             console.log(error);

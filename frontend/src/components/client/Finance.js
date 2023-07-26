@@ -14,7 +14,9 @@ const Finance = () => {
     const [loan_term, setLoan_term] = useState('')
     const [repayment_method, setrepayment_method] = useState('')
     const [prices_property, setPrices_property] = useState('')
-    const [price, setPrice] = useState('')
+    const [banks, setBanks] = useState([])
+
+    const [prices, setPrices] = useState('')
 
     const { id } = useParams();
 
@@ -28,7 +30,7 @@ const Finance = () => {
         FinanceService.calculateBank(realestates).then((response) => {
             console.log(response.data)
             setFinance(response.data)
-            debugger
+            
 
         }).catch(error => {
             console.log(error)
@@ -36,29 +38,77 @@ const Finance = () => {
 
     }
 
-    const FinanceCalculates = () => {
-        const a = "00000000";
-        if (a == 0) {
-            divStyle.width = 30
-        }     
+    const getAllBank = () => {
+        FinanceService.getAllBank().then((response) => {
+            console.log(response.data)
+            setBanks(response.data)
+
+        }).catch(error => {
+            console.log(error)
+        })
 
     }
 
-    const divStyle = {
-        width: '15%'
-        
-      };
+    const ref1 = React.useRef();
+    const ref2 = React.useRef();
+    const ref3 = React.useRef();
+    const ref4 = React.useRef();
+    
+    const css1 = () => {
+
+        let a = ref1.current?.innerText.replaceAll(".","");
+        let d = ref4.current?.innerText.replaceAll(".","");
+
+        let a1 = a/d*100;
+
+        console.log(a1.toFixed(0))
+
+        return a1.toFixed(0) + '%'
+
+    }
+
+    const css2 = () => {
+
+
+        let a = ref2.current?.innerText.replaceAll(".","");
+        let d = ref4.current?.innerText.replaceAll(".","");
+
+        let a1 = a/d*100;
+
+        console.log(a1.toFixed(0))
+
+        return a1.toFixed(0) + '%'
+
+    }
+
+    const css3 = () => {
+
+
+        let a = ref3.current?.innerText.replaceAll(".","");
+        let d = ref4.current?.innerText.replaceAll(".","");
+
+        let a1 = a/d*100;
+
+        console.log(a1.toFixed(0))
+
+        return a1.toFixed(0) + '%'
+
+    }
+
+
 
 
     useEffect(() => {
         RealEstateService.getRealEstateById(id).then((response) => {
             console.log(response.data)
 
-            setPrice(response.data.price)
+            setPrices_property(response.data.price)
 
         }).catch(error => {
             console.log(error)
         })
+
+        getAllBank()
     }, [])
 
     return (
@@ -67,19 +117,20 @@ const Finance = () => {
                 <div class="col-md-6">
 
                     <div class="form-row" style={{ display: 'flex' }}>
-                        <div class="form-group col-md-8 mb-3">
+                        <div class="form-group col-md-9 mb-3">
                             <label for="inputprices_property">Giá BDS</label>
                             <input type="text"
                                 class="form-control"
-                                name="price"
-                                
+                                name="prices_property"
+                                value={prices_property.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}
                                 onChange={(e) => setPrices_property(e.target.value)}
-                                id="price">
+                                id="prices_property"
+                                disabled>
                             </input>
                         </div>
-                        <div class="form-group col-md-4 mb-3">
+                        <div class="form-group col-md-3 mb-3">
                             <label for="inputState">Đơn vị</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" disabled>
                                 <option selected>VND</option>
                             </select>
                         </div>
@@ -87,7 +138,7 @@ const Finance = () => {
                     </div>
 
                     <div class="form-row" style={{ display: 'flex' }}>
-                        <div class="form-group col-md-8 mb-3">
+                        <div class="form-group col-md-9 mb-3">
                             <label for="loan_amount">Số tiền muốn vay</label>
                             <input type="text"
                                 class="form-control"
@@ -96,16 +147,16 @@ const Finance = () => {
                                 id="inputLoan_amount">
                             </input>
                         </div>
-                        <div class="form-group col-md-4 mb-3">
+                        <div class="form-group col-md-3 mb-3">
                             <label for="inputState">Đơn vị</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" disabled>
                                 <option selected>VND</option>
                             </select>
                         </div>
 
                     </div>
                     <div class="form-row" style={{ display: 'flex' }}>
-                        <div class="form-group col-md-8 mb-3">
+                        <div class="form-group col-md-9 mb-3">
                             <label for="loan_term">Thời hạn vay</label>
                             <input type="text"
                                 class="form-control"
@@ -114,9 +165,9 @@ const Finance = () => {
                                 id="inputLoan_term">
                             </input>
                         </div>
-                        <div class="form-group col-md-4 mb-3">
+                        <div class="form-group col-md-3 mb-3">
                             <label for="inputState">Đơn vị</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" disabled>
                                 <option selected>Tháng</option>
                             </select>
                         </div>
@@ -124,26 +175,26 @@ const Finance = () => {
                     </div>
 
                     <div class="form-row" style={{ display: 'flex' }}>
-                        <div class="form-group col-md-9 mb-3">
+                        <div class="form-group col-md-12 mb-3">
                             <label for="inputTitle">Ngân hàng</label>
                             <select class="form-control" id="exampleFormControlSelect1"
                                 name="id_bank"
                                 onChange={(e) => setId_bank(e.target.value)}
                             >
-                                <option value="0"></option>
-                                <option value="1">BIDV</option>
-                                <option value="2">Agribank</option>
-                                <option value="3">Vietinbank</option>
-                                <option value="4">Vietcombank</option>
-                                <option value="5">MSB</option>
+
+
+                                {
+                                    banks.map(
+
+                                        bank =>
+                                            <option value={bank.id_bank}>{bank.bank_name} ({bank.bank_rate}%)</option>
+                                    )}
+
+
+
                             </select>
                         </div>
-                        <div class="form-group col-md-3 mb-3">
-                            <label for="inputFloor">Lãi suất</label>
-                            <input type="text"                             
-                            >
-                            </input>
-                        </div>
+
                     </div>
 
                     <div class="form-row" style={{ display: 'flex' }}>
@@ -168,42 +219,43 @@ const Finance = () => {
                             <span></span>
                             <div>
                                 <b>Giá trị BĐS:</b>
-                                <h5>{price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</h5>
+                                <h5>{prices_property.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</h5>
                             </div>
-                            
+
                         </div>
                         <br></br>
                         <div class="progress">
-                                <div class="progress-bar" role="progressbar" style={FinanceCalculates()} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-success" role="progressbar" style={{width: '15%'}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-info" role="progressbar" style={{width: '15%'}} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <div class="progress-bar" role="progressbar" style={{ width: css1() }} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style={{ width: css2() }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-warning" role="progressbar" style={{ width: css3() }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                         <br></br>
                         <div class="d-flex justify-content-between">
-                            <span>Cần trả trước:</span>
+                            <span class="text-primary">Cần trả trước ({css1()}):</span>
                             {
                                 Finance.filter(finance => finance.term === 1)
                                     .map(
                                         Finance =>
-                                            <span>{Finance.prepay_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                            <span ref={ref1}>{Finance.prepay_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                            
                                     )}
                         </div>
                         <div class="d-flex justify-content-between">
-                            <span>Gốc cần trả:</span>
+                            <span class="text-success">Gốc cần trả ({css2()}):</span>
                             {
                                 Finance.filter(finance => finance.term === 1)
                                     .map(
                                         Finance =>
-                                            <span>{Finance.principal_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                            <span ref={ref2}>{Finance.principal_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
                         <div class="d-flex justify-content-between">
-                            <span>Lãi cần trả:</span>
+                            <span class="text-warning">Lãi cần trả ({css3()}):</span>
                             {
                                 Finance.filter(finance => finance.term === Finance.length)
                                     .map(
                                         Finance =>
-                                            <span>{Finance.interest_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                            <span ref={ref3}>{Finance.interest_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
                                     )}
                         </div>
                         <hr></hr>
@@ -220,10 +272,10 @@ const Finance = () => {
                         <div class="d-flex justify-content-between">
                             <span>Tổng phải trả:</span>
                             {
-                                Finance.filter(finance => finance.term  === Finance.length)
+                                Finance.filter(finance => finance.term === Finance.length)
                                     .map(
                                         Finance =>
-                                            <span>{Finance.total_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</span>
+                                            <span ref={ref4}><b>{Finance.total_amount.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}</b></span>
                                     )}
                         </div>
 
@@ -232,9 +284,9 @@ const Finance = () => {
                 </div>
             </div>
 
-            <button className="btn btn-success" onClick={(e) => FinanceCalculate(e)} >Submit </button>
-
-            <h4>Chi tiết khoản vay phải trả hàng tháng</h4>
+            <button className="btn btn-success" onClick={(e) => FinanceCalculate(e)} >Thực hiện </button>
+            <p></p>
+            <h4 class="text-center">Chi tiết khoản vay phải trả hàng tháng</h4>
             <table class="table table-bordered text-center">
 
                 <thead class="table-secondary">
