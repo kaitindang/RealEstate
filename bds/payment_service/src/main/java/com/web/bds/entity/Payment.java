@@ -35,11 +35,11 @@ public class Payment {
 
     @Column
     private double amount;
-
     @Column
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date date_modified;
+
 
 
 }

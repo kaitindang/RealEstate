@@ -106,7 +106,7 @@ const FlatList = (props) => {
                                                     <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
                                                         <span className="item-title">{RealEstate.name}</span>
                                                     </Link>
-                                                    <span className="item-price">{RealEstate.price} Tỷ</span>
+                                                    <span className="item-price">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
 
                                                 </div>
                                                 <div>

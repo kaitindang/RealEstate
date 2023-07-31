@@ -125,12 +125,12 @@ const FilterSearchBar = () => {
 
                                         <label>Mức giá</label>
                                         <div style={{ width: "32rem", padding: "20px" }}>
-                                            <Slider min={0}
-                                                max={10000}
+                                            <Slider min={1000000}
+                                                max={10000000000}
                                                 value={rangePrice}
                                                 onChange={handleChangesPrice}
                                                 valueLabelDisplay="auto" />
-                                            {price_start} - {price_end}
+                                            {price_start.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} - {price_end.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")}
                                         </div>
 
                                         <label>Số phòng</label>

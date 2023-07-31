@@ -43,12 +43,20 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="table">Quản lý tin đăng</CDBSidebarMenuItem>
             </NavLink>
             {author() === "Admin" ?
+              < NavLink exact to="/userList" activeClassName="activeClicked">
+                <CDBSidebarMenuItem icon="sticky-note">Quản lý người dùng</CDBSidebarMenuItem>
+              </NavLink>
+              :
+              <span></span>
+            }
+            {author() === "Admin" ?
               < NavLink exact to="/productApprove" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="sticky-note">Phê duyệt</CDBSidebarMenuItem>
               </NavLink>
               :
               <span></span>
-          }
+            }
+
 
 
           </CDBSidebarMenu>

@@ -1,10 +1,11 @@
 import ImageGallery from 'react-image-gallery';
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams, useSearchParams  } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
 import Pagination from "@material-ui/lab/Pagination";
 import Title from "./Title"
 import FilterSearchBar from "./FilterSearchBar";
+import dayjs from "dayjs";
 
 const SearchResult = () => {
 
@@ -30,39 +31,41 @@ const SearchResult = () => {
     const listing_categories = searchParams.get("listing_categories");
     const listing_type = searchParams.get("listing_type");
 
+    var relativeTime = require('dayjs/plugin/relativeTime')
+    dayjs.extend(relativeTime)
 
     const getRequestParams = (page, pageSize) => {
         let params = {};
-    
+
         if (page) {
-          params["page"] = page - 1;
+            params["page"] = page - 1;
         }
-    
+
         if (pageSize) {
-          params["size"] = pageSize;
+            params["size"] = pageSize;
         }
-    
+
         return params;
-      };
+    };
 
 
-    const getRequestfilterParams = (price_start, price_end, room_start, room_end, area_start, area_end, 
+    const getRequestfilterParams = (price_start, price_end, room_start, room_end, area_start, area_end,
         floor_spaceStart, floor_spaceEnd, address, listing_categories, listing_type) => {
         let params = {};
-    
+
         if (price_start && price_end) {
-          params["price_start"] = price_start;
-          params["price_end"] = price_end;
+            params["price_start"] = price_start;
+            params["price_end"] = price_end;
         } else {
             params["price_start"] = null;
-          params["price_end"] = null;
+            params["price_end"] = null;
         }
 
         if (room_start && room_end) {
             params["room_start"] = room_start;
             params["room_end"] = room_end;
         } else {
-              params["room_start"] = null;
+            params["room_start"] = null;
             params["room_end"] = null;
         }
 
@@ -70,7 +73,7 @@ const SearchResult = () => {
             params["area_start"] = area_start;
             params["area_end"] = area_end;
         } else {
-              params["area_start"] = null;
+            params["area_start"] = null;
             params["area_end"] = null;
         }
 
@@ -78,55 +81,55 @@ const SearchResult = () => {
             params["floor_spaceStart"] = floor_spaceStart;
             params["floor_spaceEnd"] = floor_spaceEnd;
         } else {
-              params["floor_spaceStart"] = null;
+            params["floor_spaceStart"] = null;
             params["floor_spaceEnd"] = null;
         }
 
         if (address) {
             params["address"] = address;
         } else {
-              params["address"] = null;
+            params["address"] = null;
         }
 
         if (listing_categories) {
             params["listing_categories"] = listing_categories;
         } else {
-              params["listing_categories"] = null;
+            params["listing_categories"] = null;
         }
 
         if (listing_type) {
             params["listing_type"] = listing_type;
         } else {
-              params["listing_type"] = null;
+            params["listing_type"] = null;
         }
-    
+
         return params;
-      };
+    };
 
 
-    useEffect(() => {   
-        
+    useEffect(() => {
+
         if (query == "all") {
 
-            const params = getRequestParams(page, pageSize);            
+            const params = getRequestParams(page, pageSize);
 
             RealEstateService.getAllRealEstate(params).then((response) => {
                 const { listings, totalPages } = response.data;
                 setCount(totalPages);
                 setRealEstate(listings);
-                console.log(response.data);                
+                console.log(response.data);
             }).catch(error => {
                 console.log(error);
             })
-        } else if(query == "searchbyfilter") {
+        } else if (query == "searchbyfilter") {
 
-            const params = getRequestfilterParams(price_start, price_end, room_start, room_end, area_start, area_end, 
-                    floor_spaceStart, floor_spaceEnd, address, listing_categories, listing_type)
-            
+            const params = getRequestfilterParams(price_start, price_end, room_start, room_end, area_start, area_end,
+                floor_spaceStart, floor_spaceEnd, address, listing_categories, listing_type)
+
             RealEstateService.multipleSearchRealEstates(params).then((response) => {
                 setRealEstate(response.data)
                 console.log(response.data);
-        
+
             }).catch(error => {
                 console.log(error);
             })
@@ -149,10 +152,10 @@ const SearchResult = () => {
 
     const handlePageChange = (event, value) => {
         setPage(value);
-      };
+    };
 
 
-    const handlePageSizeChange = (event) => {       
+    const handlePageSizeChange = (event) => {
         setPageSize(event.target.value);
         setPage(1);
     };
@@ -165,54 +168,104 @@ const SearchResult = () => {
                 <div className="container">
                     <Title title={title.text} description={title.description} />
                     <div className="row">
-                        
-                        {RealEstate.length === 0 ? (<p>Không có kết quả tìm kiếm</p>) :
 
+                        <div className="mt-3 d-flex flex-row-reverse bd-highlight">
+
+                            <Pagination
+                                color="primary"
+                                className="my-3"
+                                count={count}
+                                page={page}
+                                siblingCount={1}
+                                boundaryCount={1}
+                                variant="outlined"
+                                onChange={handlePageChange}
+                            />
+                        </div>
+                        {
                             RealEstate.map(
 
                                 RealEstate =>
+                                    RealEstate.priority == true ?
+                                    <div class="card mb-3" style={{ width: "2000px" }}>
+                                    <div class="row g-0">
+                                        <div class="col-md-3 best-estate-img-area">
+                                            <img style={{ width: "300px", height: "200px" }} src={RealEstate.image_product} class="img-fluid rounded-start" alt="..." />
+                                            <div className="best-estate-state bg-red">Ưu tiên</div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body">
+                                                <div className="d-flex align-items-center justify-content-between">
+                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                        <span className="item-title">{RealEstate.name}</span>
+                                                    </Link>
 
-                                    <div className="text-center col-lg-4 col-12 col-md-6 ">
-                                        <div className="item">
-                                            <div className="item-image">
-                                                <img className="img-fluid" src="/img/product1.jpeg" alt="flat" />
-                                            </div>
-                                            <div className="item-description">
-                                                <div className="d-flex justify-content-between mb-3">
-                                                    <span className="item-title">{RealEstate.name}</span>
-                                                    <span className="item-price">${RealEstate.price}</span>
                                                 </div>
-                                                <div className="item-icon d-flex alig-items-center justify-content-between">
-                                                    <div>
+                                                <div>
+                                                    <span className="item-price">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
+                                                </div>
+                                                <div>
+                                                    <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                        {RealEstate.address}</p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <div class="mr-auto p-2">
                                                         <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
                                                     </div>
-                                                    <div>
+                                                    <div class="p-2">
                                                         <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
                                                     </div>
-                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                        <button className="btn btn-detail">View</button>
-                                                    </Link>
+                                                    <div class="p-2">
+                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
+                                                    </div>
                                                 </div>
+                                                <p class="card-text"><small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small></p>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                        :
+                                        <div class="card mb-3" style={{ width: "2000px" }}>
+                                            <div class="row g-0">
+                                                <div class="col-md-3 best-estate-img-area">
+                                                    <img style={{ width: "300px", height: "200px" }} src={RealEstate.image_product} class="img-fluid rounded-start" alt="..." />
+                                                   
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="card-body">
+                                                        <div className="d-flex align-items-center justify-content-between">
+                                                            <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                                <span className="item-title">{RealEstate.name}</span>
+                                                            </Link>
 
+                                                        </div>
+                                                        <div>
+                                                            <span className="item-price">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
+                                                        </div>
+                                                        <div>
+                                                            <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                                {RealEstate.address}</p>
+                                                        </div>
+                                                        <div className="d-flex">
+                                                            <div class="mr-auto p-2">
+                                                                <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+                                                            </div>
+                                                            <div class="p-2">
+                                                                <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                            </div>
+                                                            <div class="p-2">
+                                                                <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
+                                                            </div>
+                                                        </div>
+                                                        <p class="card-text"><small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                             )
                         }
                     </div>
-                </div>
-                <div className="mt-3">
-                    
-                    <Pagination
-                        color="primary"
-                        className="my-3"
-                        count={count}
-                        page={page}
-                        siblingCount={1}
-                        boundaryCount={1}
-                        variant="outlined"
-                        onChange={handlePageChange}
-                    />
+
                 </div>
             </section>
         </div>
