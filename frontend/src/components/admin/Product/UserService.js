@@ -38,9 +38,16 @@ class UserService {
         });
     }
 
-    uploadAvatar(id, fileFormData){
-        return axios.post(PRO_API_BASE_URL + "/upload-avatar/" + id, fileFormData, {headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
-    });
+    uploadAvatar(id, fileFormData) {
+        return axios.post(PRO_API_BASE_URL + "/upload-avatar/" + id, fileFormData, {
+            headers: { 'Authorization': "Bearer " + localStorage.getItem("accessToken") }
+        });
+    }
+
+    changePassword(password) {
+        return axios.post(PRO_API_BASE_URL + "/change-password", password, {
+            headers: { 'Authorization': "Bearer " + localStorage.getItem("accessToken") }
+        });
     }
 
 }

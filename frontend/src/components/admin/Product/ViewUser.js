@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import Sidebar from '../../client/Sidebar';
 import UserService from './UserService';
 
@@ -22,6 +23,9 @@ const ViewUser = (props) => {
         fileUploaded: null,
     });
 
+    const [oldPassword, setOldPassword] = useState('')
+    const [newPassword, setNewPassword] = useState('');
+
     const { id } = useParams();
 
     const handleChange = (e) => {
@@ -29,7 +33,7 @@ const ViewUser = (props) => {
         setAccount({ ...account, [e.target.name]: value });
     }
 
-    
+
     const onFileChange = (event) => {
         setUpload({ ...upload, file: event.target.files[0] });
     };
@@ -44,9 +48,8 @@ const ViewUser = (props) => {
 
         formData.append('file', upload.file);
 
-        debugger
         UserService.uploadAvatar(id, formData).then((response) => {
-            debugger
+
             console.log(response.data);
             setUpload({ ...upload, fileUploaded: true });
 
@@ -57,9 +60,6 @@ const ViewUser = (props) => {
         if (id) {
             UserService.updateUser(id, account).then((response) => {
                 console.log(response.data)
-
-
-
                 navigate(`/userView/${response.data.id}`)
             }).catch(error => {
                 console.log(error)
@@ -68,6 +68,33 @@ const ViewUser = (props) => {
         }
 
         window.location.reload();
+    }
+
+
+    const changePassword = (e) => {
+        e.preventDefault();
+
+        const password = {
+            id, oldPassword, newPassword
+        }
+
+        if (id) {
+            UserService.changePassword(password).then((response) => {
+                console.log(response.data)
+
+                alert("Mời bạn đăng nhập lại!");
+
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("id");
+                localStorage.removeItem("role");
+
+                navigate("/login")
+            }).catch(error => {
+                console.log(error)
+            })
+
+        }
+
     }
 
 
@@ -99,15 +126,15 @@ const ViewUser = (props) => {
                                     <img src={account.avatar} alt="" />
                                     <div class="file btn btn-lg btn-primary">
                                         Change photo
-                                        <input type="file" name="file" onChange={onFileChange}/>
+                                        <input type="file" name="file" onChange={onFileChange} />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="profile-head">
-                                    <h5>
-                                        {account.username}
-                                    </h5>
+                                    <h3>
+                                        <b>{account.username}</b>
+                                    </h3>
 
                                     <h6>
                                         Môi giới viên
@@ -139,15 +166,16 @@ const ViewUser = (props) => {
                                 <div class="tab-content profile-tab" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>ID tài khoản</label>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-6">
                                                 <p>{account.id}</p>
                                             </div>
                                         </div>
+
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Họ</label>
                                             </div>
                                             <div class="col-md-6">
@@ -158,8 +186,9 @@ const ViewUser = (props) => {
                                                 />
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Tên</label>
                                             </div>
                                             <div class="col-md-6">
@@ -170,8 +199,9 @@ const ViewUser = (props) => {
                                                 />
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
@@ -182,8 +212,9 @@ const ViewUser = (props) => {
                                                 />
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Điện thoại</label>
                                             </div>
                                             <div class="col-md-6">
@@ -194,8 +225,9 @@ const ViewUser = (props) => {
                                                 />
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Ngày sinh</label>
                                             </div>
                                             <div class="col-md-6">
@@ -214,47 +246,51 @@ const ViewUser = (props) => {
 
                                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Mật khẩu cũ</label>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" id="form3Example1" class="form-control"
-                                                    name="firstname"
-                                                    value={account.firstname}
-                                                    onChange={(e) => handleChange(e)}
+                                                <input type="password" id="form3Example1" class="form-control"
+                                                    name="oldPassword"
+                                                    onChange={(e) => setOldPassword(e.target.value)}
                                                 />
 
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Mật khẩu mới</label>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" id="form3Example1" class="form-control"
-                                                    name="firstname"
-                                                    value={account.firstname}
-                                                    onChange={(e) => handleChange(e)}
+                                                <input type="password" id="form3Example1" class="form-control"
+                                                    name="newPassword"
+                                                    onChange={(e) => setNewPassword(e.target.value)}
                                                 />
 
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <label>Nhập lại mật khẩu mới</label>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" id="form3Example1" class="form-control"
+                                                <input type="password" id="form3Example1" class="form-control"
                                                     name="firstname"
-                                                    value={account.firstname}
-                                                    onChange={(e) => handleChange(e)}
                                                 />
+
+
                                             </div>
 
                                         </div>
+                                        <br></br>
+                                        <button onClick={changePassword} type="submit" className="btn btn-primary btn-block mb-4">
+                                            Xác nhận
+                                        </button>
 
                                     </div>
                                 </div>

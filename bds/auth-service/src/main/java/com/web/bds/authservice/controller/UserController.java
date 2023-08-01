@@ -1,5 +1,6 @@
 package com.web.bds.authservice.controller;
 
+import com.web.bds.authservice.dto.ChangePasswordRequest;
 import com.web.bds.authservice.entity.Account;
 import com.web.bds.authservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,6 +26,9 @@ import java.util.Map;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/all-users")
     public Map<String, Object> getAllUser(@RequestParam(value = "page", defaultValue = "0") int page,
@@ -47,6 +52,20 @@ public class UserController {
         return userService.findAllUser();
     }
 
+    @PostMapping(value = {"/change-password" })
+    public ResponseEntity<HttpStatus> changePassword(@RequestBody ChangePasswordRequest request) {
+
+
+        int check = userService.updatePassword(request.getId(), request.getNewPassword(), request.getOldPassword());
+
+        if(check == 1) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+    }
+
     @PostMapping(value = {"/upload-avatar/{id}" })
     public Account saveAvatar(@PathVariable int id, @RequestParam("file") MultipartFile file) {
 
@@ -58,7 +77,7 @@ public class UserController {
     }
 
     @GetMapping(value = {"/get-user/{id}" })
-    public Account getListing(@PathVariable int id) {
+    public Account getUser(@PathVariable int id) {
         return userService.findUserById(id).get();
     }
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,6 +30,9 @@ public class UserService {
 
     @Autowired
     AccountRepo accountRepo;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public UserService() throws IOException {
     }
@@ -58,6 +62,37 @@ public class UserService {
         updateAccount.setPhone(account.getPhone());
 
         return accountRepo.save(updateAccount);
+    }
+
+    public boolean isTruePassword(int id, String oldPassword) {
+
+        Account account = accountRepo.findById(id).orElse(null);
+
+        if(account != null) {
+            boolean check = passwordEncoder.matches(oldPassword, account.getPassword());
+
+            return check;
+        } else {
+            return false;
+        }
+    }
+
+    public int updatePassword(int id, String newPassword, String oldPassword) {
+
+        Account account = accountRepo.findById(id).orElse(null);
+
+        boolean checkPassword = isTruePassword(id, oldPassword);
+
+        if(checkPassword) {
+            account.setPassword(passwordEncoder.encode(newPassword));
+
+            accountRepo.save(account);
+
+            return 1;
+        }
+
+        return 0;
+
     }
 
     public void deleteUser(int id) {
