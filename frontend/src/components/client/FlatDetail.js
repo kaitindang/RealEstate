@@ -19,6 +19,23 @@ const FlatDetail = () => {
     const history = useNavigate();
     const { id } = useParams();
 
+    const [recommendListingAddress, setRecommendListingAddress] = useState([]);
+
+    const recommendAddress = () => {
+        const realestates = {
+            address
+        }
+        RealEstateService.recommendListingAddress(realestates).then((response) => {
+            console.log(response.data)
+            debugger
+            setRecommendListingAddress(response.data)
+
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }
+
     useEffect(() => {
 
         RealEstateService.getRealEstateById(id).then((response) => {
@@ -32,9 +49,12 @@ const FlatDetail = () => {
             setArea(response.data.area)
             setRoom(response.data.room)
             setOwner_project(response.data.owner_project)
+
         }).catch(error => {
             console.log(error)
         })
+
+        recommendAddress()
 
     }, [])
 
@@ -66,7 +86,7 @@ const FlatDetail = () => {
 
                                     </div>
                                     <div class="d-flex align-content-between justify-content-between">
-                                
+
                                         <button type="button" class="btn btn-outline-dark">Yêu cầu liên hệ lại</button>
                                     </div>
 
@@ -118,13 +138,13 @@ const FlatDetail = () => {
                                 <div className="fd-item fd-features">
                                     <h4>Vay mua nhà</h4>
                                     <div className="row">
-                                        <Finance/>
+                                        <Finance />
                                     </div>
 
                                 </div>
                             </div>
                             <div className="col-lg-4">
-                                
+
                                 <div className="fd-sidebar-item">
                                     <h4>Danh sách khác</h4>
                                     <ul className="category-ul">
@@ -137,18 +157,18 @@ const FlatDetail = () => {
                                 </div>
                                 <div className="fd-sidebar-item">
                                     <h4>Dành cho bạn</h4>
-                                    <div className="recently-item">
-                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                        <span>Bất động sản 1</span>
-                                    </div>
-                                    <div className="recently-item">
-                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                        <span>Bất động sản 2</span>
-                                    </div>
-                                    <div className="recently-item">
-                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                        <span>Bất động sản 3</span>
-                                    </div>
+
+                                    {
+                                        recommendListingAddress.map((listing, index) =>
+                                            <div className="recently-item">
+                                                <Link className="item-title" to={`/detail-realestate/${listing.id_product}`}>
+                                                    <img src="/img/product1.jpeg" alt="detail" width="50px" />
+                                                    <span>{listing.name}</span>
+                                                </Link>
+
+                                            </div>
+                                        )}
+
                                 </div>
                             </div>
                         </div>

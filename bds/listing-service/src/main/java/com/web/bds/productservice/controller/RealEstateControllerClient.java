@@ -120,4 +120,9 @@ public class RealEstateControllerClient {
         return ResponseEntity.ok(searchService.findListingByFilterParam(filter));
     }
 
+    @PostMapping("/listing-address")
+    public ResponseEntity<List<Listing>> searchListingsByAdress(@RequestBody Listing realEstateDetails){
+        return ResponseEntity.ok(listingService.findListingByAddress(realEstateDetails.getAddress()));
+    }
+
 }

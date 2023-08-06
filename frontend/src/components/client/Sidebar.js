@@ -36,7 +36,7 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to={`/userView/${localStorage.getItem("id")}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Thông tin tài khoản</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/productlist" activeClassName="activeClicked">

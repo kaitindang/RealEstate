@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/IListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/IListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +116,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
+  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="authservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.authservice.AuthServiceApplication" />
@@ -123,12 +130,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="configserver" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.configserver.ConfigServerApplication" />
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eurekaserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.eurekaserver.EurekaServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.configserver.*" />
+          <option name="PATTERN" value="com.web.bds.eurekaserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="eurekaserver" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.eurekaserver.EurekaServerApplication" />
+    <configuration name="FinanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="financeservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.financeservice.FinanceServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.eurekaserver.*" />
+          <option name="PATTERN" value="com.web.bds.financeservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -175,12 +182,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ImageServiceApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.FinanceServiceApplication" />
+      <item itemvalue="Spring Boot.ProductServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.ProductServiceApplication" />
+        <item itemvalue="Spring Boot.FinanceServiceApplication" />
         <item itemvalue="Spring Boot.ImageServiceApplication" />
-        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.EurekaServerApplication" />
       </list>
     </recent_temporary>
@@ -254,7 +268,13 @@
       <workItem from="1690771717790" duration="17979000" />
       <workItem from="1690819745362" duration="314000" />
       <workItem from="1690856042638" duration="607000" />
-      <workItem from="1690857834506" duration="6738000" />
+      <workItem from="1690857834506" duration="11703000" />
+      <workItem from="1690941787610" duration="2633000" />
+      <workItem from="1690962841094" duration="2235000" />
+      <workItem from="1691027571104" duration="1828000" />
+      <workItem from="1691114119243" duration="3451000" />
+      <workItem from="1691241383245" duration="5071000" />
+      <workItem from="1691306496716" duration="8534000" />
     </task>
     <servers />
   </component>
@@ -282,6 +302,26 @@
           <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
           <line>73</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

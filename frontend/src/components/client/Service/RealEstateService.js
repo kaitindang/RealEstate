@@ -49,6 +49,11 @@ class RealEstateService{
     });
     }
 
+    recommendListingAddress(realestates){
+        return axios.post(REALESTATE_BASE_REST_API_URL + '/listing-address', realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
+
 }
 
 export default new RealEstateService();
