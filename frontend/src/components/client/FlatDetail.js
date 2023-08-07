@@ -49,14 +49,30 @@ const FlatDetail = () => {
             setArea(response.data.area)
             setRoom(response.data.room)
             setOwner_project(response.data.owner_project)
+            debugger
+          
+        }).catch(error => {
+            console.log(error)
+        })
+
+        const realestates = {
+            address
+        }
+        
+        RealEstateService.recommendListingAddress(realestates).then((response) => {
+            console.log(response.data)
+            debugger
+            setRecommendListingAddress(response.data)
 
         }).catch(error => {
             console.log(error)
         })
 
-        recommendAddress()
-
     }, [])
+
+    const handleReload = () => {
+        window.location.reload();
+    };
 
     return (
         <div className="flat-detail">
@@ -156,19 +172,28 @@ const FlatDetail = () => {
                                     </ul>
                                 </div>
                                 <div className="fd-sidebar-item">
-                                    <h4>Dành cho bạn</h4>
+                                    <h4>BĐS đề xuất</h4><br></br>
+                                    <div className="recommend-listing">
+                                        {
+                                            recommendListingAddress.map((listing, index) =>
+                                                <div className="recently-item pb-5 ">
 
-                                    {
-                                        recommendListingAddress.map((listing, index) =>
-                                            <div className="recently-item">
-                                                <Link className="item-title" to={`/detail-realestate/${listing.id_product}`}>
-                                                    <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                                    <span>{listing.name}</span>
-                                                </Link>
+                                                    <Link onClick={handleReload} className="d-flex align-items-start flex-column bd-highlight mb-3 text-decoration-none" to={`/detail-realestate/${listing.id_product}`}>
+                                                        <div className="d-flex justify-content-between">
+                                                            <img src="/img/product1.jpeg" alt="detail" width="50px" />
+                                                            <div className="d-flex align-items-start flex-column bd-highlight mb-3">
+                                                                <span>{listing.name}</span>
 
-                                            </div>
-                                        )}
+                                                                <span className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                                    {listing.address}</span>
+                                                            </div>
+                                                        </div>
 
+
+                                                    </Link>
+                                                </div>
+                                            )}
+                                    </div>
                                 </div>
                             </div>
                         </div>

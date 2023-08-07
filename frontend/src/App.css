@@ -943,6 +943,13 @@ section {
 .recently-item span {
   margin-left: 10px;
   font-weight: 500;
+  color: black;
+}
+
+.recommend-listing {
+  overflow: auto;
+  width: 380px;
+  height: 400px;
 }
 
 .fd-sidebar-item ul {
