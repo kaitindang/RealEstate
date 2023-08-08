@@ -1,5 +1,6 @@
 package com.web.bds.productservice.service.impl;
 
+import com.web.bds.productservice.entity.Listing;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -24,4 +25,6 @@ public interface IListingService<T> {
     void deleteListing(int id);
 
     List<T> listProductWaitingApprove();
+
+    List<Listing> findListingByAddress(String address);
 }

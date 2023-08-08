@@ -30,6 +30,11 @@ public interface ListingRepo extends JpaRepository<Listing,Integer> {
     @Query(value = "SELECT * FROM listing p WHERE p.approve = false",nativeQuery = true)
     public List<Listing> findListingWaitingApprove();
 
+    @Query("SELECT p FROM Listing p WHERE " +
+            "p.enable_product = true " +
+            "And p.address LIKE CONCAT('%',:address, '%') ")
+    public List<Listing> findListingByAddress(String address);
+
     List<Listing> findByName(String name);
     Boolean existsByName(String name);
 

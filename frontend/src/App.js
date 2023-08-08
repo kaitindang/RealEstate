@@ -11,8 +11,9 @@ import SearchResult from './components/client/SearchResult';
 import ProductApprove from './components/admin/Product/ProductApprove';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
-import Upload from './components/client/upload'
-
+import Upload from './components/client/upload';
+import UserList from './components/admin/Product/UserList';
+import ViewUser from './components/admin/Product/ViewUser';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
 
         <Route path="/productList" element={<ProductList />} />
         <Route path='/productApprove' element={<ProductApprove />} />
+        <Route path='/userList' element={<UserList />} />
+        <Route path="/userView/:id" element={<ViewUser />} ></Route>
 
         {/* CLIENT */}
         <Route path="/" element={<Home />}></Route>

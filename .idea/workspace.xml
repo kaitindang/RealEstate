@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+>>>>>>> 6f59d657bd41d74e933b88417fced4c213c04207
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,78 +113,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PaymentServiceApplication">
-    <configuration name="AuthServiceApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.authservice.AuthServiceApplication" />
-      <module name="authservice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.configserver.ConfigServerApplication" />
-      <module name="configserver" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CrawldataApplication" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.example.crawldata.CrawldataApplication" />
-      <module name="crawldata" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.eurekaserver.EurekaServerApplication" />
-      <module name="eurekaserver" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageServiceApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.ImageServiceApplication" />
-      <module name="imageservice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.PaymentServiceApplication" />
-      <module name="paymentservice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductServiceApplication" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.web.bds.productservice.ProductServiceApplication" />
-      <module name="listingservice" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="run" type="CompoundRunConfigurationType">
-      <toRun name="AuthServiceApplication" type="Application" />
-      <toRun name="ConfigServerApplication" type="Application" />
-      <toRun name="EurekaServerApplication" type="Application" />
-      <toRun name="ImageServiceApplication" type="Application" />
-      <toRun name="ProductServiceApplication" type="Application" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="authservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.authservice.AuthServiceApplication" />
@@ -192,12 +127,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="eurekaserver" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.eurekaserver.EurekaServerApplication" />
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="configserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.configserver.ConfigServerApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.eurekaserver.*" />
+          <option name="PATTERN" value="com.web.bds.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrawldataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="crawldata" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.crawldata.CrawldataApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.crawldata.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,19 +159,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.web.bds.financeservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="imageservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.ImageServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.web.bds.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,15 +180,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.PaymentServiceApplication" />
-      <item itemvalue="Application.AuthServiceApplication" />
-      <item itemvalue="Application.EurekaServerApplication" />
-      <item itemvalue="Application.ImageServiceApplication" />
-      <item itemvalue="Application.ConfigServerApplication" />
-      <item itemvalue="Application.ProductServiceApplication" />
-      <item itemvalue="Application.CrawldataApplication" />
-      <item itemvalue="Compound.run" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.CrawldataApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.FinanceServiceApplication" />
+      <item itemvalue="Spring Boot.ProductServiceApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ProductServiceApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="Spring Boot.CrawldataApplication" />
+        <item itemvalue="Spring Boot.FinanceServiceApplication" />
+        <item itemvalue="Spring Boot.AuthServiceApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -315,7 +256,23 @@
       <workItem from="1690082528510" duration="12995000" />
       <workItem from="1690165975387" duration="10637000" />
       <workItem from="1690250269755" duration="14115000" />
-      <workItem from="1690360400583" duration="9000000" />
+      <workItem from="1690360400583" duration="9107000" />
+      <workItem from="1690425992053" duration="2677000" />
+      <workItem from="1690516857890" duration="897000" />
+      <workItem from="1690594589428" duration="7724000" />
+      <workItem from="1690617918452" duration="5283000" />
+      <workItem from="1690683583921" duration="5843000" />
+      <workItem from="1690771717790" duration="17979000" />
+      <workItem from="1690819745362" duration="314000" />
+      <workItem from="1690856042638" duration="607000" />
+      <workItem from="1690857834506" duration="11703000" />
+      <workItem from="1690941787610" duration="2633000" />
+      <workItem from="1690962841094" duration="2235000" />
+      <workItem from="1691027571104" duration="1828000" />
+      <workItem from="1691114119243" duration="3451000" />
+      <workItem from="1691241383245" duration="5071000" />
+      <workItem from="1691306496716" duration="8534000" />
+      <workItem from="1691374853684" duration="12179000" />
     </task>
     <servers />
   </component>
@@ -323,6 +280,39 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
+          <line>55</line>
+          <properties class="com.web.bds.authservice.controller.UserController" method="changePassword">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="Math.round(financeRequest.getPrices_property()-financeRequest.getLoan_amount())" />

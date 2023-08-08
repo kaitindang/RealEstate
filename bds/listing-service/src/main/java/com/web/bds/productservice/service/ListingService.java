@@ -107,4 +107,11 @@ public class ListingService implements IListingService<Listing> {
 
     }
 
+    @Override
+    public List<Listing> findListingByAddress(String address) {
+        List<Listing> products = listingRepo.findListingByAddress(address);
+        return products;
+    }
+
+
 }

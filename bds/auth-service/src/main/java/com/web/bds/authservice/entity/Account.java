@@ -39,7 +39,8 @@ public class Account {
 	@Column
 	private int phone;
 
-	@Column
+	@Lob
+	@Column(columnDefinition = "MEDIUMBLOB")
 	private String avatar;
 
 	@CreationTimestamp

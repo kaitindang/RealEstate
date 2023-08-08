@@ -36,19 +36,27 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to={`/userView/${localStorage.getItem("id")}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Thông tin tài khoản</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/productlist" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Quản lý tin đăng</CDBSidebarMenuItem>
             </NavLink>
             {author() === "Admin" ?
+              < NavLink exact to="/userList" activeClassName="activeClicked">
+                <CDBSidebarMenuItem icon="sticky-note">Quản lý người dùng</CDBSidebarMenuItem>
+              </NavLink>
+              :
+              <span></span>
+            }
+            {author() === "Admin" ?
               < NavLink exact to="/productApprove" activeClassName="activeClicked">
                 <CDBSidebarMenuItem icon="sticky-note">Phê duyệt</CDBSidebarMenuItem>
               </NavLink>
               :
               <span></span>
-          }
+            }
+
 
 
           </CDBSidebarMenu>
