@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { useNavigate, useParams, Link} from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Sidebar from '../../client/Sidebar';
 import UserService from './UserService';
@@ -18,11 +18,83 @@ const ViewUser = (props) => {
         avatar: ""
     });
 
+    const [upload, setUpload] = useState({
+        file: null,
+        fileUploaded: null,
+    });
+
+    const [oldPassword, setOldPassword] = useState('')
+    const [newPassword, setNewPassword] = useState('');
+
     const { id } = useParams();
 
     const handleChange = (e) => {
         const value = e.target.value;
         setAccount({ ...account, [e.target.name]: value });
+    }
+
+
+    const onFileChange = (event) => {
+        setUpload({ ...upload, file: event.target.files[0] });
+    };
+
+
+    const navigate = useNavigate();
+
+    const UpdateUser = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+
+        formData.append('file', upload.file);
+
+        UserService.uploadAvatar(id, formData).then((response) => {
+
+            console.log(response.data);
+            setUpload({ ...upload, fileUploaded: true });
+
+        }).catch(error => {
+            console.log(error);
+        });
+
+        if (id) {
+            UserService.updateUser(id, account).then((response) => {
+                console.log(response.data)
+                navigate(`/userView/${response.data.id}`)
+            }).catch(error => {
+                console.log(error)
+            })
+
+        }
+
+        window.location.reload();
+    }
+
+
+    const changePassword = (e) => {
+        e.preventDefault();
+
+        const password = {
+            id, oldPassword, newPassword
+        }
+
+        if (id) {
+            UserService.changePassword(password).then((response) => {
+                console.log(response.data)
+
+                alert("Mời bạn đăng nhập lại!");
+
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("id");
+                localStorage.removeItem("role");
+
+                navigate("/login")
+            }).catch(error => {
+                console.log(error)
+            })
+
+        }
+
     }
 
 
@@ -36,17 +108,6 @@ const ViewUser = (props) => {
         })
 
     }, [])
-
-    const HideEdit = () => {
-        var id = localStorage.getItem("id");
-        if (account.id == id) {
-          return <td className="text-left px-6 py-4 whitespace-nowrap">Chỉnh sửa</td>
-        }
-        else {
-          return <span></span>
-        }
-    
-      }
 
     return (
         <div className='row'>
@@ -62,7 +123,11 @@ const ViewUser = (props) => {
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="profile-img">
-                                    <img src={account.avatar} alt="" />                                  
+                                    <img src={account.avatar} alt="" />
+                                    <div class="file btn btn-lg btn-primary">
+                                        Change photo
+                                        <input type="file" name="file" onChange={onFileChange} />
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -79,15 +144,12 @@ const ViewUser = (props) => {
                                         <li class="nav-item">
                                             <button class="nav-link active" id="hone-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false">Thông tin</button>
                                         </li>
-
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Đổi mật khẩu</button>
+                                        </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="col-md-2">
-                                <Link className="item-title" to={`/edit-user/${account.id}`}>
-                                    {HideEdit()}
-                                </Link>
-                            </div>
+                            </div>                      
                         </div>
 
                         <div class="row">
@@ -118,7 +180,6 @@ const ViewUser = (props) => {
                                                     name="firstname"
                                                     value={account.firstname}
                                                     onChange={(e) => handleChange(e)}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -132,7 +193,6 @@ const ViewUser = (props) => {
                                                     name="lastname"
                                                     value={account.lastname}
                                                     onChange={(e) => handleChange(e)}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -146,7 +206,6 @@ const ViewUser = (props) => {
                                                     name="email"
                                                     value={account.email}
                                                     onChange={(e) => handleChange(e)}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -160,16 +219,66 @@ const ViewUser = (props) => {
                                                     name="phone"
                                                     value={account.phone}
                                                     onChange={(e) => handleChange(e)}
-                                                    disabled
                                                 />
                                             </div>
                                         </div>
                                         <br></br>
-
-
+                                        
+                                        
+                                        <button onClick={UpdateUser} type="submit" className="btn btn-primary btn-block mb-4">
+                                            Xác nhận
+                                        </button>
                                     </div>
 
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Mật khẩu cũ</label>
+                                            </div>
 
+                                            <div class="col-md-6">
+                                                <input type="password" id="form3Example1" class="form-control"
+                                                    name="oldPassword"
+                                                    onChange={(e) => setOldPassword(e.target.value)}
+                                                />
+
+                                            </div>
+                                        </div>
+                                        <br></br>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Mật khẩu mới</label>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="password" id="form3Example1" class="form-control"
+                                                    name="newPassword"
+                                                    onChange={(e) => setNewPassword(e.target.value)}
+                                                />
+
+                                            </div>
+                                        </div>
+                                        <br></br>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Nhập lại mật khẩu mới</label>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="password" id="form3Example1" class="form-control"
+                                                    name="firstname"
+                                                />
+
+
+                                            </div>
+
+                                        </div>
+                                        <br></br>
+                                        <button onClick={changePassword} type="submit" className="btn btn-primary btn-block mb-4">
+                                            Xác nhận
+                                        </button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

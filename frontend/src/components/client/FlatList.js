@@ -90,93 +90,57 @@ const FlatList = (props) => {
                         RealEstate.map(
 
                             RealEstate =>
-                                RealEstate.priority == true ?
-                                    <div class="text-center col-lg-4 col-12 col-md-6">
 
-                                        <div class="card h-100 card-image">
-                                            <div className="best-estate-img-area">
-                                                <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />
-                                                <div className="best-estate-state bg-red">Ưu tiên</div>
-                                            </div>
-
-
-                                            <div class="card-body d-flex align-content-between justify-content-between flex-wrap">
-
-                                                <div className="d-flex align-items-center justify-content-between">
-                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                        <span className="item-title">{RealEstate.name}</span>
-                                                    </Link>
-                                                    <span className="item-price">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
-
-                                                </div>
+                                <div class="text-center col-lg-4 col-12 col-md-6">
+                                    <div class="card h-100 card-image">
+                                        <div className="best-estate-img-area">
+                                            {RealEstate.priority == true ?
                                                 <div>
-                                                    <p className="fd-address"> <i className="fas fa-map-marker-alt"></i>
-                                                        {RealEstate.address}</p>
+                                                    <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />
+                                                    <div className="best-estate-state bg-red">Ưu tiên</div>
                                                 </div>
-                                                <div className="d-flex">
-                                                    <div class="mr-auto p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
-                                                    </div>
-                                                    <div class="p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
-                                                    </div>
-                                                    <div class="p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
-                                                    </div>
-                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                        <button className="btn btn-detail">Chi tiết</button>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    :
-                                    <div class="text-center col-lg-4 col-12 col-md-6">
-
-                                        <div class="card h-100 card-image">
-                                            <div className="best-estate-img-area">
+                                                :
                                                 <img className="best-estate-img" src={RealEstate.image_product} class="card-img-top" alt="..." />
+
+                                            }
+                                        </div>
+
+                                        <div class="card-body d-flex align-content-between justify-content-between flex-wrap">
+
+                                            <div className="d-flex align-items-center justify-content-between">
+                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}?address=${RealEstate.address}&person_modified=${RealEstate.person_modified}`}>
+                                                    <span className="item-title">{RealEstate.name}</span>
+                                                </Link>
                                             </div>
 
 
-                                            <div class="card-body d-flex align-content-between justify-content-between flex-wrap">
-
-                                                <div className="d-flex align-items-center justify-content-between">
-                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                        <span className="item-title">{RealEstate.name}</span>
-                                                    </Link>
-                                                </div>
-            
-                                                
-                                                <div className="d-flex flex-column">
-                                                    <span className="item-price p-2">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
-                                                    <span className="fd-address p-2"> <i className="fas fa-map-marker-alt"></i>
-                                                        {RealEstate.address}</span>
-                                                </div>
-
-                                                <div className="d-flex">
-                                                    <div class="mr-auto p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
-                                                    </div>
-                                                    <div class="p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
-                                                    </div>
-                                                    <div class="p-2">
-                                                        <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
-                                                    </div>
-                                                    <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
-                                                        <button className="btn btn-detail">Chi tiết</button>
-                                                    </Link>
-                                                </div>
+                                            <div className="d-flex flex-column">
+                                                <span className="item-price p-2">{RealEstate.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }).replaceAll(",", ".")} VND</span>
+                                                <span className="fd-address p-2"> <i className="fas fa-map-marker-alt"></i>
+                                                    {RealEstate.address}</span>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
+
+                                            <div className="d-flex">
+                                                <div class="mr-auto p-2">
+                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.floor_space} tầng</span>
+                                                </div>
+                                                <div class="p-2">
+                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.room} phòng</span>
+                                                </div>
+                                                <div class="p-2">
+                                                    <i className="fas fa-check-circle"></i> <span>{RealEstate.area} m²</span>
+                                                </div>
+                                                <Link className="item-title" to={`/detail-realestate/${RealEstate.id_product}`}>
+                                                    <button className="btn btn-detail">Chi tiết</button>
+                                                </Link>
                                             </div>
                                         </div>
+                                        <div class="card-footer">
+                                            <small class="text-muted">{dayjs(RealEstate.date_modified).fromNow()}</small>
+                                        </div>
                                     </div>
+                                </div>
+                                
                         )
                     }
                 </div>

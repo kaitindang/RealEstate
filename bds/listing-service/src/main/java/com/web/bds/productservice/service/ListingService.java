@@ -108,10 +108,15 @@ public class ListingService implements IListingService<Listing> {
     }
 
     @Override
-    public List<Listing> findListingByAddress(String address) {
-        List<Listing> products = listingRepo.findListingByAddress(address);
+    public List<Listing> findListingByAddress(int id, String addressParam) {
+        String address = addressParam.replaceAll("·","");
+        List<Listing> products = listingRepo.findListingByAddress(id, address);
         return products;
     }
 
+    @Override
+    public Page<Listing> findListingByUser(int id, Pageable pageable) {
 
+        return listingRepo.findListingByUser(id, pageable);
+    }
 }

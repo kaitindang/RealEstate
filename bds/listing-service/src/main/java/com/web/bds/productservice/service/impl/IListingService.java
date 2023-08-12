@@ -26,5 +26,8 @@ public interface IListingService<T> {
 
     List<T> listProductWaitingApprove();
 
-    List<Listing> findListingByAddress(String address);
+    List<Listing> findListingByAddress(int id, String addressParam);
+
+
+    Page<Listing> findListingByUser(int id, Pageable pageable);
 }

@@ -67,36 +67,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div class="list-group d-flex flex-row bd-highlight">
-                    <a href="/search/home" class="list-group-item list-group-item-action" aria-current="true">
-                        <div class="d-flex align-items-center">
-                        <img className="img-fluid" src="/img/buy.png" alt="flat" style={{ width: "50px" }} />
-                            <h5 class="m-2"><b>Mua bán</b></h5>
-                        </div>
-                        <p class="mb-1">10000 tin đăng mua bán</p>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <div class="d-flex align-items-center">
-                            <img className="img-fluid" src="/img/rent.png" alt="flat" style={{ width: "50px" }} />
-                            <h5 class="m-2"><b>Cho thuê</b></h5>
-                        </div>
-                        <small>1000 tin đăng cho thuê</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex align-items-center">
-                        <img className="img-fluid" src="/img/property.png" alt="flat" style={{ width: "50px" }} />
-                            <h5 class="m-2"><b>Dự án</b></h5>
-                        </div>
-                        <p class="mb-1">10000 dự án</p>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex align-items-center">
-                        <img className="img-fluid" src="/img/skyscraper.png" alt="flat" style={{ width: "50px" }} />
-                            <h5 class="m-2"><b>Môi giới</b></h5>
-                        </div>
-                        <p class="mb-1">10000 môi giới</p>
-                    </a>
-                </div>
+                
             </div>
         </Form>
     )

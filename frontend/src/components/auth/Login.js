@@ -56,6 +56,7 @@ const Login = (e) => {
                 localStorage.setItem("accessToken", result.accessToken);
                 localStorage.setItem("id", result.id)
                 localStorage.setItem("role", result.roles)
+                localStorage.setItem("username", result.username)
                 navigate('/');
             })
             .catch(error => {
@@ -82,8 +83,8 @@ const Login = (e) => {
                                     <div class="row gx-lg-5 align-items-center">
                                         <div class="col-lg-6 mb-5 mb-lg-0">
                                             <h1 class="my-5 display-3 fw-bold ls-tight">
-                                                The best website <br />
-                                                <span class="text-primary">Real Estate</span>
+                                                Website <br />
+                                                <span class="text-primary">batdongsan</span>
                                             </h1>
                                             <p>
                                                 

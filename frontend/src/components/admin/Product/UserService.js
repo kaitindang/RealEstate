@@ -50,6 +50,11 @@ class UserService {
         });
     }
 
+    recommendUserAddress(id, addressParam){
+        return axios.get(PRO_API_BASE_URL + '/user-address?id='+ id +'&addressParam=' + addressParam,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
+
 }
 
 export default new UserService();

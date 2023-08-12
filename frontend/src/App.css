@@ -949,7 +949,7 @@ section {
 .recommend-listing {
   overflow: auto;
   width: 380px;
-  height: 400px;
+  height: 500px;
 }
 
 .fd-sidebar-item ul {
@@ -1082,7 +1082,7 @@ section {
 }
 
 .profile-work {
-  padding: 14%;
+  padding-top: 14%;
   margin-top: -15%;
 }
 

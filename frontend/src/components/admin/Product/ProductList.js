@@ -47,28 +47,53 @@ const ProductList = (props) => {
 
     useEffect(() => {
         retrieveUsers();
-        
+
     }, [page, pageSize])
 
     const retrieveUsers = () => {
         const fetchData = async () => {
-            const params = getRequestParams(page, pageSize);
-            setLoading(true);
-            try {
-                const response = await ProductService.getProduct(params);
-                const { listings, totalPages } = response.data;
+            var role = localStorage.getItem("role");
+            var id = localStorage.getItem("id");
+            debugger
+            console.log(id);
 
-                setProduct(listings);
-                setCount(totalPages);
+            if (role == "ROLE_USER") {
+                const params = getRequestParams(page, pageSize);
+                setLoading(true);
+                debugger
+                try {
+                    const response = await RealEstateService.getListingByUser(id, params);
+                    debugger
+                    const { listings, totalPages } = response.data;
+                    
+                    setProduct(listings);
+                    setCount(totalPages);
+    
+                }
+                catch (error) {
+                    console.log(error);
+                }
+                setLoading(false);
+            } else {
+                const params = getRequestParams(page, pageSize);
+                setLoading(true);
+                try {
+                    const response = await ProductService.getProduct(params);
+                    const { listings, totalPages } = response.data;
+    
+                    setProduct(listings);
+                    setCount(totalPages);
+    
+                }
+                catch (error) {
+                    console.log(error);
+                }
+                setLoading(false);
+            }
 
-            }
-            catch (error) {
-                console.log(error);
-            }
-            setLoading(false);
         };
         fetchData();
-      };
+    };
 
 
 
@@ -113,19 +138,20 @@ const ProductList = (props) => {
             <div class="col-sm-9">
 
                 <div className='flex shadow border-b overflow-x-scroll'>
-                    <table class="table table-sm">
+                    <table class="table table-bordered">
                         <thead >
                             <tr>
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
                                     #
                                 </th>
-
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
                                     Bản tin
                                 </th>
-
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
                                     Giá
+                                </th>
+                                <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
+                                    Người đăng
                                 </th>
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
                                     Trạng thái

@@ -45,7 +45,7 @@ public class Listing {
     @Column
     private double price;
     @Column
-    private String person_modified;
+    private int person_modified;
     @Column
     private boolean enable_product = true;
     @Column
@@ -57,7 +57,7 @@ public class Listing {
     @Column
     private int room;
     @Column
-    private String owner_project;
+    private int owner_project;
     @Column
     private int id_producttype;
     @Column

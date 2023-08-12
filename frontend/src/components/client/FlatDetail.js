@@ -1,7 +1,8 @@
 import ImageGallery from 'react-image-gallery';
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
+import UserService from '../admin/Product/UserService';
 import ImagesListing from './ImagesListing';
 import Finance from './Finance';
 
@@ -16,25 +17,30 @@ const FlatDetail = () => {
     const [room, setRoom] = useState('')
     const [area, setArea] = useState('')
     const [owner_project, setOwner_project] = useState('')
+    const [date_create, setDate_create] = useState('')
+    const [date_expired, setDate_expired] = useState('')
     const history = useNavigate();
     const { id } = useParams();
+    const [loading, setLoading] = useState(true);
 
     const [recommendListingAddress, setRecommendListingAddress] = useState([]);
+    const [recommendUserAddress, setRecommendUserAddress] = useState([]);
 
-    const recommendAddress = () => {
-        const realestates = {
-            address
-        }
-        RealEstateService.recommendListingAddress(realestates).then((response) => {
-            console.log(response.data)
-            debugger
-            setRecommendListingAddress(response.data)
+    const [searchParams, setSearchParams] = useSearchParams();
+    const addressParam = searchParams.get("address");
+    const person_modified = searchParams.get("person_modified");
 
-        }).catch(error => {
-            console.log(error)
-        })
-
-    }
+    const [account, setAccount] = useState({
+        id: "",
+        username: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        dateOfBirth: "",
+        phone: "",
+        avatar: ""
+    });
 
     useEffect(() => {
 
@@ -49,17 +55,28 @@ const FlatDetail = () => {
             setArea(response.data.area)
             setRoom(response.data.room)
             setOwner_project(response.data.owner_project)
+            setDate_create(response.data.date_create)
+            setDate_expired(response.data.date_expired)
             debugger
-          
+
         }).catch(error => {
             console.log(error)
         })
 
-        const realestates = {
-            address
-        }
-        
-        RealEstateService.recommendListingAddress(realestates).then((response) => {
+        UserService.getUserById(person_modified).then((response) => {
+            console.log(response.data)
+
+            setAccount(response.data)
+        }).catch(error => {
+            console.log(error)
+        })
+
+        recommendAddress();
+    }, [])
+
+    const recommendAddress = () => {
+
+        RealEstateService.recommendListingAddress(id, addressParam).then((response) => {
             console.log(response.data)
             debugger
             setRecommendListingAddress(response.data)
@@ -68,10 +85,22 @@ const FlatDetail = () => {
             console.log(error)
         })
 
-    }, [])
+        UserService.recommendUserAddress(id, addressParam).then((response) => {
+            console.log(response.data)
+            debugger
+            setRecommendUserAddress(response.data)
+
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }
 
     const handleReload = () => {
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
+        }, 100);
+
     };
 
     return (
@@ -95,15 +124,24 @@ const FlatDetail = () => {
                             <ImagesListing />
                             <div className="col-lg-4">
                                 <div className="fd-sidebar-item">
-                                    <h4>Được đăng bởi</h4>
+                                    <h4 style={{ textAlign: "center" }}>Được đăng bởi</h4>
                                     <div className="recently-item">
-                                        <img src="/img/product1.jpeg" alt="detail" width="50px" />
-                                        <span></span>
+                                        <Link className="d-flex align-items-start flex-column bd-highlight text-decoration-none align-items-center justify-content-center" to={`/view-user/${account.id}`}>
 
+                                            <img src={account.avatar} alt="detail" style={{ width: "100px", height: "100px" }} />
+                                            <div className="d-flex align-items-start flex-column bd-highlight align-items-center justify-content-center">
+                                                <span><b>{account.username}</b></span>
+
+                                                <span></span>
+                                            </div>
+
+                                        </Link>
                                     </div>
-                                    <div class="d-flex align-content-between justify-content-between">
+                                    <br></br>
 
-                                        <button type="button" class="btn btn-outline-dark">Yêu cầu liên hệ lại</button>
+                                    <div class="d-flex align-items-start flex-column bd-highlight">
+                                        <button type="button" class="btn btn-outline-dark p-3 mb-2" style={{ width: "350px" }} ><i class="fas fa-envelope"></i> {account.email}</button>
+                                        <button type="button" class="btn btn-outline-dark p-3" style={{ width: "350px" }}><i class="fas fa-phone"></i> 0{account.phone}</button>
                                     </div>
 
                                 </div>
@@ -112,7 +150,7 @@ const FlatDetail = () => {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-8">
+                            <div className="col-lg-8">                              
                                 <div className="fd-item">
                                     <h4>Mô tả</h4>
                                     <p>{detail_product}</p>
@@ -161,26 +199,17 @@ const FlatDetail = () => {
                             </div>
                             <div className="col-lg-4">
 
+
                                 <div className="fd-sidebar-item">
-                                    <h4>Danh sách khác</h4>
-                                    <ul className="category-ul">
-                                        <li>Category 1</li>
-                                        <li>Category 2</li>
-                                        <li>Category 3</li>
-                                        <li>Category 4</li>
-                                        <li>Category 5</li>
-                                    </ul>
-                                </div>
-                                <div className="fd-sidebar-item">
-                                    <h4>BĐS đề xuất</h4><br></br>
+                                    <h4>BĐS cùng khu vực <br></br> {addressParam}</h4><br></br>
                                     <div className="recommend-listing">
                                         {
                                             recommendListingAddress.map((listing, index) =>
                                                 <div className="recently-item pb-5 ">
 
-                                                    <Link onClick={handleReload} className="d-flex align-items-start flex-column bd-highlight mb-3 text-decoration-none" to={`/detail-realestate/${listing.id_product}`}>
+                                                    <Link onClick={handleReload} className="d-flex align-items-start flex-column bd-highlight mb-3 text-decoration-none" to={`/detail-realestate/${listing.id_product}?address=${listing.address}`}>
                                                         <div className="d-flex justify-content-between">
-                                                            <img src="/img/product1.jpeg" alt="detail" width="50px" />
+                                                            <img src={listing.image_product} alt="detail" width="50px" />
                                                             <div className="d-flex align-items-start flex-column bd-highlight mb-3">
                                                                 <span>{listing.name}</span>
 
@@ -189,6 +218,28 @@ const FlatDetail = () => {
                                                             </div>
                                                         </div>
 
+                                                    </Link>
+                                                </div>
+                                            )}
+                                    </div>
+                                </div>
+                                <div className="fd-sidebar-item">
+                                    <h4>Môi giới trong khu vực <br></br> {addressParam}</h4><br></br>
+                                    <div className="recommend-listing">
+                                        {
+                                            recommendUserAddress.map((user, index) =>
+                                                <div className="recently-item pb-5 ">
+
+                                                    <Link className="d-flex align-items-start flex-column bd-highlight mb-3 text-decoration-none" to={`/view-user/${account.id}`}>
+                                                        <div className="d-flex justify-content-between">
+                                                            <img src={user.avatar} alt="detail" width="50px" />
+                                                            <div className="d-flex align-items-start flex-column bd-highlight mb-3">
+                                                                <span><b>{user.username}</b></span>
+                                                                <span><i class="fas fa-phone"></i> 0{user.phone}</span>
+                                                                <span className="fd-address"> <i className="fas fa-map-marker-alt"></i>
+                                                                    {user.address}</span>
+                                                            </div>
+                                                        </div>
 
                                                     </Link>
                                                 </div>

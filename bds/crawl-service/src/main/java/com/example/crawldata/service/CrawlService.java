@@ -88,7 +88,7 @@ public class CrawlService {
     }
 
 
-    public void crawlSellData(String URL) throws IOException {
+   public void crawlSellData(String URL) throws IOException {
 
         chromeDriver.get(URL);
 
@@ -172,7 +172,7 @@ public class CrawlService {
                     .area(Integer.parseInt(numberArea))
                     .room(random.nextInt(5)+1)
                     .floor_space(random.nextInt(5)+1)
-                    .person_modified(dealer.get(i).getText())
+                    .person_modified((random.nextInt(50)+1))
                     .id_productcate(random.nextInt(5)+1)
                     .image_product(imageparent.get(i).getAttribute("src"))
                     .id_producttype(1)
@@ -365,7 +365,7 @@ public class CrawlService {
                     .area(Integer.parseInt(numberArea))
                     .room(random.nextInt(5)+1)
                     .floor_space(random.nextInt(5)+1)
-                    .person_modified(dealer.get(i).getText())
+                    .person_modified(random.nextInt(50)+1)
                     .id_productcate(random.nextInt(5)+1)
                     .image_product(imageparent.get(i).getAttribute("src"))
                     .id_producttype(2)

@@ -73,7 +73,7 @@ const ProductList = () => {
             <div class="col-sm-9">
 
                 <div className='flex shadow border-b overflow-x-scroll'>
-                    <table class="table table-sm">
+                    <table class="table table-bordered">
                         <thead >
                             <tr>
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">

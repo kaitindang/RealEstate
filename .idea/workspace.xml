@@ -5,10 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/52ee7a9d-a9e2-4d65-a82f-b37133d8e103.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/repo/AccountRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/repo/AccountRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/model/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/model/Listing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/src/main/java/com/example/crawldata/service/CrawlService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/model/Listing$ListingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/model/Listing$ListingBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/model/Listing.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/model/Listing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/crawl-service/target/classes/com/example/crawldata/service/CrawlService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/entity/Listing.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/entity/Listing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/repo/ListingRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/IListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/impl/IListingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/controller/RealEstateControllerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Listing$ListingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Listing$ListingBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Listing.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/entity/Listing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/repo/ListingRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/repo/ListingRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/ListingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/impl/IListingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/target/classes/com/web/bds/productservice/service/impl/IListingService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductApprove.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductApprove.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ViewUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ViewUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Finance.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +145,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.FinanceServiceApplication">
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="authservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.authservice.AuthServiceApplication" />
@@ -137,12 +172,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawldataApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="crawldata" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.crawldata.CrawldataApplication" />
+    <configuration name="FinanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="financeservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.financeservice.FinanceServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.crawldata.*" />
+          <option name="PATTERN" value="com.web.bds.financeservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,12 +185,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinanceServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="financeservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.financeservice.FinanceServiceApplication" />
+    <configuration name="ImageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="imageservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.bds.ImageServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.web.bds.financeservice.*" />
+          <option name="PATTERN" value="com.web.bds.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,7 +213,7 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.ConfigServerApplication" />
-      <item itemvalue="Spring Boot.CrawldataApplication" />
+      <item itemvalue="Spring Boot.ImageServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.FinanceServiceApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
@@ -186,10 +221,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProductServiceApplication" />
-        <item itemvalue="Spring Boot.ConfigServerApplication" />
-        <item itemvalue="Spring Boot.CrawldataApplication" />
         <item itemvalue="Spring Boot.FinanceServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.ImageServiceApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +304,15 @@
       <workItem from="1691114119243" duration="3451000" />
       <workItem from="1691241383245" duration="5071000" />
       <workItem from="1691306496716" duration="8534000" />
-      <workItem from="1691374853684" duration="12179000" />
+      <workItem from="1691374853684" duration="12689000" />
+      <workItem from="1691462732772" duration="9518000" />
+      <workItem from="1691544561527" duration="5859000" />
+      <workItem from="1691567962937" duration="1013000" />
+      <workItem from="1691586201870" duration="2848000" />
+      <workItem from="1691632541059" duration="10285000" />
+      <workItem from="1691720706442" duration="9926000" />
+      <workItem from="1691807623454" duration="13958000" />
+      <workItem from="1691856010302" duration="59000" />
     </task>
     <servers />
   </component>
@@ -279,34 +322,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
-          <line>55</line>
-          <properties class="com.web.bds.authservice.controller.UserController" method="changePassword">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/service/UserService.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

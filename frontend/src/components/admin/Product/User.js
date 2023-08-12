@@ -15,7 +15,7 @@ const User = ({ account, deleteAccount }) => {
     <tr key={account.id}>
       <td className="text-left px-6 py-4 whitespace-nowrap">{account.id}</td>
          
-      <Link className="item-title" to={`/userView/${account.id}`}>       
+      <Link className="item-title" to={`/view-user/${account.id}`}>       
         <td className="text-left px-6 py-4 whitespace-nowrap">{account.username}</td>
       </Link>
 
@@ -24,7 +24,7 @@ const User = ({ account, deleteAccount }) => {
       <td className="text-left px-6 py-4 whitespace-nowrap"></td>
       <td className="text-left px-6 py-4 whitespace-nowrap text-sm">
 
-
+      <Link to={`/edit-user/${account.id}`}><button type="button" class="btn btn-warning" data-mdb-ripple-color="dark">Sửa</button></Link>
         <button className="btn btn-danger" onClick={(e, id) => deleteAccount(e, account.id)}>
           Xóa
         </button>

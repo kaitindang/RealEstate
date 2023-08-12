@@ -120,9 +120,31 @@ public class RealEstateControllerClient {
         return ResponseEntity.ok(searchService.findListingByFilterParam(filter));
     }
 
-    @PostMapping("/listing-address")
-    public ResponseEntity<List<Listing>> searchListingsByAdress(@RequestBody Listing realEstateDetails){
-        return ResponseEntity.ok(listingService.findListingByAddress(realEstateDetails.getAddress()));
+    @GetMapping("/listing-address")
+    public ResponseEntity<List<Listing>> getListingsByAdress(@RequestParam("id") int id, @RequestParam("addressParam") String address){
+        return ResponseEntity.ok(listingService.findListingByAddress(id, address));
     }
 
+/*    @GetMapping("/listing-users/{id}")
+    public ResponseEntity<List<Listing>> getListingsByUser(@PathVariable int id){
+        return ResponseEntity.ok(listingService.findListingByUser(id));
+    }*/
+
+    @GetMapping(value = "/listing-users/{id}")
+    /*@PreAuthorize("hasRole('ROLE_ANONYMOUS') or hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")*/
+    public Map<String, Object> getListingsByUser(@RequestParam(value = "page", defaultValue = "0") int page,
+                                                     @RequestParam(value = "size", defaultValue = "5") int size,
+                                                 @PathVariable int id) {
+        List<Listing> listings = new ArrayList<Listing>();
+        Pageable pagination = PageRequest.of(page, size);
+        Page<Listing> productPage;
+
+        productPage = listingService.findListingByUser(id, pagination);
+
+        listings = productPage.getContent();
+        Map<String, Object> response = new HashMap<String, Object>();
+        response.put("listings", listings);
+        response.put("totalPages", productPage.getTotalPages());
+        return response;
+    }
 }

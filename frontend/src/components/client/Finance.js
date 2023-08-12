@@ -14,6 +14,7 @@ const Finance = () => {
     const [loan_term, setLoan_term] = useState('')
     const [repayment_method, setrepayment_method] = useState('')
     const [prices_property, setPrices_property] = useState('')
+    const [image_product, setImage_product] = useState('')
     const [banks, setBanks] = useState([])
 
     const [prices, setPrices] = useState('')
@@ -103,6 +104,7 @@ const Finance = () => {
             console.log(response.data)
 
             setPrices_property(response.data.price)
+            setImage_product(response.data.image_product)
 
         }).catch(error => {
             console.log(error)
@@ -215,7 +217,7 @@ const Finance = () => {
                 <div class="col-md-6 fd-sidebar-item">
                     <div className="recently-item ">
                         <div class="d-flex justify-content-evenly">
-                            <img src="/img/product1.jpeg" alt="detail" width="50px" />
+                            <img src={image_product} alt="detail" width="50px" />
                             <span></span>
                             <div>
                                 <b>Giá trị BĐS:</b>

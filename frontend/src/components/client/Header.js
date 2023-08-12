@@ -42,19 +42,32 @@ const Header = () => {
                         </button>
                         <div className="navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
-                                {localStorage.getItem("accessToken") ?
+
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="search/searchbyfilter?price_start=&price_end=&room_start=&room_end=&area_start=&area_end=&floor_spaceStart=&floor_spaceEnd=&address=&listing_categories=&listing_type=1">Mua bán</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/search/searchbyfilter?price_start=&price_end=&room_start=&room_end=&area_start=&area_end=&floor_spaceStart=&floor_spaceEnd=&address=&listing_categories=&listing_type=2">Cho thuê</Link>
+                                </li>                               
+
+                                {!localStorage.getItem("accessToken") ?
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/productlist">Quản lý tin đăng</Link>
+                                        <button onClick={(e) => onClick(e)} className="nav-link" >Đăng nhập</button>
                                     </li>
                                     :
                                     <li className="nav-item">
-
+                                        <div class="dropdown">
+                                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Xin chào, {localStorage.getItem("username")}
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><Link className="dropdown-item" to={`/view-user/${localStorage.getItem("id")}`}>Thông tin tài khoản</Link></li>
+                                                <li><Link className="dropdown-item" to="/productlist">Quản lý tin đăng</Link></li>
+                                                <li><Link className="dropdown-item" onClick={(e) => onLogout(e)}>Đăng xuất</Link></li>
+                                            </ul>
+                                        </div>
                                     </li>
                                 }
-
-                                <li className="nav-item">
-                                    <button onClick={(e) => onClick(e)} className="nav-link" >Đăng nhập</button>
-                                </li>
 
                                 {!localStorage.getItem("accessToken") ?
                                     <li className="nav-item">
@@ -62,7 +75,7 @@ const Header = () => {
                                     </li>
                                     :
                                     <li className="nav-item">
-                                        <button onClick={(e) => onLogout(e)} className="nav-link" >Đăng xuất</button>
+                                        
                                     </li>
                                 }
 

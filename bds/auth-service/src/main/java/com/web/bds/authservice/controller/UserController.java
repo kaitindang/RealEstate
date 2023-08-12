@@ -102,4 +102,8 @@ public class UserController {
 
     }
 
+    @GetMapping("/user-address")
+    public ResponseEntity<List<Account>> searchAccountsByAdress(@RequestParam("id") int id, @RequestParam("addressParam") String address){
+        return ResponseEntity.ok(userService.findAccountByAddress(id, address));
+    }
 }

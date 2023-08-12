@@ -36,8 +36,12 @@ public class Account {
 
 	@Column(name = "date_of_birth")
 	private Timestamp dateOfBirth;
+
 	@Column
 	private int phone;
+
+	@Column
+	private String address;
 
 	@Lob
 	@Column(columnDefinition = "MEDIUMBLOB")

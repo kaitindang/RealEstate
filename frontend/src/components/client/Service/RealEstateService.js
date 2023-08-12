@@ -19,6 +19,15 @@ class RealEstateService{
         )
     }
 
+    getListingByUser(id, params){
+        return axios.get(REALESTATE_BASE_REST_API_URL + "/listing-users/" + id,
+            {
+                params: params,
+                headers: config.headers
+            }
+        );
+    }
+
     createRealEstate(realestates){
         return axios.post(REALESTATE_BASE_REST_API_URL + '/create-listing', realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
@@ -49,8 +58,8 @@ class RealEstateService{
     });
     }
 
-    recommendListingAddress(realestates){
-        return axios.post(REALESTATE_BASE_REST_API_URL + '/listing-address', realestates,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    recommendListingAddress(id, addressParam){
+        return axios.get(REALESTATE_BASE_REST_API_URL + '/listing-address?id='+ id + '&addressParam=' + addressParam,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
     });
     }
 

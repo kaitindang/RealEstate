@@ -18,9 +18,9 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
     console.log(enable_product);
     if (approve_product === "true" && enable_product === "true") {
       return <div><span class="badge rounded-pill bg-success">Hoạt động</span></div>
-    } else if(approve_product === "false" && enable_product === "true") {
+    } else if (approve_product === "false" && enable_product === "true") {
       return <div><span class="badge rounded-pill bg-success">Chờ duyệt</span></div>
-    } else if(approve_product === "false" && enable_product === "false") {
+    } else if (approve_product === "false" && enable_product === "false") {
       return <div><span class="badge rounded-pill bg-warning">Chờ duyệt</span></div>
     }
     else {
@@ -46,15 +46,16 @@ const Product = ({ product, deleteProduct, hideProduct }) => {
 
     <tr key={product.id_product}>
       <td className="text-left px-6 py-4 whitespace-nowrap">{product.id_product}</td>
-         
-      <Link className="item-title" to={`/detail-realestate/${product.id_product}`}>       
+
+      <Link className="item-title d-flex" to={`/detail-realestate/${product.id_product}`}>
+        <img src={product.image_product} alt="detail" style={{ width: "100px", height: "100px", margin: "10px" }} />
         <td className="text-left px-6 py-4 whitespace-nowrap">{product.name}</td>
       </Link>
 
       <td className="text-left px-6 py-4 whitespace-nowrap">{product.price}</td>
 
       <td className="text-left px-6 py-4 whitespace-nowrap">{hide()}</td>
-      <td className="text-left px-6 py-4 whitespace-nowrap text-sm">
+      <td className="d-flex text-center">
 
         <button className="btn btn-warning" onClick={(e, id_product) => editProduct(e, product.id_product)}>
           Sửa

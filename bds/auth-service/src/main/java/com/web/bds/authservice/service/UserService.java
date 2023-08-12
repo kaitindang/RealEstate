@@ -124,4 +124,10 @@ public class UserService {
 
         return accountRepo.save(avatar);
     }
+
+    public List<Account> findAccountByAddress(int id, String addressParam) {
+        String account = addressParam.replaceAll("·","");
+        List<Account> users = accountRepo.findAccountByAddress(id, account);
+        return users;
+    }
 }
