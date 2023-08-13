@@ -48,7 +48,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"user\",\r\n    \"email\" : \"user@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"firstname\": \"user\",\r\n    \"lastname\": \"user\"\r\n}",
+							"raw": "{\r\n    \"username\": \"user20\",\r\n    \"email\" : \"user20@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"firstname\": \"admin\",\r\n    \"lastname\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,6 +70,254 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDg4NDEyMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA5MDgxMjN9.dICZULLis8uwqPV20hPcYjN2VWmzXuKkblfOONDPtIKMGZPBNEhkmDZPGjY5rJBP0EcINn7I1gtkV-oSmLj9bw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/user/all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDg4NDEyMywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA5MDgxMjN9.dICZULLis8uwqPV20hPcYjN2VWmzXuKkblfOONDPtIKMGZPBNEhkmDZPGjY5rJBP0EcINn7I1gtkV-oSmLj9bw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/user/get-user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"get-user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDc5ODE4Niwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA4MjIxODZ9.1SBF1hTCnNGwWrhWwLWLIavS3_g6dXj8XAptFpoulmOs6SYoFiVZ-XhCKc0RJW0aYKL72YxIc6QergaupNaaWA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"user12377777\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/user/update-user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"update-user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDYwMDc0Mywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA2MjQ3NDN9.wKJDQR_P3OrAq_lU5c1BSBCv7t5krfrkZZcAYRDOP8Y9RXqTl5fGAmqkjPPc6v8Er9N3_tThwu8uQ1JhtPudhQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/user/delete-user/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"delete-user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDc5ODE4Niwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA4MjIxODZ9.1SBF1hTCnNGwWrhWwLWLIavS3_g6dXj8XAptFpoulmOs6SYoFiVZ-XhCKc0RJW0aYKL72YxIc6QergaupNaaWA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/trong/OneDrive/Hình ảnh/team.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8100/user/upload-avatar/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"upload-avatar",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTY5MDg4NDU1Nywicm9sZXMiOlsiUk9MRV9VU0VSIl0sImV4cCI6MTY5MDkwODU1N30.9s1oSTrlYNFlhJMnGArjy6oBzWNAlf2vzVvHApNpmsXmNuAO5lnHLsu7f_FBIi10QCpYvM16ov2rFBNTaPxfMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"oldPassword\": \"1234567\",\r\n    \"newPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/user/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recommed listing user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MTQ4NzY1Miwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTE1MTE2NTJ9.HkIlWFJ4gO4PkERiUyNMtIY1kK3yI_JURI_eThEAwFCOkVPPlbugquegs9bTDbaofFGXT0t3qz8ZgJKB5Pqnmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/user/user-address?addressParam=Gia Lâm, Hà Nội",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"user",
+								"user-address"
+							],
+							"query": [
+								{
+									"key": "addressParam",
+									"value": "Gia Lâm, Hà Nội"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -87,7 +335,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODYwOTUwOSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODg2MzM1MDl9.F79O62AQ_aL7kMz1VgmMAYVT3YNrt4UIRZm275mvOAL5j3xX5wPF-weEm35GSBaWmx_2Lw7cd4H3kbZ7A6Xd1g",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODc0MzA0OSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODg3NjcwNDl9.wW55uBDdL7IQo_F9UuqSfCMaOYVIrt7lMnbXttBINmLwa9wEokGSW4tN4QgaHwF4JuTJf7SZNSY4CJ8qb24x-g",
 									"type": "string"
 								}
 							]
@@ -104,7 +352,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8091/realestates/all-listings?page=0&size=10",
+							"raw": "http://localhost:8091/realestates/all-listings?page=0&size=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -121,7 +369,7 @@
 								},
 								{
 									"key": "size",
-									"value": "10"
+									"value": "3"
 								}
 							]
 						}
@@ -136,7 +384,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEzMjE4Mywicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODgxNTYxODN9.Pdou60Wu6NP-DT0j8OHoy2OGTsyEaJ_kdrx_rN0ThZijTXjmtrZ8NGLJXLGixadZXpYNM5YbzCluljt3euZd0g",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDk2MzM0MSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA5ODczNDF9.1_SD_4nyPql-h6ljLZ2WvsfQ5z5MLfYziauiG_Cjk1eamhVoI4IINFRGJOHcKVZCXeS9sgjkZKmXexvYejmQeQ",
 									"type": "string"
 								}
 							]
@@ -339,6 +587,224 @@
 							"path": [
 								"realestates",
 								"search-filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTQyMjcyOSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODk0NDY3Mjl9.on9zQWWhBOM6pS908tKbwImK9ZFpo5vDnomhedDD6Fb3k73_cpbyVR06kdhC_SmT4Jh1qnsZBEl1CMoCflPU7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id_product",
+									"value": "112",
+									"type": "default"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/trong/OneDrive/Hình ảnh/banner.jpg",
+										"/C:/Users/trong/OneDrive/Hình ảnh/download.jpg",
+										"/C:/Users/trong/OneDrive/Hình ảnh/product1.jpeg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8092/photo/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8092",
+							"path": [
+								"photo",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get image id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4OTQyMjcyOSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2ODk0NDY3Mjl9.on9zQWWhBOM6pS908tKbwImK9ZFpo5vDnomhedDD6Fb3k73_cpbyVR06kdhC_SmT4Jh1qnsZBEl1CMoCflPU7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8092/photo/816",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8092",
+							"path": [
+								"photo",
+								"816"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calculate finance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDM3ODQ5MSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTA0MDI0OTF9.VGWWM0zbGNhLuJoHjyy2Gs2NKILu1FWeE4K1fMoSvRFruxyFe6DSeBM4rV7GUj2o7t8s8vAx5WUt87xrYfVFSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loan_amount\": 100000000,\r\n    \"loan_term\": 12,\r\n    \"repayment_method\": 1,\r\n    \"id_bank\": 1,\r\n    \"prices_property\": 4200000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8094/finance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"finance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all bank",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MDM2NDc1OCwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTAzODg3NTh9.-bl7JU3Xpx_takO0xr_oWrKxKern4Up0rNPQKWIB-Vc2hAZj76bn4cqGug9TjvjRz4tpakoQcpsZ4Jb9KJhUtg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8094/finance/all-bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"finance",
+								"all-bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recommed listing address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MTgzMDIzOSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTE4NTQyMzl9.sx9x1GvM_hdWh756X-i7z2ACkCg3iam_WGHwrG5eJ6QMCwYTBT9hdFNBGrdbD_VNxkV5OEqNIeIybRanvtf-_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/listing-address?id=1243&addressParam=·Hai Bà Trưng, Hà Nội",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"listing-address"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1243"
+								},
+								{
+									"key": "addressParam",
+									"value": "·Hai Bà Trưng, Hà Nội"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find listing user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY5MTgzMDIzOSwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJleHAiOjE2OTE4NTQyMzl9.sx9x1GvM_hdWh756X-i7z2ACkCg3iam_WGHwrG5eJ6QMCwYTBT9hdFNBGrdbD_VNxkV5OEqNIeIybRanvtf-_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/realestates/listing-users/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"realestates",
+								"listing-users",
+								"11"
 							]
 						}
 					},
