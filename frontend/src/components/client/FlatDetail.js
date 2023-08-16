@@ -4,6 +4,11 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
 import ImagesListing from './ImagesListing';
 import Finance from './Finance';
+import {GoogleMap,Marker,MarkerF} from '@react-google-maps/api'
+import { getGeocode,getLatLng } from 'use-places-autocomplete';
+import { Fragment } from 'react';
+import Geocode from "react-geocode"
+
 
 const FlatDetail = () => {
 
@@ -20,7 +25,13 @@ const FlatDetail = () => {
     const { id } = useParams();
 
     const [recommendListingAddress, setRecommendListingAddress] = useState([]);
-
+        
+   const [laglng,setLaglng] = useState(
+    {
+        lat:30,
+        lng:40
+    }
+   )
     const recommendAddress = () => {
         const realestates = {
             address
@@ -35,6 +46,11 @@ const FlatDetail = () => {
         })
 
     }
+    
+    
+   
+   
+    
 
     useEffect(() => {
 
@@ -49,7 +65,7 @@ const FlatDetail = () => {
             setArea(response.data.area)
             setRoom(response.data.room)
             setOwner_project(response.data.owner_project)
-            debugger
+           
           
         }).catch(error => {
             console.log(error)
@@ -61,19 +77,76 @@ const FlatDetail = () => {
         
         RealEstateService.recommendListingAddress(realestates).then((response) => {
             console.log(response.data)
-            debugger
+        
             setRecommendListingAddress(response.data)
 
         }).catch(error => {
             console.log(error)
         })
+        
+        Geocode.setLanguage('vi')
+        Geocode.setRegion('VN')
+        Geocode.setApiKey("AIzaSyAbjJPkxU0zTQXY17w3sZBWksp96V1MrNI")
+        Geocode.fromAddress(address).then(
+            (response) => {
+        
+              const { lat, lng } = response.results[0].geometry.location;
+
+              setLaglng(response.results[0].geometry.location);            
+            },
+            (error) => {
+              console.error(error);
+            }
+        )
+        
 
     }, [])
 
     const handleReload = () => {
         window.location.reload();
     };
+   
 
+    
+    const containerStyle = {
+        width: '500px',
+        height: '500px',
+      };
+
+    
+    function Place() {
+        
+         const [map,setMap] = useState(null)
+         const mapref = React.useRef()
+         const onload = React.useCallback(function callback(map) {
+            mapref.current = map;
+            setMap(map)
+
+         },[])
+
+        
+
+
+        return (
+            <Fragment>
+                
+                    <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={laglng}
+                    zoom={10}
+                    onLoad={onload}
+                  
+                    >
+                    <MarkerF position={laglng}></MarkerF>
+                    </GoogleMap>
+               
+            </Fragment>
+        ) 
+       
+    }
+    
+
+    
     return (
         <div className="flat-detail">
 
@@ -146,9 +219,11 @@ const FlatDetail = () => {
 
                                 </div>
 
-                                <div className="fd-item">
+                                <div >
                                     <h4>Bản đồ</h4>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15105200.564429!2d37.91245092855647!3d38.99130948591772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1630158674074!5m2!1str!2str" width="100%" height="450" loading="lazy"></iframe>
+                                    <Place/>
+                                    
+                                    
                                 </div>
 
                                 <div className="fd-item fd-features">
@@ -200,7 +275,9 @@ const FlatDetail = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
+        
     )
 }
 
