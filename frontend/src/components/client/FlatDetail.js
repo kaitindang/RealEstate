@@ -4,14 +4,14 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
 import ImagesListing from './ImagesListing';
 import Finance from './Finance';
-import {GoogleMap,Marker,MarkerF} from '@react-google-maps/api'
+import {GoogleMap,LoadScript,Marker,MarkerF} from '@react-google-maps/api'
 import { getGeocode,getLatLng } from 'use-places-autocomplete';
 import { Fragment } from 'react';
 import Geocode from "react-geocode"
 
 
 const FlatDetail = () => {
-
+    const google = window.google
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [floor_space, setFloor_space] = useState('')
@@ -28,10 +28,12 @@ const FlatDetail = () => {
         
    const [laglng,setLaglng] = useState(
     {
-        lat:30,
-        lng:40
+        lat:null,
+        lng:null
     }
+    
    )
+   const [ismapReady,setIsmapReady] = useState(false)
     const recommendAddress = () => {
         const realestates = {
             address
@@ -47,13 +49,10 @@ const FlatDetail = () => {
 
     }
     
-    
    
-   
-    
 
     useEffect(() => {
-
+        let address1 =''
         RealEstateService.getRealEstateById(id).then((response) => {
             console.log(response.data)
             setName(response.data.name)
@@ -65,7 +64,7 @@ const FlatDetail = () => {
             setArea(response.data.area)
             setRoom(response.data.room)
             setOwner_project(response.data.owner_project)
-           
+            address1 = response.data.address
           
         }).catch(error => {
             console.log(error)
@@ -84,10 +83,31 @@ const FlatDetail = () => {
             console.log(error)
         })
         
-        Geocode.setLanguage('vi')
-        Geocode.setRegion('VN')
-        Geocode.setApiKey("AIzaSyAbjJPkxU0zTQXY17w3sZBWksp96V1MrNI")
-        Geocode.fromAddress(address).then(
+        
+    
+    }, [])
+
+    
+
+    const handleReload = () => {
+        window.location.reload();
+    };
+   
+  
+
+    
+    const containerStyle = {
+        width: '500px',
+        height: '500px',
+      };
+
+    
+    function Place() {
+        if(laglng.lat == null && laglng.lng == null){
+            Geocode.setLanguage('vi')
+            Geocode.setRegion('VN')
+            Geocode.setApiKey("AIzaSyAbjJPkxU0zTQXY17w3sZBWksp96V1MrNI")
+            Geocode.fromAddress(address).then(
             (response) => {
         
               const { lat, lng } = response.results[0].geometry.location;
@@ -98,23 +118,7 @@ const FlatDetail = () => {
               console.error(error);
             }
         )
-        
-
-    }, [])
-
-    const handleReload = () => {
-        window.location.reload();
-    };
-   
-
-    
-    const containerStyle = {
-        width: '500px',
-        height: '500px',
-      };
-
-    
-    function Place() {
+        }
         
          const [map,setMap] = useState(null)
          const mapref = React.useRef()
@@ -139,7 +143,7 @@ const FlatDetail = () => {
                     >
                     <MarkerF position={laglng}></MarkerF>
                     </GoogleMap>
-               
+                
             </Fragment>
         ) 
        
@@ -222,6 +226,7 @@ const FlatDetail = () => {
                                 <div >
                                     <h4>Bản đồ</h4>
                                     <Place/>
+                                   
                                     
                                     
                                 </div>
