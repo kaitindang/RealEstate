@@ -41,7 +41,7 @@ public class Listing {
     @Column
     private double price;
     @Column
-    private String person_modified;
+    private int person_modified;
     @Column
     private boolean enable_product = true;
     @Column
