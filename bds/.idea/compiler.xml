@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apigateway" />
+        <module name="eurekaserver" />
+        <module name="listingservice" />
+        <module name="blogservice" />
+        <module name="financeservice" />
+        <module name="authservice" />
+        <module name="imageservice" />
+        <module name="configserver" />
+        <module name="crawldata" />
+        <module name="paymentservice" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apigateway" options="-parameters" />
+      <module name="authservice" options="-parameters" />
+      <module name="blogservice" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="crawldata" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="financeservice" options="-parameters" />
+      <module name="imageservice" options="-parameters" />
+      <module name="listingservice" options="-parameters" />
+      <module name="paymentservice" options="-parameters" />
+    </option>
+  </component>
+</project>

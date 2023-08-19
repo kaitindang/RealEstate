@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS Listing (
     date_create DATETIME DEFAULT NOW(),
     id_productcate INT NOT NULL,
     price DOUBLE NOT NULL,
-    person_modified VARCHAR(50),
+    person_modified int,
     date_modified datetime default now(),
     enable_product BOOLEAN DEFAULT TRUE,
 	address VARCHAR(300),

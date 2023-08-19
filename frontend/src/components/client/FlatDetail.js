@@ -5,9 +5,14 @@ import RealEstateService from './Service/RealEstateService';
 import UserService from '../admin/Product/UserService';
 import ImagesListing from './ImagesListing';
 import Finance from './Finance';
+import {GoogleMap,LoadScript,Marker,MarkerF} from '@react-google-maps/api'
+import { getGeocode,getLatLng } from 'use-places-autocomplete';
+import { Fragment } from 'react';
+import Geocode from "react-geocode"
+
 
 const FlatDetail = () => {
-
+    const google = window.google
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [floor_space, setFloor_space] = useState('')
@@ -41,9 +46,18 @@ const FlatDetail = () => {
         phone: "",
         avatar: ""
     });
+        
+   const [laglng,setLaglng] = useState(
+    {
+        lat:null,
+        lng:null
+    }
+    
+   )
+   const [ismapReady,setIsmapReady] = useState(false)  
 
     useEffect(() => {
-
+        let address1 =''
         RealEstateService.getRealEstateById(id).then((response) => {
             console.log(response.data)
             setName(response.data.name)
@@ -59,6 +73,8 @@ const FlatDetail = () => {
             setDate_expired(response.data.date_expired)
             debugger
 
+            address1 = response.data.address
+          
         }).catch(error => {
             console.log(error)
         })
@@ -102,7 +118,65 @@ const FlatDetail = () => {
         }, 100);
 
     };
+   
+  
 
+    
+    const containerStyle = {
+        width: '500px',
+        height: '500px',
+      };
+
+    
+    function Place() {
+        if(laglng.lat == null && laglng.lng == null){
+            Geocode.setLanguage('vi')
+            Geocode.setRegion('VN')
+            Geocode.setApiKey("AIzaSyAbjJPkxU0zTQXY17w3sZBWksp96V1MrNI")
+            Geocode.fromAddress(address).then(
+            (response) => {
+        
+              const { lat, lng } = response.results[0].geometry.location;
+
+              setLaglng(response.results[0].geometry.location);            
+            },
+            (error) => {
+              console.error(error);
+            }
+        )
+        }
+        
+         const [map,setMap] = useState(null)
+         const mapref = React.useRef()
+         const onload = React.useCallback(function callback(map) {
+            mapref.current = map;
+            setMap(map)
+
+         },[])
+
+        
+
+
+        return (
+            <Fragment>
+                
+                    <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={laglng}
+                    zoom={10}
+                    onLoad={onload}
+                  
+                    >
+                    <MarkerF position={laglng}></MarkerF>
+                    </GoogleMap>
+                
+            </Fragment>
+        ) 
+       
+    }
+    
+
+    
     return (
         <div className="flat-detail">
 
@@ -184,9 +258,12 @@ const FlatDetail = () => {
 
                                 </div>
 
-                                <div className="fd-item">
+                                <div >
                                     <h4>Bản đồ</h4>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15105200.564429!2d37.91245092855647!3d38.99130948591772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1630158674074!5m2!1str!2str" width="100%" height="450" loading="lazy"></iframe>
+                                    <Place/>
+                                   
+                                    
+                                    
                                 </div>
 
                                 <div className="fd-item fd-features">
@@ -251,7 +328,9 @@ const FlatDetail = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
+        
     )
 }
 

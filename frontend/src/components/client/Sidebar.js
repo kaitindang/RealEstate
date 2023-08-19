@@ -44,7 +44,7 @@ const Sidebar = () => {
             </NavLink>
             {author() === "Admin" ?
               < NavLink exact to="/userList" activeClassName="activeClicked">
-                <CDBSidebarMenuItem icon="sticky-note">Quản lý người dùng</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem icon="book">Quản lý người dùng</CDBSidebarMenuItem>
               </NavLink>
               :
               <span></span>
