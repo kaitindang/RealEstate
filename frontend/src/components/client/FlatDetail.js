@@ -9,10 +9,10 @@ import {GoogleMap,LoadScript,Marker,MarkerF} from '@react-google-maps/api'
 import { getGeocode,getLatLng } from 'use-places-autocomplete';
 import { Fragment } from 'react';
 import Geocode from "react-geocode"
-
+import { Suspense } from 'react';
 
 const FlatDetail = () => {
-    const google = window.google
+    const Place = React.lazy(() => import('./Place'))
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [floor_space, setFloor_space] = useState('')
@@ -26,7 +26,6 @@ const FlatDetail = () => {
     const [date_expired, setDate_expired] = useState('')
     const history = useNavigate();
     const { id } = useParams();
-    const [loading, setLoading] = useState(true);
 
     const [recommendListingAddress, setRecommendListingAddress] = useState([]);
     const [recommendUserAddress, setRecommendUserAddress] = useState([]);
@@ -47,17 +46,10 @@ const FlatDetail = () => {
         avatar: ""
     });
         
-   const [laglng,setLaglng] = useState(
-    {
-        lat:null,
-        lng:null
-    }
-    
-   )
-   const [ismapReady,setIsmapReady] = useState(false)  
+
 
     useEffect(() => {
-        let address1 =''
+        
         RealEstateService.getRealEstateById(id).then((response) => {
             console.log(response.data)
             setName(response.data.name)
@@ -71,9 +63,9 @@ const FlatDetail = () => {
             setOwner_project(response.data.owner_project)
             setDate_create(response.data.date_create)
             setDate_expired(response.data.date_expired)
-            debugger
 
-            address1 = response.data.address
+            
+            
           
         }).catch(error => {
             console.log(error)
@@ -122,58 +114,26 @@ const FlatDetail = () => {
   
 
     
-    const containerStyle = {
-        width: '500px',
-        height: '500px',
-      };
-
-    
-    function Place() {
-        if(laglng.lat == null && laglng.lng == null){
-            Geocode.setLanguage('vi')
-            Geocode.setRegion('VN')
-            Geocode.setApiKey("AIzaSyAbjJPkxU0zTQXY17w3sZBWksp96V1MrNI")
-            Geocode.fromAddress(address).then(
-            (response) => {
+   
+    // function Place() {
+      
         
-              const { lat, lng } = response.results[0].geometry.location;
-
-              setLaglng(response.results[0].geometry.location);            
-            },
-            (error) => {
-              console.error(error);
-            }
-        )
-        }
-        
-         const [map,setMap] = useState(null)
-         const mapref = React.useRef()
-         const onload = React.useCallback(function callback(map) {
-            mapref.current = map;
-            setMap(map)
-
-         },[])
-
-        
-
-
-        return (
-            <Fragment>
-                
-                    <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={laglng}
-                    zoom={10}
-                    onLoad={onload}
+    //     return (
+            
+    //         <Fragment>
+    //                 <GoogleMap
+    //                 mapContainerStyle={containerStyle}
+    //                 center={laglng}
+    //                 zoom={10}
                   
-                    >
-                    <MarkerF position={laglng}></MarkerF>
-                    </GoogleMap>
+    //                 >
+    //                 {laglng && <MarkerF position={laglng}></MarkerF>}
+    //                 </GoogleMap>
                 
-            </Fragment>
-        ) 
+    //         </Fragment>
+    //     ) 
        
-    }
+    // }
     
 
     
@@ -260,10 +220,11 @@ const FlatDetail = () => {
 
                                 <div >
                                     <h4>Bản đồ</h4>
-                                    <Place/>
-                                   
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <Place  id={id}/>    
+                                    </Suspense>
                                     
-                                    
+                                                                      
                                 </div>
 
                                 <div className="fd-item fd-features">
