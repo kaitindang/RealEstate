@@ -4,7 +4,7 @@ import Header from './components/client/Header';
 import Footer from './components/client/Footer';
 import Home from './components/client/Home';
 import FlatDetail from './components/client/FlatDetail';
-
+import '@goongmaps/goong-js/dist/goong-js.css';
 import ProductList from './components/admin/Product/ProductList';
 import PostListing from './components/client/PostListing';
 import SearchResult from './components/client/SearchResult';

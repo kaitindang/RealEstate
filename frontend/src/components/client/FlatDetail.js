@@ -1,18 +1,15 @@
 import ImageGallery from 'react-image-gallery';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,lazy } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import RealEstateService from './Service/RealEstateService';
 import UserService from '../admin/Product/UserService';
 import ImagesListing from './ImagesListing';
 import Finance from './Finance';
-import {GoogleMap,LoadScript,Marker,MarkerF} from '@react-google-maps/api'
-import { getGeocode,getLatLng } from 'use-places-autocomplete';
-import { Fragment } from 'react';
-import Geocode from "react-geocode"
 import { Suspense } from 'react';
+import axios from 'axios';
 
 const FlatDetail = () => {
-    const Place = React.lazy(() => import('./Place'))
+    
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
     const [floor_space, setFloor_space] = useState('')
@@ -29,11 +26,11 @@ const FlatDetail = () => {
 
     const [recommendListingAddress, setRecommendListingAddress] = useState([]);
     const [recommendUserAddress, setRecommendUserAddress] = useState([]);
-
     const [searchParams, setSearchParams] = useSearchParams();
     const addressParam = searchParams.get("address");
     const person_modified = searchParams.get("person_modified");
-
+    const [laglng,setLaglng] = useState(null);
+    const [ismaploaded,setIsmaploaded] = useState(false);
     const [account, setAccount] = useState({
         id: "",
         username: "",
@@ -45,8 +42,32 @@ const FlatDetail = () => {
         phone: "",
         avatar: ""
     });
-        
 
+    const Place = lazy(() => {
+        const x = new Promise((resolve) =>{
+            setTimeout(() => {
+                return resolve(import("./Place"))
+            }, 1500);
+        })
+        return x
+    });
+    
+    
+    async function GetLocation(address){
+        if(address !== ''){
+            const baseURL = `https://rsapi.goong.io/geocode?address=${address}&api_key=aAt4K0Rulg9VEdff9yyiRAniaEFRf3uBB8RLWCzh`
+            await axios.get(baseURL).then((response)=>{
+                console.log(response)
+                setLaglng(response.data.results[0].geometry.location)
+            }).catch(error =>{
+                console.log(error)
+            })
+        
+        }
+    }
+
+  
+ 
 
     useEffect(() => {
         
@@ -63,9 +84,7 @@ const FlatDetail = () => {
             setOwner_project(response.data.owner_project)
             setDate_create(response.data.date_create)
             setDate_expired(response.data.date_expired)
-
-            
-            
+            GetLocation(response.data.address)
           
         }).catch(error => {
             console.log(error)
@@ -113,27 +132,6 @@ const FlatDetail = () => {
    
   
 
-    
-   
-    // function Place() {
-      
-        
-    //     return (
-            
-    //         <Fragment>
-    //                 <GoogleMap
-    //                 mapContainerStyle={containerStyle}
-    //                 center={laglng}
-    //                 zoom={10}
-                  
-    //                 >
-    //                 {laglng && <MarkerF position={laglng}></MarkerF>}
-    //                 </GoogleMap>
-                
-    //         </Fragment>
-    //     ) 
-       
-    // }
     
 
     
@@ -220,11 +218,10 @@ const FlatDetail = () => {
 
                                 <div >
                                     <h4>Bản đồ</h4>
+                                    <test/>
                                     <Suspense fallback={<div>Loading...</div>}>
-                                        <Place  id={id}/>    
-                                    </Suspense>
-                                    
-                                                                      
+                                        <Place laglng={laglng}/>  
+                                    </Suspense>                                   
                                 </div>
 
                                 <div className="fd-item fd-features">

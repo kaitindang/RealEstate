@@ -1,58 +1,41 @@
-import Geocode from "react-geocode";
-import { useState } from "react";
-import {GoogleMap,LoadScript,Marker,MarkerF} from '@react-google-maps/api'
-import { getGeocode,getLatLng } from 'use-places-autocomplete';
-import { Fragment } from 'react';
-import { useEffect } from "react";
-import RealEstateService from './Service/RealEstateService';
-import { Suspense } from "react";
+import ReactMapGL from '@goongmaps/goong-map-react';
+import Marker from '@goongmaps/goong-map-react';
+import { Fragment, useState } from "react";
+import React from 'react';
 
-const Place = ({id})=>{
 
-  
-    const containerStyle = {
-        width: '500px',
-        height: '500px',
-      };
 
-    const [laglng,setLaglng] = useState(null);
-    useEffect(()=>{
-        RealEstateService.getRealEstateById(id).then((response) => {
-            
-            Geocode.setLanguage('vi')
-            Geocode.setRegion('VN')
-            Geocode.setApiKey("AIzaSyA7QMEaYntyKOIFQmB911DQaU92GHXfffM")
-            Geocode.fromAddress(response.data.address).then(
-            (response) => {
-              setLaglng(response.results[0].geometry.location);            
-            }).catch(error =>{
-                console.log(error)
-            })
-            
-            
-          
-        }).catch(error => {
-            console.log(error)
-        })
-            
-    },[])
-    
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-        <Fragment>
-                <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={laglng}
-                zoom={10}
-              
-                >
-                 <MarkerF position={laglng}></MarkerF>
-                </GoogleMap>
-            
-        </Fragment>
-        </Suspense>
-    ) 
 
-    }
+const Place = ({laglng})=>{
+
+
+  const [viewport, setViewport] = useState({
+    width: 700,
+    height: 700,
+    latitude: laglng.lat,
+    longitude: laglng.lng,
+    zoom: 12
+  });
+
+  const[maker,setMaker] = useState({
+    latitude: laglng.lat,
+    longitude: laglng.lng,
+  })
+
+  return (
+    <ReactMapGL
+      {...viewport}
+      onViewportChange={nextViewport => setViewport(nextViewport)}
+      
+      goongApiAccessToken='PrLvkQKJlfK7iBycRsODlcRk3XsPI2DgHYgnNHs5'
+    >
+      <Marker {...maker}
+            goongApiAccessToken='5gy8P5nRJTXhOlFaCVuRURIcPr4pmAlqm3BvF9IW'>
+        <a>YOU ARE HERE</a>
+      </Marker>
+    </ReactMapGL>
+  );
+
+  }
 
 export default Place;
