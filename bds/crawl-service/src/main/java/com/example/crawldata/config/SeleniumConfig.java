@@ -13,7 +13,7 @@ public class SeleniumConfig {
 
     @PostConstruct
     void postConstruct(){
-        System.setProperty("webdriver.chrome.driver","D://Eclipse/cntt2/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","E://driver/116/chromedriver-win64/chromedriver.exe");
     }
 
 

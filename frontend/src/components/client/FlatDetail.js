@@ -85,6 +85,7 @@ const FlatDetail = () => {
             setDate_create(response.data.date_create)
             setDate_expired(response.data.date_expired)
             GetLocation(response.data.address)
+            recommendAddress(response.data.address)
           
         }).catch(error => {
             console.log(error)
@@ -98,10 +99,10 @@ const FlatDetail = () => {
             console.log(error)
         })
 
-        recommendAddress();
+        // recommendAddress();
     }, [])
 
-    const recommendAddress = () => {
+    const recommendAddress = (addressParam) => {
 
         RealEstateService.recommendListingAddress(id, addressParam).then((response) => {
             console.log(response.data)
@@ -218,7 +219,7 @@ const FlatDetail = () => {
 
                                 <div >
                                     <h4>Bản đồ</h4>
-                                    <test/>
+                                    
                                     <Suspense fallback={<div>Loading...</div>}>
                                         <Place laglng={laglng}/>  
                                     </Suspense>                                   

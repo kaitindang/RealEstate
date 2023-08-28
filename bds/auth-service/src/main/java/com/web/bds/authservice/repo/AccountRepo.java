@@ -14,9 +14,9 @@ public interface AccountRepo extends JpaRepository<Account, Integer> {
     Boolean existsByUsername(String username);
     Boolean existsByEmail(String email);
 
-    @Query("SELECT ac FROM Account ac WHERE " +
+    @Query(value = "SELECT * FROM Account as ac WHERE " +
             "ac.enable_account = true " +
-            "And ac.id != :id " +
-            "And ac.address LIKE CONCAT('%',:address, '%') ")
+            "And ac.id_account != :id " +
+            "And ac.address LIKE CONCAT('%',:address, '%') ",nativeQuery = true)
     public List<Account> findAccountByAddress(int id, String address);
 }

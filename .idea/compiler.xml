@@ -20,8 +20,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="blogservice" target="17" />
-      <module name="eurekaserver" target="17" />
       <module name="image-service" target="17" />
       <module name="payment_service" target="17" />
       <module name="productservice (1)" target="17" />

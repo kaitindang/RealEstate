@@ -91,7 +91,7 @@ insert into account_service.account (username, password, first_name, last_name, 
 ("user47", "$2a$10$4yfOx16qoQ9vslreXbIgYO411.OWWfweR9MWronWKI9nbdS7WQZBC", "user47","user47","user47@gmail.com", 0919114445),
 ("user48", "$2a$10$4yfOx16qoQ9vslreXbIgYO411.OWWfweR9MWronWKI9nbdS7WQZBC", "user48","user48","user48@gmail.com", 0919114445),
 ("user49", "$2a$10$4yfOx16qoQ9vslreXbIgYO411.OWWfweR9MWronWKI9nbdS7WQZBC", "user49","user49","user49@gmail.com", 0919114445),
-("user50", "$2a$10$4yfOx16qoQ9vslreXbIgYO411.OWWfweR9MWronWKI9nbdS7WQZBC", "user50","user50","user50@gmail.com", 0919114445)
+("user50", "$2a$10$4yfOx16qoQ9vslreXbIgYO411.OWWfweR9MWronWKI9nbdS7WQZBC", "user50","user50","user50@gmail.com", 0919114445);
 
 INSERT INTO Account_roles(account_id, roles_id) VALUE 
 (1,2),
