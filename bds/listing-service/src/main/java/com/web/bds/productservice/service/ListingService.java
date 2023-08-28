@@ -46,7 +46,7 @@ public class ListingService implements IListingService<Listing> {
 
     @Override
     public Listing findOne(int id) {
-        // TODO Auto-generated method stub
+
         Listing d =  listingRepo.findById(id).get();
 
         return d;

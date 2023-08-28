@@ -71,8 +71,7 @@ const FlatDetail = () => {
             setOwner_project(response.data.owner_project)
             setDate_create(response.data.date_create)
             setDate_expired(response.data.date_expired)
-            debugger
-
+ 
             address1 = response.data.address
           
         }).catch(error => {

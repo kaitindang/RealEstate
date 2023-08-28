@@ -83,8 +83,8 @@ public class CrawlService {
     }
 
     public void crawlData() throws InterruptedException, IOException {
-        //crawlSellData(URLSellData4);
-        crawlRentData(URLRentData4);
+        crawlSellData(URLSellData);
+        //crawlRentData(URLRentData4);
     }
 
 
