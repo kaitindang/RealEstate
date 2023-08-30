@@ -86,18 +86,19 @@ const FlatDetail = () => {
             setDate_expired(response.data.date_expired)
             GetLocation(response.data.address)
             recommendAddress(response.data.address)
+            UserService.getUserById(response.data.person_modified).then((response) => {
+                console.log(response.data)
+    
+                setAccount(response.data)
+            }).catch(error => {
+                console.log(error)
+            })
           
         }).catch(error => {
             console.log(error)
         })
 
-        UserService.getUserById(person_modified).then((response) => {
-            console.log(response.data)
-
-            setAccount(response.data)
-        }).catch(error => {
-            console.log(error)
-        })
+        
 
         // recommendAddress();
     }, [])

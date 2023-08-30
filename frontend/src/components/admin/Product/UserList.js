@@ -116,11 +116,11 @@ const UserList = (props) => {
                                 </th>
 
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
-                                    Bản tin
+                                    Tên Tài Khoảng
                                 </th>
 
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
-                                    Giá
+                                    Email
                                 </th>
                                 <th className="text-left font-medium uppercase tracking-wider py-3 px-6">
                                     Trạng thái

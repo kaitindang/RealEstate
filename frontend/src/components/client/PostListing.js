@@ -20,6 +20,7 @@ const AddProduct = () => {
     const [area, setArea] = useState('')
     const [owner_project, setOwner_project] = useState('')
     const [priority_type, setPriority_type] = useState('');
+    const person_modified = localStorage.getItem("id")
 
     const [upload, setUpload] = useState({
         files: null,
@@ -43,7 +44,7 @@ const AddProduct = () => {
 
         const realestates = {
             id_producttype, id_productcate, name, address, floor_space, price, type,
-            detail_product, room, area, owner_project, priority_type
+            detail_product, room, area, owner_project, priority_type,person_modified
         }
 
         if (id) {

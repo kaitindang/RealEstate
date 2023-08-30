@@ -15,6 +15,8 @@ import Upload from './components/client/upload';
 import UserList from './components/admin/Product/UserList';
 import ViewUser from './components/admin/Product/ViewUser';
 import EditUser from './components/admin/Product/EditUser';
+import PaymentHistory from './components/admin/Product/PaymentHistory';
+import PaymentListing from './components/admin/Product/PaymentListing';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path='/userList' element={<UserList />} />
         <Route path="/view-user/:id" element={<ViewUser />} ></Route>
         <Route path="/edit-user/:id" element={<EditUser />} ></Route>
+        <Route path="/payment-history/:id_account" element={<PaymentListing />}></Route>
 
         {/* CLIENT */}
         <Route path="/" element={<Home />}></Route>

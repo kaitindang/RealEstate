@@ -33,8 +33,6 @@ public class RabbitMQJsonConsumer {
             throw new RuntimeException("Tài khoản không đủ để đăng ký gói");
         }
 
-
-
         payment.setId_payment(paymentFromDb.getId_payment());
         payment.setAmount(money - payment.getAmount());
         Payment payment1 = paymentRepo.save(payment);
@@ -42,7 +40,7 @@ public class RabbitMQJsonConsumer {
         //Update History
 
         PaymentHistory paymentHistory = new PaymentHistory();
-        paymentHistory.setId_payment(payment.getId_payment());
+        paymentHistory.setId_payment(payment.getId_account());
         paymentHistory.setPre_amount(money);
         paymentHistory.setPay_money(paymoney);
         paymentHistory.setAft_amount(payment1.getAmount());

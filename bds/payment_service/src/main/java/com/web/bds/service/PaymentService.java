@@ -7,6 +7,8 @@ import com.web.bds.repo.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PaymentService {
 
@@ -39,4 +41,15 @@ public class PaymentService {
 
         return paymentFromDb;
     }
+
+    public List<PaymentHistory> getPaymentHistory(int id_payment){
+        return  paymentHistoryRepo.getPaymentHistoryfromIdPayment(id_payment);
+    }
+
+    public Payment findByAccountId(int id_account){
+        return paymentRepo.findByAccountId(id_account);
+    }
+
+
+
 }

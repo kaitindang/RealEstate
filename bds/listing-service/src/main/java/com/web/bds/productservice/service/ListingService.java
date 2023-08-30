@@ -81,7 +81,7 @@ public class ListingService implements IListingService<Listing> {
         }
         int m = t.getPriority_type();
         RequestPayment payment = new RequestPayment();
-        payment.setId_account(1);
+        payment.setId_account(t.getPerson_modified());
         if (m == 1){
             payment.setAmount(10000.00);
             payment.setName_payment("Tin thường");

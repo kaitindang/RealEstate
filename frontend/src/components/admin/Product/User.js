@@ -28,6 +28,7 @@ const User = ({ account, deleteAccount }) => {
         <button className="btn btn-danger" onClick={(e, id) => deleteAccount(e, account.id)}>
           Xóa
         </button>
+        <Link to={`/payment-history/${account.id}`}><button type="button" class="btn btn-info" data-mdb-ripple-color="dark">Lịch sử thanh toán</button></Link>
       </td>
 
     </tr>
