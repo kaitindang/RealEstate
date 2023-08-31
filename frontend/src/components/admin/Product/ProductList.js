@@ -5,6 +5,7 @@ import ProductService from './ProductService';
 import Product from './Product';
 import Sidebar from '../../client/Sidebar';
 import RealEstateService from '../../client/Service/RealEstateService';
+import CashIn from '../../client/CashIn';
 
 const ProductList = (props) => {
     const navigate = useNavigate();
@@ -131,6 +132,7 @@ const ProductList = (props) => {
 
 
     return (
+        
         <div className='row'>
             <div class="col-sm-3">
                 <Sidebar />
@@ -205,7 +207,7 @@ const ProductList = (props) => {
                 </div>
             </div>
         </div>
-
+        
     )
 }
 

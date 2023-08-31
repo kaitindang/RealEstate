@@ -28,14 +28,15 @@ public class PaymentService {
             return payment2;
         }
         paymentFromDb.setId_account(payment.getId_account());
+        paymentFromDb.setName_payment(payment.getName_payment());
         paymentFromDb.setAmount(paymentFromDb.getAmount() + payment.getAmount());
         Payment payment1 = paymentRepo.save(paymentFromDb);
 
         PaymentHistory paymentHistory = new PaymentHistory();
-        paymentHistory.setId_payment(payment.getId_payment());
+        paymentHistory.setId_payment(paymentFromDb.getId_payment());
         paymentHistory.setPre_amount(paymentFromDb.getAmount());
         paymentHistory.setPay_money(payment.getAmount());
-        paymentHistory.setAft_amount(payment1.getAmount());
+        paymentHistory.setAft_amount(paymentFromDb.getAmount() + payment.getAmount());
 
         paymentHistoryRepo.save(paymentHistory);
 

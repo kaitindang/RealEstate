@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/config/SercurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/security/jwt/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/security/jwt/AuthTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/security/jwt/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/security/services/UserDetailsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/service/ListingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentHistoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/repo/PaymentHistoryRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/FlatDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentListing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" afterDir="false" />
     </list>
@@ -56,37 +47,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/2/RealEstate/bds/payment_service/src/main/java/com/web/bds&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b285c1537a763e6c26f4dcfb159d9254&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/2/RealEstate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "b285c1537a763e6c26f4dcfb159d9254",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mongo&quot;,
-      &quot;documentdb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mongo",
+      "documentdb"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -288,10 +279,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NumberFormatException" package="java.lang" />
-          <option name="timeStamp" value="4" />
-        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java</url>
           <line>124</line>
@@ -301,11 +288,6 @@
           <url>file://$PROJECT_DIR$/bds/auth-service/src/main/java/com/web/bds/authservice/controller/UserController.java</url>
           <line>106</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/bds/listing-service/src/main/java/com/web/bds/productservice/controller/RealEstateControllerClient.java</url>

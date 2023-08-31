@@ -22,11 +22,14 @@ public class RabbitMQJsonConsumer {
     @RabbitListener(queues = "${rabbitmq.queue.name}")
     public void consumeJsonMessage(Payment payment){
         Payment paymentFromDb = paymentRepo.findByAccountId(payment.getId_account());
+        if(paymentFromDb == null){
+             paymentFromDb.setAmount(0);
+             paymentFromDb = paymentRepo.save(payment);
+        }
+
         double money = paymentFromDb.getAmount();
         double paymoney = payment.getAmount();
-        if(paymentFromDb == null){
-          throw new RuntimeException("Tài khoản không tồn tại");
-        }else if(money <= 0){
+        if(money <= 0){
             throw new RuntimeException("Hiện không có số dư trong tài khoản");
         }
         else if(money < payment.getAmount()){

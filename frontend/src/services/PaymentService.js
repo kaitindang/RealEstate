@@ -25,6 +25,10 @@ class PaymentService {
                 headers: { 'Authorization': "Bearer " + localStorage.getItem("accessToken") }
             });
     }
+    cashIn(payment){
+        return axios.post(PRO_API_BASE_URL + '/cashIn', payment,{headers: {'Authorization':"Bearer " +  localStorage.getItem("accessToken")}
+    });
+    }
 
 
     

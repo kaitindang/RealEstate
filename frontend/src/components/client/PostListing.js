@@ -5,6 +5,8 @@ import RealEstateService from './Service/RealEstateService';
 import UploadImageComponent from './upload';
 import FileService from './Service/FileService';
 import ImageService from './Service/ImageService';
+import PaymentService from '../../services/PaymentService';
+
 
 const AddProduct = () => {
 
@@ -21,7 +23,9 @@ const AddProduct = () => {
     const [owner_project, setOwner_project] = useState('')
     const [priority_type, setPriority_type] = useState('');
     const person_modified = localStorage.getItem("id")
-
+    const [amount,setAmount] = useState(0)
+    
+    
     const [upload, setUpload] = useState({
         files: null,
         fileUploaded: null,
@@ -39,52 +43,63 @@ const AddProduct = () => {
     const navigate = useNavigate();
     const { id } = useParams();
 
+   
+
     const saveOrUpdateRealEstate = (e) => {
         e.preventDefault();
-
-        const realestates = {
-            id_producttype, id_productcate, name, address, floor_space, price, type,
-            detail_product, room, area, owner_project, priority_type,person_modified
+        debugger;
+        if(amount <= 0 || !amount){
+            alert("Tài khoản quy khách không đủ, vui lòng nạp thêm")
+            navigate("/")
         }
+        else{
 
-        if (id) {
-            RealEstateService.updateRealEstate(id, realestates).then((response) => {
-                console.log(response.data)
-                navigate('/')
-            }).catch(error => {
-                console.log(error)
-            })
+            const realestates = {
+                id_producttype, id_productcate, name, address, floor_space, price, type,
+                detail_product, room, area, owner_project, priority_type,person_modified
+            }
 
-        } else {
-
-            RealEstateService.createRealEstate(realestates).then((response) => {
-                console.log(response.data)
-
-                const id_product = response.data.id_product;
-
-                const formData = new FormData();
-
-                for (const key of Object.keys(upload.files)) {
-                    formData.append('files', upload.files[key]);
-                }
-
-                formData.append('id_product', id_product);
-
-                ImageService.uploadImage(formData).then((response) => {
-                    console.log(response.data);
-                    setUpload({ ...upload, fileUploaded: true });
-                    console.log("image_product: ", response.data[0].fileUri)
-
+            if (id) {
+                RealEstateService.updateRealEstate(id, realestates).then((response) => {
+                    console.log(response.data)
+                    navigate('/')
                 }).catch(error => {
-                    console.log(error);
-                });
-            }).catch(error => {
-                console.log(error)
-            })
+                    console.log(error)
+                })
 
+            } else {
+
+                RealEstateService.createRealEstate(realestates).then((response) => {
+                    console.log(response.data)
+
+                    const id_product = response.data.id_product;
+
+                    const formData = new FormData();
+
+                    for (const key of Object.keys(upload.files)) {
+                        formData.append('files', upload.files[key]);
+                    }
+
+                    formData.append('id_product', id_product);
+
+                    ImageService.uploadImage(formData).then((response) => {
+                        console.log(response.data);
+                        setUpload({ ...upload, fileUploaded: true });
+                        console.log("image_product: ", response.data[0].fileUri)
+
+                    }).catch(error => {
+                        console.log(error);
+                    });
+                }).catch(error => {
+                    console.log(error)
+                })
+
+            }
+
+            
+
+            navigate('/')
         }
-
-        navigate('/')
     }
 
     const handleExpireChange = (e) => {
@@ -106,6 +121,15 @@ const AddProduct = () => {
         }).catch(error => {
             console.log(error)
         })
+
+        PaymentService.getPaymentByAccountId(person_modified).then((reponse) =>{
+            console.log(reponse)
+            setAmount(reponse.data.amount)
+        }).catch((error => {
+             console.log(error)
+        }))
+
+       
     }, [])
 
     const title = () => {

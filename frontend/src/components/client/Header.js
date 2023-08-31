@@ -63,6 +63,7 @@ const Header = () => {
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><Link className="dropdown-item" to={`/view-user/${localStorage.getItem("id")}`}>Thông tin tài khoản</Link></li>
                                                 <li><Link className="dropdown-item" to="/productlist">Quản lý tin đăng</Link></li>
+                                                <li><Link className="dropdown-item" to="/cashIn">Nạp tiền</Link></li>
                                                 <li><Link className="dropdown-item" onClick={(e) => onLogout(e)}>Đăng xuất</Link></li>
                                             </ul>
                                         </div>

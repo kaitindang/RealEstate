@@ -4,7 +4,7 @@ import ProductService from './ProductService';
 import ProductWaiting from './ProductWaiting';
 import Sidebar from '../../client/Sidebar';
 import RealEstateService from '../../client/Service/RealEstateService';
-import PaymentService from './PaymentService';
+import PaymentService from '../../../services/PaymentService';
 import UserService from './UserService';
 import PaymentHistory from './PaymentHistory';
 

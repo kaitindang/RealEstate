@@ -10,8 +10,13 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 import '../../App.css';
+import { useScrollTrigger } from '@material-ui/core';
+import { useState } from 'react';
+import CashIn from './CashIn';
 
 const Sidebar = () => {
+
+  const [open,setOpen] = useState(false);
 
   const author = () => {
     var role = localStorage.getItem("role");
@@ -24,6 +29,7 @@ const Sidebar = () => {
   }
 
   return (
+    <>
     <div className="sidebar"
       style={{ display: 'flex', height: '150vh', overflow: 'scroll initial' }}
     >
@@ -32,6 +38,7 @@ const Sidebar = () => {
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             {author()}
           </a>
+          
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
@@ -74,7 +81,12 @@ const Sidebar = () => {
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>
+      
+      
     </div >
+    
+    
+    </>
   );
 };
 

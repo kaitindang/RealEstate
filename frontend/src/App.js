@@ -17,6 +17,7 @@ import ViewUser from './components/admin/Product/ViewUser';
 import EditUser from './components/admin/Product/EditUser';
 import PaymentHistory from './components/admin/Product/PaymentHistory';
 import PaymentListing from './components/admin/Product/PaymentListing';
+import CashIn from './components/client/CashIn';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/edit-realestate/:id" element={<PostListing />} ></Route>
         <Route path="/search/:query" element={<SearchResult />} ></Route>
         <Route path="/upload" element={<Upload />} ></Route>
+        <Route path='/cashIn' element={<CashIn />}></Route>
 
         {/* AUTH*/}
         <Route path="/login" element={<Login />} ></Route>
