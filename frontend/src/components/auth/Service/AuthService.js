@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const AUTH_BASE_REST_API_URL = 'http://localhost:8100/api/auth';
+const AUTH_BASE_REST_API_URL = 'http://localhost:8060/api/auth';
 
 class Account{
 

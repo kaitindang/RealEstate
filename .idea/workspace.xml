@@ -6,15 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="74e458c5-0218-4d4a-a932-733a8e806ba7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/rabbitmq/consumer/RabbitMQJsonConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/payment_service/src/main/java/com/web/bds/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentListing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/PaymentService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/PostListing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/config/SercurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/config/SercurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/filter/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/filter/RouteValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/filter/RouteValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/jwt/AuthTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/bds/api-gateway/src/main/java/com/web/bds/apigateway/security/jwt/AuthTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bds/api-gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bds/api-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/ProductService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/admin/Product/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/auth/Service/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/auth/Service/AuthService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/ImageService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/ImageService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/client/Service/RealEstateService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/PaymentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/PaymentService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/RealEstateService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/RealEstateService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/2/RealEstate",
+    "last_opened_file_path": "D:/1/RealEstate",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +96,7 @@
       <recent name="D:\Eclipse\duancntt\RealEstate\bds\image-service\src\main\java\com\web\bds" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.bds.apigateway.security.filter" />
       <recent name="com.web.bds.config" />
       <recent name="com.web.bds.financeservice.entity" />
       <recent name="com.web.bds.repo" />

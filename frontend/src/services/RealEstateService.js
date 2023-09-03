@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const REALESTATE_BASE_REST_API_URL = 'http://localhost:8091/realestates';
+const REALESTATE_BASE_REST_API_URL = 'http://localhost:8060/realestates';
 
 class RealEstateService{
 

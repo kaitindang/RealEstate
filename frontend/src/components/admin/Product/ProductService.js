@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const PRO_API_BASE_URL = "http://localhost:8091/admin/realestate";
+const PRO_API_BASE_URL = "http://localhost:8060/admin/realestate";
 
 const config = {
     headers: {

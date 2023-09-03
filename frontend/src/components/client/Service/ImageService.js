@@ -1,5 +1,5 @@
 import axios from "axios"
-const BASE_URL = "http://localhost:8092/photo"
+const BASE_URL = "http://localhost:8060/photo"
 const config = {
     headers: {
         'Authorization': 'Bearer ' + localStorage.getItem("accessToken"),

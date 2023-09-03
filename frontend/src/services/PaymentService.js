@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const PRO_API_BASE_URL = "http://localhost:8093/api/payment";
+const PRO_API_BASE_URL = "http://localhost:8060/api/payment";
 
 const config = {
     headers: {
